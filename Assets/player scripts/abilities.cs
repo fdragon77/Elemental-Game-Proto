@@ -43,6 +43,7 @@ public class abilities : MonoBehaviour
         {
             if (Input.GetKeyDown(abKeys[abOrder[iii]]))
             {
+                Debug.Log("Key Pressed: " + abKeys[abOrder[iii]].ToString());
                 switch (iii)
                 {
                     case 0:

@@ -12,6 +12,7 @@ public class fireball : MonoBehaviour
         G.transform.rotation = gameObject.transform.rotation;
     }
 
+    /*
     public void Update()
     {
         //for testing.
@@ -20,4 +21,5 @@ public class fireball : MonoBehaviour
             cast();
         }
     }
+    */
 }
