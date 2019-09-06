@@ -15,6 +15,6 @@ public class flying : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.forward * Time.deltaTime * speed;
+        transform.position += transform.forward * Time.deltaTime * speed;
     }
 }
