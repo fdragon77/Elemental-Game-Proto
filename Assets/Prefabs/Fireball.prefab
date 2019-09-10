@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8000995428032571934}
   - component: {fileID: 8000995428032571906}
   - component: {fileID: 4357774274454378660}
-  m_Layer: 0
+  - component: {fileID: 898541388304688344}
+  m_Layer: 9
   m_Name: Fireball
-  m_TagString: Untagged
+  m_TagString: fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,4 +123,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c440c62bce8f4b4aa894a45943af3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theBall: {fileID: 8000995428032571935}
+  myBody: {fileID: 8000995428032571906}
+--- !u!135 &898541388304688344
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000995428032571935}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
