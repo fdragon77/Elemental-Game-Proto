@@ -7,6 +7,9 @@ public class AttackPlayerInRange : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] float range;
     [SerializeField] float speed;
+    [HideInInspector] bool pushed = false;
+    [HideInInspector] float waitTime = 1;
+    [HideInInspector] float timecast;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,25 @@ public class AttackPlayerInRange : MonoBehaviour
         if(Vector3.Distance(target.transform.position, transform.position) <= range)
         {
             transform.LookAt(target.transform);
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            if (!pushed)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime * -10);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            }
+            
         }
+        if(Time.time - timecast >= waitTime)
+        {
+            pushed = true;
+        }
+    }
+
+    public void push()
+    {
+        pushed = true;
+        timecast = Time.time;
     }
 }

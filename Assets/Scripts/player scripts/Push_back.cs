@@ -33,4 +33,13 @@ public class Push_back : MonoBehaviour
         ps.Play();
         col.enabled = true;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if(other.gameObject.tag == "enemy")
+        {
+            other.gameObject.GetComponent<AttackPlayerInRange>().push();
+        }
+    }
 }
