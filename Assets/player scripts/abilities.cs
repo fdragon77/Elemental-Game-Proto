@@ -18,6 +18,7 @@ public class abilities : MonoBehaviour
     [SerializeField] public UnityEvent ability3;
     [SerializeField] public UnityEvent ability4;
     [SerializeField] public UnityEvent ability5;
+    [HideInInspector] public bool pull_healing = false;
     // Update is called once per frame
     void Update()
     {
