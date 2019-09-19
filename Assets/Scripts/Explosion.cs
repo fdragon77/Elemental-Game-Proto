@@ -7,7 +7,9 @@ public class Explosion : MonoBehaviour
 
     bool hasCollided = false;
     public Rigidbody myBody;
-    int timer = 40;
+    public GameObject theExplosion;
+    //var renderer = GetComponent("mesh renderer");
+    int timer = 60;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class Explosion : MonoBehaviour
             transform.localScale *= 7;
             myBody.Sleep();
             myBody.isKinematic = true;
+            theExplosion.SetActive(true);
+            //renderer.SetActive(false);
 
             hasCollided = true;
         }
