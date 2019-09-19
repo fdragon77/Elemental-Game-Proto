@@ -6,6 +6,7 @@ public class Character_Control : MonoBehaviour
 {
     CharacterController characterController;
     [SerializeField] Transform camera;
+    public AudioSource soundController;
     public float speed = 6.0f;
     private float initSpeed;
     int time = 0;
@@ -28,6 +29,7 @@ public class Character_Control : MonoBehaviour
         move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
         if (Input.GetButtonDown("Jump") && time < 1)
         {
+            soundController.Play();
             Debug.Log("Dash");
             speed *= 4;
             time = 20;
