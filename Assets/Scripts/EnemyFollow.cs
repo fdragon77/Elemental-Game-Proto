@@ -13,7 +13,7 @@ public class EnemyFollow : MonoBehaviour
     void Start()
     {
         //playerLoc = player.position;
-        player = GameObject.Find("Body");
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame

@@ -46,11 +46,11 @@ public class Explosion : MonoBehaviour
         if (hasCollided)
         {
             timer--;
-            Debug.Log("tick");
+            //Debug.Log("tick");
         }
         if (timer == 0)
         {
-            Debug.Log("Destroy");
+            //Debug.Log("Destroy");
             Destroy(gameObject);
         }
     }

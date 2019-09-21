@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character_Control : MonoBehaviour
 {
     CharacterController characterController;
-    [SerializeField] Transform camera;
+    
     public AudioSource soundController;
     public float speed = 6.0f;
     private float initSpeed;
@@ -30,7 +30,7 @@ public class Character_Control : MonoBehaviour
         if (Input.GetButtonDown("Jump") && time < 1)
         {
             soundController.Play();
-            Debug.Log("Dash");
+            //Debug.Log("Dash");
             speed *= 4;
             time = 20;
         }
@@ -48,7 +48,7 @@ public class Character_Control : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("Fire");
+            //Debug.Log("Fire");
             GameObject fireballHandler;
 			fireballHandler = Instantiate (projectile, characterController.transform.position, characterController.transform.rotation) as GameObject;
 			//fireballHandler.transform.Rotate (Vector3.right * 90); 
@@ -61,7 +61,7 @@ public class Character_Control : MonoBehaviour
             fireDirection.y = 150;
             
             
-            Debug.Log(transform.forward.x +" "+ transform.forward.y +" "+ transform.forward.z );
+            //Debug.Log(transform.forward.x +" "+ transform.forward.y +" "+ transform.forward.z );
             TempBody.AddForce (fireDirection);
         }
 
