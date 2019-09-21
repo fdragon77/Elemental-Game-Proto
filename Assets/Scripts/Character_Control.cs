@@ -56,8 +56,8 @@ public class Character_Control : MonoBehaviour
 			TempBody = fireballHandler.GetComponent<Rigidbody>();
             Vector3 fireDirection;
             fireDirection = transform.forward;
-            fireDirection.x *= 800;
-            fireDirection.z *= 800;
+            fireDirection.x *= 1500;
+            fireDirection.z *= 1500;
             fireDirection.y = 150;
             
             
