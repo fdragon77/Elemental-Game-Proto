@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4880404279944182}
   - component: {fileID: 198626727012709668}
   - component: {fileID: 199514066930719758}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4691,7 +4691,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275401390743235635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.03, y: 1.11, z: -5.765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5037,9 +5037,10 @@ GameObject:
   - component: {fileID: 3157232654607495316}
   - component: {fileID: 3157232654607495319}
   - component: {fileID: 3157232654607495318}
-  m_Layer: 8
+  - component: {fileID: 1874950411523621000}
+  m_Layer: 9
   m_Name: Left Hand
-  m_TagString: Untagged
+  m_TagString: fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5113,11 +5114,27 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3157232654607495312}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1874950411523621000
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157232654607495312}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3157232655568205241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5130,9 +5147,10 @@ GameObject:
   - component: {fileID: 3157232655568205245}
   - component: {fileID: 3157232655568205244}
   - component: {fileID: 3157232655568205247}
-  m_Layer: 8
+  - component: {fileID: 1874950412509234608}
+  m_Layer: 9
   m_Name: Right Hand
-  m_TagString: Untagged
+  m_TagString: fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5206,11 +5224,27 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3157232655568205241}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1874950412509234608
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157232655568205241}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6729990835442014557
 GameObject:
   m_ObjectHideFlags: 0
@@ -9884,7 +9918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7835386260862479900}
   - component: {fileID: 7868173815253300142}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9975,7 +10009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7832768266562576296}
   - component: {fileID: 7832768266562576297}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10067,7 +10101,7 @@ GameObject:
   - component: {fileID: 7832768267397058259}
   - component: {fileID: 7832768267397058257}
   - component: {fileID: 7832768267397058258}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14694,7 +14728,7 @@ GameObject:
   - component: {fileID: 7832768267720134169}
   - component: {fileID: 7832768267720134175}
   - component: {fileID: 7832768267720134168}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GlowMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19321,7 +19355,7 @@ GameObject:
   - component: {fileID: 7832768267865380401}
   - component: {fileID: 7832768267865380407}
   - component: {fileID: 7832768267865380400}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23984,7 +24018,7 @@ GameObject:
   - component: {fileID: 7832768267903018144}
   - component: {fileID: 7832768267903018150}
   - component: {fileID: 7832768267903018151}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28609,7 +28643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7832768268233760556}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Fire Hand Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28644,7 +28678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7835339256269096650}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Fire Hand Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28681,7 +28715,7 @@ GameObject:
   - component: {fileID: 7828330761965335722}
   - component: {fileID: 7958618836288216664}
   - component: {fileID: 7957911460493057838}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GlowMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33308,7 +33342,7 @@ GameObject:
   - component: {fileID: 7835182246445500906}
   - component: {fileID: 7958458216163298336}
   - component: {fileID: 7959975678163502044}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37971,7 +38005,7 @@ GameObject:
   - component: {fileID: 7835227730712425670}
   - component: {fileID: 7958181210599748316}
   - component: {fileID: 7959907754975558726}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
