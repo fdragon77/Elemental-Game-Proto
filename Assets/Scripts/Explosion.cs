@@ -8,8 +8,10 @@ public class Explosion : MonoBehaviour
     bool hasCollided = false;
     public Rigidbody myBody;
     public GameObject theExplosion;
+    public SphereCollider trigger;
+    public SphereCollider rigid;
     //var renderer = GetComponent("mesh renderer");
-    int timer = 60;
+    int timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,10 +47,15 @@ public class Explosion : MonoBehaviour
     {
         if (hasCollided)
         {
-            timer--;
+            timer++;
+            if (timer == 40)
+            {
+                trigger.enabled = false;
+                rigid.enabled = false;
+            }
             //Debug.Log("tick");
         }
-        if (timer == 0)
+        if (timer == 200)
         {
             //Debug.Log("Destroy");
             Destroy(gameObject);
