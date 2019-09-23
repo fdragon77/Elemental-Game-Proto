@@ -17,7 +17,7 @@ public class Destructable : MonoBehaviour
     }
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == "fireball")
+        if(collider.tag == "Attack")
         {
             Destroy(gameObject);
         }

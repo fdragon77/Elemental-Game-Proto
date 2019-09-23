@@ -5149,6 +5149,7 @@ GameObject:
   - component: {fileID: 3157232654607495319}
   - component: {fileID: 3157232654607495318}
   - component: {fileID: 1874950411523621000}
+  - component: {fileID: 7556798474016138660}
   m_Layer: 9
   m_Name: Left Hand
   m_TagString: fireball
@@ -5246,6 +5247,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &7556798474016138660
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157232654607495312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3157232655568205241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,6 +5273,7 @@ GameObject:
   - component: {fileID: 3157232655568205244}
   - component: {fileID: 3157232655568205247}
   - component: {fileID: 1874950412509234608}
+  - component: {fileID: 1857625716599531754}
   m_Layer: 9
   m_Name: Right Hand
   m_TagString: fireball
@@ -5356,6 +5371,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1857625716599531754
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157232655568205241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
 --- !u!1 &6729990835442014557
 GameObject:
   m_ObjectHideFlags: 0
