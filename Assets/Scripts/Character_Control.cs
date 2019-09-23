@@ -48,24 +48,29 @@ public class Character_Control : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            //Debug.Log("Fire");
             GameObject fireballHandler;
-			fireballHandler = Instantiate (projectile, characterController.transform.position, characterController.transform.rotation) as GameObject;
-			//fireballHandler.transform.Rotate (Vector3.right * 90); 
-			Rigidbody TempBody;
-			TempBody = fireballHandler.GetComponent<Rigidbody>();
+            Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+            Vector3 worldPos;
             Vector3 fireDirection;
-            fireDirection = transform.forward;
-            fireDirection.x *= 1500;
-            fireDirection.z *= 1500;
-            fireDirection.y = 150;
-            
-            
-            //Debug.Log(transform.forward.x +" "+ transform.forward.y +" "+ transform.forward.z );
-            TempBody.AddForce (fireDirection);
+            Ray ray = Camera.main.ScreenPointToRay(mousePos);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 1000f)) //click hit something
+            {
+                worldPos = hit.point;
+            }
+            else //click missed the world
+            {
+                worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+            }
+            fireDirection = (worldPos - transform.position);//.normalized;
+            fireDirection *= 0.1f; //normalizing it without limiting range to exactly 1;
+            fireDirection.y = transform.position.y; //might matter for different height enviornments
+
+            fireballHandler = Instantiate(projectile, transform.position, projectile.transform.rotation) as GameObject;
+
+            int fireballSpeed = 10;
+            int fireballHeight = 3;
+            fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
         }
-
-
-
     }
 }
