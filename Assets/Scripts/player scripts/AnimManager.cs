@@ -16,7 +16,7 @@ public class AnimManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            Debug.Log("Swing");
+           // Debug.Log("Swing");
             theAnim.SetTrigger("Mouse Click");
         }
     }
