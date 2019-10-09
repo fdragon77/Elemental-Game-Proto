@@ -7537,6 +7537,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6992878695095857479, guid: c2e495332dd7d1b468ea915943231ee0,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e495332dd7d1b468ea915943231ee0, type: 3}
 --- !u!1 &776387887
@@ -22087,6 +22092,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2037315954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2855487305167446740, guid: c2e495332dd7d1b468ea915943231ee0,
+    type: 3}
+  m_PrefabInstance: {fileID: 742328581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037315955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037315954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8914c990d88184b4285a02e9ddf645ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speakers:
+  - Narrator
+  - Narrator
+  - Narrator
+  Lines:
+  - To move use WASD
+  - To do anything else wait until abilities are programmed
+  - This is just the first sprint, it shouldn't be much longer.
 --- !u!1 &2050027822
 GameObject:
   m_ObjectHideFlags: 0
