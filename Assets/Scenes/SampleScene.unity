@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -23}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10248906
@@ -2472,7 +2472,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 333335489}
 --- !u!114 &10248907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2750,7 +2749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -153}
+  m_AnchoredPosition: {x: 0, y: -130}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193950274
@@ -5065,7 +5064,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1294088430}
 --- !u!114 &193950275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,7 +5106,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 193950276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1363647255}
+        m_MethodName: QuitGamePopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &193950276
@@ -5185,6 +5194,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &301664374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 301664376}
+  - component: {fileID: 301664375}
+  m_Layer: 0
+  m_Name: Coroutiner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &301664375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301664374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bf0e3570f6de24b8937cb5f95c497e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &301664376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301664374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &333335487
 GameObject:
   m_ObjectHideFlags: 0
@@ -7416,7 +7468,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &742328581
 PrefabInstance:
@@ -7468,7 +7520,7 @@ PrefabInstance:
     - target: {fileID: 7759036262641789953, guid: c2e495332dd7d1b468ea915943231ee0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7759036262641789953, guid: c2e495332dd7d1b468ea915943231ee0,
         type: 3}
@@ -7484,6 +7536,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992878695095857479, guid: c2e495332dd7d1b468ea915943231ee0,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e495332dd7d1b468ea915943231ee0, type: 3}
@@ -7683,7 +7740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 69}
+  m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818886565
@@ -9998,7 +10055,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 2050027824}
 --- !u!114 &818886566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10319,7 +10375,18 @@ MonoBehaviour:
         CustomSortingLayer: Default
       Event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1363647255}
+            m_MethodName: setGameSpeed
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       GameEvents: []
@@ -10605,7 +10672,18 @@ MonoBehaviour:
         CustomSortingLayer: Default
       Event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1363647255}
+            m_MethodName: setGameSpeed
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       GameEvents: []
@@ -10686,6 +10764,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 3002255105893342284, guid: 0e82fe43b1f343542a76f02074c922b3,
+        type: 3}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     - target: {fileID: 3002255105893342286, guid: 0e82fe43b1f343542a76f02074c922b3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10724,7 +10807,7 @@ PrefabInstance:
     - target: {fileID: 3002255105893342286, guid: 0e82fe43b1f343542a76f02074c922b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3002255105893342286, guid: 0e82fe43b1f343542a76f02074c922b3,
         type: 3}
@@ -13281,7 +13364,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 625042958}
 --- !u!114 &1074685852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13493,7 +13575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -111}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094513050
@@ -15808,7 +15890,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1440729576}
 --- !u!114 &1094513051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18355,7 +18436,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 376240806}
 --- !u!114 &1168427775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18792,7 +18872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -69}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341546190
@@ -21107,7 +21187,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 150276962}
 --- !u!114 &1341546191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21266,6 +21345,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345496944}
   m_CullTransparentMesh: 0
+--- !u!114 &1363647255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3002255105893342285, guid: 0e82fe43b1f343542a76f02074c922b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 830003291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e046e0cc8a5a1d4faaec343330dd185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1377679164
 GameObject:
   m_ObjectHideFlags: 0
@@ -21909,7 +22000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugMode: 0
-  ControllerName: 
+  ControllerName: Pause menu
   DontDestroyControllerOnLoad: 1
   m_graphModel: {fileID: 11400000, guid: 4a0b7f779c6b52e4d9c099f2a6526489, type: 2}
 --- !u!4 &1994353418
@@ -21999,8 +22090,34 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2037315954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2855487305167446740, guid: c2e495332dd7d1b468ea915943231ee0,
+    type: 3}
+  m_PrefabInstance: {fileID: 742328581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037315955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037315954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8914c990d88184b4285a02e9ddf645ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speakers:
+  - Narrator
+  - Narrator
+  - Narrator
+  Lines:
+  - To move use WASD
+  - To do anything else wait until abilities are programmed
+  - This is just the first sprint, it shouldn't be much longer.
 --- !u!1 &2050027822
 GameObject:
   m_ObjectHideFlags: 0
@@ -22197,7 +22314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 21}
+  m_AnchoredPosition: {x: 0, y: 30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053404623
@@ -24512,7 +24629,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 776387889}
 --- !u!114 &2053404624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27536,7 +27652,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1259659862}
 --- !u!114 &2118681602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27670,7 +27785,7 @@ PrefabInstance:
     - target: {fileID: 6398797171849213440, guid: 323193daab11dab459d2f428f1e8b8e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6398797171849213440, guid: 323193daab11dab459d2f428f1e8b8e2,
         type: 3}

@@ -10,6 +10,8 @@ public class CharacterController : MonoBehaviour
 
     Vector3 forward, right;
 
+    GameController GAME;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +33,8 @@ public class CharacterController : MonoBehaviour
     void Move()
     {
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
-        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical");
+        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal") * GameController.gamespeed;
+        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical") * GameController.gamespeed;
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
