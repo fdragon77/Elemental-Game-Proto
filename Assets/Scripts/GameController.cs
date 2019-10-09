@@ -56,6 +56,7 @@ public class GameController : MonoBehaviour
         q_popup.HideOnClickOverlay = true;
         q_popup.HideOnBackButton = true;
         q_popup.HideOnClickContainer = false;
+
         q_popup.Show();
     }
 
@@ -67,5 +68,10 @@ public class GameController : MonoBehaviour
     public void DoNothing()
     {
 
+    }
+
+    public void setGameSpeed(float speed)
+    {
+        gamespeed = speed;
     }
 }
