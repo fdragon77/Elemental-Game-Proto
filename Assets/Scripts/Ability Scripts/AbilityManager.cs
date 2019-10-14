@@ -10,26 +10,21 @@ public class AbilityManager : MonoBehaviour
     public UnityEngine.Events.UnityEvent abil3Trigger;
     public UnityEngine.Events.UnityEvent abil4Trigger;
     public UnityEngine.Events.UnityEvent abil5Trigger;
+    public UnityEngine.Events.UnityEvent abil6Trigger;
 
     bool abil1bound = false;
     bool abil2bound = false;
     bool abil3bound = false;
     bool abil4bound = false;
     bool abil5bound = false;
+    bool abil6bound = false;
 
     float abil1cool;
     float abil2cool;
     float abil3cool;
     float abil4cool;
     float abil5cool;
-
-    string keyPress;
-
-    //ReferencedScript abil1;
-    //ReferencedScript abil2;
-    //ReferencedScript abil3;
-    //ReferencedScript abil4;
-    //ReferencedScript abil5;
+    float abil6cool;
 
 
     // Start is called before the first frame update
@@ -151,6 +146,13 @@ public class AbilityManager : MonoBehaviour
         {
             Debug.Log("5");
             abil5Trigger.Invoke();
+            //abil5
+            //to be bound
+        }
+        if (Input.GetButtonDown("6"))
+        {
+            Debug.Log("6");
+            abil6Trigger.Invoke();
             //abil5
             //to be bound
         }
