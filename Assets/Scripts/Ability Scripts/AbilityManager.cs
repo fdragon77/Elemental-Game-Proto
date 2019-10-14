@@ -94,6 +94,17 @@ public class AbilityManager : MonoBehaviour
                     }
                 }
                 break;
+            case 6:
+                {
+                    if (!abil6bound)
+                    {
+                        //abil1 = theAbil;
+                        abil6bound = true;
+                        succesfulBind = true;
+                        abil6cool = cooldown;
+                    }
+                    break;
+                }
             default:
                 {
                     Debug.Log("Default case for binding.");
@@ -117,43 +128,36 @@ public class AbilityManager : MonoBehaviour
         {
             Debug.Log("1");
             abil1Trigger.Invoke();
-
-            //abil1
             //to be bound
         }
         if (Input.GetButtonDown("2"))
         {
             Debug.Log("2");
             abil2Trigger.Invoke();
-            //abil2
             //to be bound
         }
         if (Input.GetButtonDown("3"))
         {
             Debug.Log("3");
             abil3Trigger.Invoke();
-            //abil3
             //to be bound
         }
         if (Input.GetButtonDown("4"))
         {
             Debug.Log("4");
             abil4Trigger.Invoke();
-            //abil4
             //to be bound
         }
         if (Input.GetButtonDown("5"))
         {
             Debug.Log("5");
             abil5Trigger.Invoke();
-            //abil5
             //to be bound
         }
         if (Input.GetButtonDown("6"))
         {
             Debug.Log("6");
             abil6Trigger.Invoke();
-            //abil5
             //to be bound
         }
     }
