@@ -11,7 +11,7 @@ public class Heal : MonoBehaviour
     }
     public void Fire()
     {
-
+        Debug.Log("Heal");
     }
     // Update is called once per frame
     void Update()

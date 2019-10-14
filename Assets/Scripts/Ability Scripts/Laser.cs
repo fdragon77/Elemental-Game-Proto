@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour
     }
     public void Fire()
     {
-
+        Debug.Log("Laser");
     }
     // Update is called once per frame
     void Update()

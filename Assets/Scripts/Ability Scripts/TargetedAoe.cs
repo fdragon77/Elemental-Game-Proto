@@ -11,7 +11,7 @@ public class TargetedAoe : MonoBehaviour
     }
     public void Fire()
     {
-
+        Debug.Log("TargetedAoe");
     }
     // Update is called once per frame
     void Update()

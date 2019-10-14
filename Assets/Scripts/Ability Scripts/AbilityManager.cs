@@ -5,7 +5,11 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
 
-    public UnityEngine.Events.UnityEvent abilTrigger;
+    public UnityEngine.Events.UnityEvent abil1Trigger;
+    public UnityEngine.Events.UnityEvent abil2Trigger;
+    public UnityEngine.Events.UnityEvent abil3Trigger;
+    public UnityEngine.Events.UnityEvent abil4Trigger;
+    public UnityEngine.Events.UnityEvent abil5Trigger;
 
     bool abil1bound = false;
     bool abil2bound = false;
@@ -107,39 +111,46 @@ public class AbilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Update");
+        //Debug.Log("Update");
         if (Input.GetButtonDown("Fire1"))
         {
+            
             Debug.Log("Melee");
             //melee goes here
         }
         if (Input.GetButtonDown("1"))
         {
             Debug.Log("1");
+            abil1Trigger.Invoke();
+
             //abil1
             //to be bound
         }
         if (Input.GetButtonDown("2"))
         {
             Debug.Log("2");
+            abil2Trigger.Invoke();
             //abil2
             //to be bound
         }
         if (Input.GetButtonDown("3"))
         {
             Debug.Log("3");
+            abil3Trigger.Invoke();
             //abil3
             //to be bound
         }
         if (Input.GetButtonDown("4"))
         {
             Debug.Log("4");
+            abil4Trigger.Invoke();
             //abil4
             //to be bound
         }
         if (Input.GetButtonDown("5"))
         {
             Debug.Log("5");
+            abil5Trigger.Invoke();
             //abil5
             //to be bound
         }
