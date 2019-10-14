@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
+
+    public UnityEngine.Events.UnityEvent abilTrigger;
+
     bool abil1bound = false;
     bool abil2bound = false;
     bool abil3bound = false;
