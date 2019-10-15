@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-
+    //hold the events for each script ability
     public UnityEngine.Events.UnityEvent abil1Trigger;
     public UnityEngine.Events.UnityEvent abil2Trigger;
     public UnityEngine.Events.UnityEvent abil3Trigger;
@@ -12,6 +12,7 @@ public class AbilityManager : MonoBehaviour
     public UnityEngine.Events.UnityEvent abil5Trigger;
     public UnityEngine.Events.UnityEvent abil6Trigger;
 
+    //maintain if the ability has been bound
     bool abil1bound = false;
     bool abil2bound = false;
     bool abil3bound = false;
@@ -19,6 +20,7 @@ public class AbilityManager : MonoBehaviour
     bool abil5bound = false;
     bool abil6bound = false;
 
+    //cooldown timers, not necessarily going to be used
     float abil1cool;
     float abil2cool;
     float abil3cool;
@@ -26,7 +28,9 @@ public class AbilityManager : MonoBehaviour
     float abil5cool;
     float abil6cool;
 
-
+    //prevent using multiple abilities at a time
+    float allcool = 2.5f;
+    bool fire = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -117,45 +121,63 @@ public class AbilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        allcool -= Time.deltaTime;
+        if(allcool <=0 && !fire)
+        {
+            fire = true;
+        }
         //Debug.Log("Update");
         if (Input.GetButtonDown("Fire1"))
         {
-            
+            fire = false;
+            allcool = 2.5f;
             Debug.Log("Melee");
             //melee goes here
         }
-        if (Input.GetButtonDown("1"))
+        if (Input.GetButtonDown("1") && fire)
         {
+            fire = false;
+            allcool = 2.5f;
             Debug.Log("1");
             abil1Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("2"))
+        if (Input.GetButtonDown("2") && fire)
         {
+            fire = false;
+            allcool = 2.5f;
             Debug.Log("2");
             abil2Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("3"))
+        if (Input.GetButtonDown("3") && fire)
         {
+            fire = false;
+            allcool = 2.5f;
             Debug.Log("3");
             abil3Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("4"))
+        if (Input.GetButtonDown("4") && fire)
         {
+            fire = false;
+            allcool = 2.5f;
             Debug.Log("4");
             abil4Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("5"))
+        if (Input.GetButtonDown("5") && fire)
         {
+            fire = false;
+            allcool = 2.5f;
             Debug.Log("5");
             abil5Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("6"))
+        if (Input.GetButtonDown("6") && fire)
         {
+            fire = false;
+            allcool = 2.5f;
             Debug.Log("6");
             abil6Trigger.Invoke();
             //to be bound

@@ -9,8 +9,13 @@ public class Fireball : MonoBehaviour
     {
         
     }
+    /// <summary>
+    /// this triggers the fireball.
+    /// </summary>
     public void Fire()
     {
+        
+        
         Debug.Log("Fireball");
         /*
         GameObject fireballHandler;

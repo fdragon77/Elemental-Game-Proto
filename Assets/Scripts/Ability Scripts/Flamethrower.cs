@@ -15,10 +15,13 @@ public class Flamethrower : MonoBehaviour
     public void Fire()
     {
         Debug.Log("flamethrower");
-
-        timer = 5;
-        flamethrower.SetActive(true);
-        active = true;
+        if (!active)
+        {
+            timer = 2.5f;
+            flamethrower.SetActive(true);
+            active = true;
+        }
+        
     }
     // Update is called once per frame
     void Update()

@@ -7,9 +7,11 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     float moveSpeed = 7f;
-
+    float regSpeed = 7f;
+    float boost = 30f;
     Vector3 forward, right;
-
+    float timer =2.5f;
+    bool dash = false;
     GameController GAME;
 
     // Start is called before the first frame update
@@ -24,9 +26,23 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
+        if (timer <=0 && dash)
+        {
+            moveSpeed = regSpeed;
+            dash = false;
+        }
         if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
         {
             Move();
+        }
+        if ((Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))&& Input.GetKeyUp("space"))
+        {
+            timer = .25f;
+            dash = true;
+            moveSpeed = boost;
+            Move();
+            
         }
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
