@@ -29,14 +29,14 @@ public class AbilityManager : MonoBehaviour
     float abil6cool;
 
     //prevent using multiple abilities at a time
-    float allcool = .5f;
+    [SerializeField] float allcool;// = .5f;
     float timer;
     bool fire = true;
     // Start is called before the first frame update
     void Start()
     {
         float timer = allcool;
-        Debug.Log(allcool);
+        //Debug.Log(allcool);
     }
     bool Bind( int binding, float cooldown)//reference script needed
     {
@@ -124,7 +124,7 @@ public class AbilityManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        Debug.Log(timer);
+        //Debug.Log(timer);
         if(timer <=0 && !fire)
         {
             fire = true;
