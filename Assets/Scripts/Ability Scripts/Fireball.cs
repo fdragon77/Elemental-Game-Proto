@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
+    public GameObject projectile;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class Fireball : MonoBehaviour
         
         
         Debug.Log("Fireball");
-        /*
+        
         GameObject fireballHandler;
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
         Vector3 worldPos;
@@ -41,7 +42,7 @@ public class Fireball : MonoBehaviour
         int fireballSpeed = 10;
         int fireballHeight = 3;
         fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
-        */
+        
     }
     // Update is called once per frame
     void Update()
