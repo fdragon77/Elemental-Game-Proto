@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class Conversable : MonoBehaviour
 {
+    [Header("List of Speaker Names:")]
     [SerializeField] List<string> Speakers;
+    [Header("Message text:")]
     [SerializeField] List<string> Lines; 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +16,9 @@ public class Conversable : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Triggers the message for the given dialogue.
+    /// </summary>
     public void Converse()
     {
         for(int i = 0; i < Speakers.Count; i++)
@@ -24,6 +29,9 @@ public class Conversable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Used to test use of converse. 
+    /// </summary>
     public void Update()
     {
         //For testing

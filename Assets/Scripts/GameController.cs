@@ -7,13 +7,18 @@ using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
+    //Keeps track of the speed of objects in the game. This needs to be used in any scripts with motion.
     public static float gamespeed = 1;
+    //SINGLETON IMPLIMENTATION 
     static GameController inst;
+    //Delegate to Quit the game.
     UnityAction quitAction;
+    //DOES NOTHING.
     UnityAction nullAction;
     // Start is called before the first frame update
     void Awake()
     {
+        //SINGLETON IMPLIMENTATION
         DontDestroyOnLoad(gameObject);
         if (inst == null)
         {
@@ -27,6 +32,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        //Set delegates for set actions. 
         quitAction += quitGame;
         nullAction += DoNothing;
     }
@@ -35,12 +41,19 @@ public class GameController : MonoBehaviour
     {
         
     }
-
+    /// <summary>
+    /// Loads given scene by string.
+    /// </summary>
+    /// <param name="scn"></param>
     public void loadScene(string scn)
     {
+        //Loads given scene.
         SceneManager.LoadScene(scn);
     }
 
+    /// <summary>
+    /// Creates a popup to quit the game. 
+    /// </summary>
     public void QuitGamePopup()
     {
         UIPopup q_popup = UIPopup.GetPopup("Popup2");
@@ -60,16 +73,26 @@ public class GameController : MonoBehaviour
         q_popup.Show();
     }
 
+    /// <summary>
+    /// Closes the application
+    /// </summary>
     public void quitGame()
     {
         Application.Quit();
     }
 
+    /// <summary>
+    /// Does absolutelty nothing.
+    /// </summary>
     public void DoNothing()
     {
 
     }
 
+    /// <summary>
+    /// Sets the speed of the game. 1 for normal speed, 0 for pause. Can be set to a float between for slow motion. 
+    /// </summary>
+    /// <param name="speed"></param>
     public void setGameSpeed(float speed)
     {
         gamespeed = speed;
