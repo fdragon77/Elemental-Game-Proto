@@ -20,7 +20,7 @@ public class Fireball : MonoBehaviour
         Debug.Log("Fireball");
         
         GameObject fireballHandler;
-        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+        Vector3 mousePos = new Vector3((Input.mousePosition.x - gameObject.transform.position.x), (Input.mousePosition.y - gameObject.transform.position.y), 0f);
         Vector3 worldPos;
         Vector3 fireDirection;
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
@@ -36,6 +36,8 @@ public class Fireball : MonoBehaviour
         fireDirection = (worldPos - transform.position);//.normalized;
         fireDirection *= 0.1f; //normalizing it without limiting range to exactly 1;
         fireDirection.y = transform.position.y; //might matter for different height enviornments
+        fireDirection.Normalize();
+        fireDirection *= 2.1f;
 
         fireballHandler = Instantiate(projectile, transform.position, projectile.transform.rotation) as GameObject;
 

@@ -48,6 +48,8 @@ public class Destructable : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case destroyType.explode:
+                Vector3 pos = transform.position;
+                Instantiate(explodeObj, pos, new Quaternion());
                 Destroy(gameObject);
                 break;
             case destroyType.burn:
@@ -66,8 +68,6 @@ public class Destructable : MonoBehaviour
             case destroyType.normal:
                 break;
             case destroyType.explode:
-                Vector3 pos = transform.position;
-                Instantiate(explodeObj, pos, new Quaternion());
                 break;
             case destroyType.burn:
                 break;
