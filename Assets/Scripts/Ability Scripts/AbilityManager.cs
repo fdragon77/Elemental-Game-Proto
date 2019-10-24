@@ -13,21 +13,10 @@ public class AbilityManager : MonoBehaviour
     public UnityEngine.Events.UnityEvent abil6Trigger;
 
     //maintain if the ability has been bound
-    bool abil1bound = false;
-    bool abil2bound = false;
-    bool abil3bound = false;
-    bool abil4bound = false;
-    bool abil5bound = false;
-    bool abil6bound = false;
+   
 
     //cooldown timers, not necessarily going to be used
-    float abil1cool;
-    float abil2cool;
-    float abil3cool;
-    float abil4cool;
-    float abil5cool;
-    float abil6cool;
-
+   
     //prevent using multiple abilities at a time
     [SerializeField] float allcool;// = .5f;
     float timer;
@@ -38,88 +27,7 @@ public class AbilityManager : MonoBehaviour
         float timer = allcool;
         //Debug.Log(allcool);
     }
-    bool Bind( int binding, float cooldown)//reference script needed
-    {
-        bool succesfulBind = false;
-        //this will assign values for abilbound and abil cool as well as what abil is bound
-        switch (binding)
-        {
-            case 1:
-                {
-                    if (!abil1bound)
-                    {
-                        //abil1 = theAbil;
-                        abil1bound = true;
-                        succesfulBind = true;
-                        abil1cool = cooldown;
-                    }
-                }
-                break;
-            case 2:
-                {
-                    if (!abil2bound)
-                    {
-                        //abil2 = theAbil;
-                        abil2bound = true;
-                        succesfulBind = true;
-                        abil2cool = cooldown;
-                    }
-
-                }
-                break;
-            case 3:
-                {
-                    if (!abil3bound)
-                    {
-                        //abil3 = theAbil;
-                        abil3bound = true;
-                        succesfulBind = true;
-                        abil3cool = cooldown;
-                    }
-                }
-                break;
-            case 4:
-                {
-                    if (!abil4bound)
-                    {
-                        //abil4 = theAbil;
-                        abil4bound = true;
-                        succesfulBind = true;
-                        abil4cool = cooldown;
-                    }
-                }
-                break;
-            case 5:
-                {
-                    if (!abil5bound)
-                    {
-                        //abil5 = theAbil;
-                        abil5bound = true;
-                        succesfulBind = true;
-                        abil5cool = cooldown;
-                    }
-                }
-                break;
-            case 6:
-                {
-                    if (!abil6bound)
-                    {
-                        //abil1 = theAbil;
-                        abil6bound = true;
-                        succesfulBind = true;
-                        abil6cool = cooldown;
-                    }
-                    break;
-                }
-            default:
-                {
-                    Debug.Log("Default case for binding.");
-                }
-                break;
-        }
-        return succesfulBind;
-
-    }
+    
     // Update is called once per frame
     void Update()
     {

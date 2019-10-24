@@ -7,17 +7,19 @@ public class Flamethrower : MonoBehaviour
     public GameObject flamethrower;
     float timer = 0;
     bool active = false;
+    [SerializeField] float cooldown;
+
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
     public void Fire()
     {
         Debug.Log("flamethrower");
         if (!active)
         {
-            timer = 2.5f;
+            timer = cooldown;
             flamethrower.SetActive(true);
             active = true;
         }

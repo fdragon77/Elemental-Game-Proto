@@ -5,8 +5,11 @@ using UnityEngine;
 public class AoeBlast : MonoBehaviour
 {
     public GameObject aoeRing;
+    [SerializeField] GameObject AoeObject;
     float timer = 0;
     bool active = false;
+    [SerializeField] float cooldown;
+    GameObject Blast;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +17,14 @@ public class AoeBlast : MonoBehaviour
     }
     public void Fire()
     {
-        Debug.Log("AoeBlast");
-        timer = 5;
-        aoeRing.SetActive(true);
-        active = true;
-
+        if (!active)
+        {
+            Debug.Log("AoeBlast");
+            timer = cooldown;
+            Blast = Instantiate(AoeObject, transform.position, AoeObject.transform.rotation) as GameObject;
+            //aoeRing.SetActive(true);
+            active = true;
+        }
     }
     // Update is called once per frame
     void Update()
