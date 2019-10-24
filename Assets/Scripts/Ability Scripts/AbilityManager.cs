@@ -29,7 +29,7 @@ public class AbilityManager : MonoBehaviour
     float abil6cool;
 
     //prevent using multiple abilities at a time
-    [SerializeField] float allcool;// = .5f;
+    [SerializeField] public float allcool;// = .5f;
     float timer;
     bool fire = true;
     // Start is called before the first frame update

@@ -8,6 +8,7 @@ public class FlyToPlayer : MonoBehaviour
     [SerializeField] float max_distance = 50f;
     [SerializeField] float speed = 1;
     [HideInInspector] GameObject player;
+    [SerializeField] bool active = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +18,13 @@ public class FlyToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(player.transform.position, transform.position) <= max_distance)
+        if (active)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed);
+        }
+        if(Vector3.Distance(player.transform.position, transform.position) <= max_distance)
+        {
+            active = player.GetComponent<Heal>().healing || active;
         }
     }
 
