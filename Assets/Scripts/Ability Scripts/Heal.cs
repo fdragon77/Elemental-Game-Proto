@@ -18,6 +18,7 @@ public class Heal : MonoBehaviour
     {
         Debug.Log("Heal");
         healing = true;
+        lastTrigger = Time.time;
     }
     // Update is called once per frame
     void Update()
