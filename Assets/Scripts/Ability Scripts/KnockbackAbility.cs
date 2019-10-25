@@ -13,16 +13,16 @@ public class KnockbackAbility : MonoBehaviour
 
     void OnTriggerEnter(Collider trigger)
     {
-        Debug.Log("Enter abil");
-        Debug.Log(trigger.gameObject.tag);
+        //Debug.Log("Enter abil");
+        //Debug.Log(trigger.gameObject.tag);
 
         if (trigger.gameObject.tag == "Enemy")
         {
-            Debug.Log("Force abil");
+            //Debug.Log("Force abil");
             Vector3 movedirection = transform.position - trigger.transform.position;
             Rigidbody theBody = trigger.GetComponent<Rigidbody>();
-            Debug.Log(theBody.name);
-            Debug.Log(movedirection.normalized);
+            //Debug.Log(theBody.name);
+            //Debug.Log(movedirection.normalized);
             theBody.AddForce(movedirection.normalized * -5000);
         }
     }
