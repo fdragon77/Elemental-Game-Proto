@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healing: 0
+  waitTime: 2
 --- !u!114 &6296993653634895284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 8125854968140948122}
+  cooldown: 0
 --- !u!114 &6296993653634895287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955bdadd204e61046ba98763c26270c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
 --- !u!114 &6296993653634895286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 8000995428032571935, guid: 7636892f0862faf4bbdc550554f11b22,
     type: 3}
+  cooldown: 0
 --- !u!114 &6296993653634895289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aoeRing: {fileID: 8125991415079999035}
+  AoeObject: {fileID: 0}
+  cooldown: 0
 --- !u!114 &6296993653634895283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flamethrower: {fileID: 1594258658111460574}
+  cooldown: 0
 --- !u!95 &6296993653634895282
 Animator:
   serializedVersion: 3
@@ -319,7 +326,7 @@ Animator:
   m_GameObject: {fileID: 856809389371772005}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a7003e5322d81dc43970e7df656f8b49, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

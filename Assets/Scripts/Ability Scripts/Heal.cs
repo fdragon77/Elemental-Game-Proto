@@ -12,7 +12,7 @@ public class Heal : MonoBehaviour
     void Start()
     {
 
-        waitTime = gameObject.GetComponent<AbilityManager>().allcool;
+        //waitTime = gameObject.GetComponent<AbilityManager>().allcool;
     }
     public void Fire()
     {
