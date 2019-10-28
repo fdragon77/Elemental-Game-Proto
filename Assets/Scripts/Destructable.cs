@@ -53,7 +53,12 @@ public class Destructable : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case destroyType.burn:
-                gameObject.GetComponent<MeshRenderer>().material = burnmat;
+                MeshRenderer[] theRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer renderer in theRenderers)
+                {
+                    renderer.material = burnmat;
+                }
+                
                 break;
         }
     }

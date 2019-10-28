@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnockbackAbility : MonoBehaviour
 {
-    
+    [SerializeField] int pushForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,12 @@ public class KnockbackAbility : MonoBehaviour
         {
             //Debug.Log("Force abil");
             Vector3 movedirection = transform.position - trigger.transform.position;
-            Rigidbody theBody = trigger.GetComponent<Rigidbody>();
+           
+           
+            Rigidbody theBody = trigger.GetComponentInChildren<Rigidbody>();
             //Debug.Log(theBody.name);
             //Debug.Log(movedirection.normalized);
-            theBody.AddForce(movedirection.normalized * -5000);
+            theBody.AddForce(movedirection.normalized * -pushForce);
         }
     }
     // Update is called once per frame

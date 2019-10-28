@@ -45,8 +45,8 @@ public class Fireball : MonoBehaviour
 
             fireballHandler = Instantiate(projectile, transform.position, projectile.transform.rotation) as GameObject;
 
-            int fireballSpeed = 10;
-            int fireballHeight = 3;
+            int fireballSpeed = 20;
+            int fireballHeight = 1;
             fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
 
         }
