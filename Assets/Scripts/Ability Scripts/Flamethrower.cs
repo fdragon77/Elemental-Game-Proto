@@ -16,7 +16,7 @@ public class Flamethrower : MonoBehaviour
     }
     public void Fire()
     {
-        Debug.Log("flamethrower");
+        //Debug.Log("flamethrower");
         if (!active)
         {
             timer = cooldown;

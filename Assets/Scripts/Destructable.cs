@@ -22,8 +22,13 @@ public class Destructable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Attack")
+        
+        Debug.Log("Collision");
+        Debug.Log(collision.gameObject.name + "asd");
+        //Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "Attack")
         {
+            
             switch (collision.gameObject.name)
             {
                 case "Fireball(Clone)":
@@ -32,7 +37,14 @@ public class Destructable : MonoBehaviour
                         destruct();
                     }
                     break;
-                //FIXME Fill in with prefabs as we work on it.
+                case "flamethrower":
+                    if (FirebreathsDestroy)
+                    {
+                        Debug.Log("Breath Destroy");
+                        destruct();
+                    }
+                    break;
+                    //FIXME Fill in with prefabs as we work on it.
             }
         }
     }

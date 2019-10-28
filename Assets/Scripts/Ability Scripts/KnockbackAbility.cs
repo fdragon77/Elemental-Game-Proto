@@ -20,9 +20,8 @@ public class KnockbackAbility : MonoBehaviour
         {
             //Debug.Log("Force abil");
             Vector3 movedirection = transform.position - trigger.transform.position;
-           
-           
-            Rigidbody theBody = trigger.GetComponentInChildren<Rigidbody>();
+            
+            Rigidbody theBody = trigger.GetComponent<Rigidbody>();
             //Debug.Log(theBody.name);
             //Debug.Log(movedirection.normalized);
             theBody.AddForce(movedirection.normalized * -pushForce);
