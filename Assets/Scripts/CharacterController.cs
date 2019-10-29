@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    float moveSpeed = 7f;
+    [SerializeField] float moveSpeed = 7f;
     float regSpeed = 7f;
     float boost = 30f;
     Vector3 forward, right;
