@@ -20,7 +20,6 @@ GameObject:
   - component: {fileID: 6296993653634895286}
   - component: {fileID: 6296993653634895289}
   - component: {fileID: 6296993653634895283}
-  - component: {fileID: 6296993653634895282}
   - component: {fileID: 6296993653634895280}
   - component: {fileID: 856809389371772002}
   m_Layer: 9
@@ -153,7 +152,7 @@ MonoBehaviour:
   abil2Trigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6296993653634895284}
+      - m_Target: {fileID: 6296993653634895283}
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -169,7 +168,7 @@ MonoBehaviour:
   abil3Trigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6296993653634895287}
+      - m_Target: {fileID: 6296993653634895289}
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -202,7 +201,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6296993653634895289}
-        m_MethodName: Fire
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -218,7 +217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6296993653634895283}
-        m_MethodName: Fire
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -230,7 +229,15 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  mana: 100
+  manaRegenMod: 15
   allcool: 0.5
+  abil1mana: 25
+  abil2mana: 10
+  abil3mana: 75
+  abil4mana: 10
+  abil5mana: 0
+  abil6mana: 0
 --- !u!114 &6296993653634895285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 8125854968140948122}
-  cooldown: 0
+  cooldown: 2.5
 --- !u!114 &6296993653634895287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955bdadd204e61046ba98763c26270c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
+  cooldown: 2.5
 --- !u!114 &6296993653634895286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 8000995428032571935, guid: 7636892f0862faf4bbdc550554f11b22,
     type: 3}
-  cooldown: 0
+  cooldown: 0.5
 --- !u!114 &6296993653634895289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,8 +307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aoeRing: {fileID: 8125991415079999035}
-  AoeObject: {fileID: 0}
-  cooldown: 0
+  AoeObject: {fileID: 3864831498559903643, guid: 1013407b7f435d3408a62d2fa4642303,
+    type: 3}
+  cooldown: 2.5
 --- !u!114 &6296993653634895283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,26 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flamethrower: {fileID: 1594258658111460574}
-  cooldown: 0
---- !u!95 &6296993653634895282
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856809389371772005}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  cooldown: 2.5
 --- !u!114 &6296993653634895280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8129884811077916391}
   - component: {fileID: 8195535794840126599}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +455,7 @@ GameObject:
   - component: {fileID: 8128340740641657924}
   - component: {fileID: 8215625028482520972}
   - component: {fileID: 8216675463919348530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5394,7 +5383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8129947328463319920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5427,7 +5416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8128163897984977468}
   - component: {fileID: 8161381295858634166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5519,7 +5508,7 @@ GameObject:
   - component: {fileID: 8129997560237558790}
   - component: {fileID: 8215275776322716868}
   - component: {fileID: 8216283053004462972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GlowMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10171,7 +10160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8129789443574469163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Aura Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10210,7 +10199,7 @@ GameObject:
   - component: {fileID: 8127979905298098674}
   - component: {fileID: 8215172509358156616}
   - component: {fileID: 8216335127686193798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SubEmitter0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15048,13 +15037,13 @@ GameObject:
   - component: {fileID: 8129877820548285881}
   - component: {fileID: 8215062527866288949}
   - component: {fileID: 8216329941078898201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8129877820548285881
 Transform:
   m_ObjectHideFlags: 0
@@ -19733,13 +19722,13 @@ GameObject:
   - component: {fileID: 8128263619698963317}
   - component: {fileID: 8214867919390146619}
   - component: {fileID: 8216542356220209363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8128263619698963317
 Transform:
   m_ObjectHideFlags: 0
@@ -24387,7 +24376,7 @@ GameObject:
   - component: {fileID: 8129787386948193184}
   - component: {fileID: 8215314731247927262}
   - component: {fileID: 8216247665522687612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29050,7 +29039,7 @@ GameObject:
   - component: {fileID: 8128347804357091995}
   - component: {fileID: 8249584078036330881}
   - component: {fileID: 8216537633991850705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CentreSpreading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29065,7 +29054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8126108181872333151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8129789443574469163}
@@ -29079,13 +29068,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8126108181872333151}
   serializedVersion: 6
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -29144,7 +29133,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -29698,7 +29687,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -30080,17 +30069,17 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 1
-          outSlope: 1
+          inSlope: 10.086341
+          outSlope: 10.086341
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
+          time: 0.09914398
           value: 1
-          inSlope: 1
-          outSlope: 1
+          inSlope: 10.086341
+          outSlope: 10.086341
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -30364,8 +30353,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0, g: 0.083200455, b: 1, a: 0}
+        key1: {r: 1, g: 0.67569816, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -31329,7 +31318,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
+    inWorldSpace: 1
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
@@ -32543,11 +32532,11 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
-    colliderForce: 0
+    colliderForce: 100
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
@@ -32613,7 +32602,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -32721,7 +32710,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -33753,13 +33742,13 @@ GameObject:
   - component: {fileID: 8129764812457248173}
   - component: {fileID: 8215616934777815179}
   - component: {fileID: 8214799967288318079}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Centre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8129764812457248173
 Transform:
   m_ObjectHideFlags: 0
@@ -38380,13 +38369,13 @@ GameObject:
   - component: {fileID: 8128094209824422701}
   - component: {fileID: 8215310304930548803}
   - component: {fileID: 8216575811320393409}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8128094209824422701
 Transform:
   m_ObjectHideFlags: 0
@@ -43007,7 +42996,7 @@ GameObject:
   - component: {fileID: 8129697336221147454}
   - component: {fileID: 8249540423678909114}
   - component: {fileID: 8216329567573245502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47668,7 +47657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8130080962150081994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flare Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47704,7 +47693,7 @@ GameObject:
   - component: {fileID: 8130101098424457526}
   - component: {fileID: 8214865018233652548}
   - component: {fileID: 8214791945816856004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52464,13 +52453,13 @@ GameObject:
   - component: {fileID: 8127954134025221295}
   - component: {fileID: 8215446584875417669}
   - component: {fileID: 8214802274513566743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmokeInside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8127954134025221295
 Transform:
   m_ObjectHideFlags: 0
