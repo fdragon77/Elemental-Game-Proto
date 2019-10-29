@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destructable : MonoBehaviour
+public class Destructable1 : MonoBehaviour
 {
     public enum destroyType {normal, explode, burn};
 
@@ -20,7 +20,7 @@ public class Destructable : MonoBehaviour
     [SerializeField] Material burnmat;
     [SerializeField] GameObject explodeObj;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         
         Debug.Log("Collision");
