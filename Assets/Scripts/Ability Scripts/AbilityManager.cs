@@ -17,7 +17,7 @@ public class AbilityManager : MonoBehaviour
     private float currentMana;
 
     
-    //prevent using multiple abilities at a time
+    //mana amounts
     [SerializeField] float allcool;// = .5f;
     [SerializeField] float abil1mana;
     [SerializeField] float abil2mana;
@@ -34,7 +34,15 @@ public class AbilityManager : MonoBehaviour
         currentMana = mana;
         //Debug.Log(allcool);
     }
-    
+    public float Mana()
+    {
+        return mana;
+    }
+    public float CurrentMana()
+    {
+        return currentMana;
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -42,7 +50,7 @@ public class AbilityManager : MonoBehaviour
         if(currentMana < mana)
         {
             currentMana += manaRegenMod*Time.deltaTime;
-            //Debug.Log(currentMana);
+            Debug.Log(currentMana);
         }
         else if(currentMana > mana)
         {

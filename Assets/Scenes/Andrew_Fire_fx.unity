@@ -653,6 +653,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273154329}
   m_CullTransparentMesh: 0
+--- !u!114 &307237485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6296993653634895283, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1660799113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac35e1ade92a943b4c174606ee8902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &307237486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6296993653634895289, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1660799113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7dc905560f48e4fa32b37453832a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &307237487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6296993653634895286, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1660799113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854c621ac4c891a44854e799e3435bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &307237490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6296993653634895285, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1660799113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fed39ad6e92b424daf3e8137f33a2ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &315076168
 GameObject:
   m_ObjectHideFlags: 0
@@ -29278,12 +29326,67 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8125567737804872456, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil1Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 307237487}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil2Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 307237486}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil3Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 307237485}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil4Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil5Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 307237490}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil5Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil1mana
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil2mana
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil3mana
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil4mana
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil5mana
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126148366295863378, guid: a90c505a73259ff43a8d88c6df9f0a2b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8126148366295863378, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+    - target: {fileID: 8125567737804872456, guid: a90c505a73259ff43a8d88c6df9f0a2b,
         type: 3}
       propertyPath: m_IsActive
       value: 0

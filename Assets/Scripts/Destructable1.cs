@@ -20,6 +20,9 @@ public class Destructable1 : MonoBehaviour
     [SerializeField] Material burnmat;
     [SerializeField] GameObject explodeObj;
 
+    [Header("Misc")]
+    [SerializeField] GameObject HealFlame = null;
+
     private void OnTriggerEnter(Collider collision)
     {
         
@@ -64,8 +67,13 @@ public class Destructable1 : MonoBehaviour
                 Instantiate(explodeObj, pos, new Quaternion());
                 Destroy(gameObject);
                 break;
-            case destroyType.burn:
+            case destroyType.burn:             
+                if(HealFlame != null)
+                {
+                    HealFlame.SetActive(true);
+                }
                 MeshRenderer[] theRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+                
                 foreach (MeshRenderer renderer in theRenderers)
                 {
                     renderer.material = burnmat;
