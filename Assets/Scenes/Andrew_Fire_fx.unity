@@ -2149,7 +2149,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178976256}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 496.54
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -38129,6 +38129,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElementalPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895283, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: FlamethrowerCooldown
+      value: 
+      objectReference: {fileID: 1921977621}
+    - target: {fileID: 6296993653634895289, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: AoeCooldown
+      value: 
+      objectReference: {fileID: 902136493}
+    - target: {fileID: 6296993653634895286, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: fireballCooldown
+      value: 
+      objectReference: {fileID: 725328350}
+    - target: {fileID: 6296993653634895286, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: cooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895285, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: HealCooldown
+      value: 
+      objectReference: {fileID: 1791116417}
     - target: {fileID: 5183334575601779376, guid: a90c505a73259ff43a8d88c6df9f0a2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38254,6 +38279,36 @@ PrefabInstance:
       propertyPath: AOECooldown
       value: 
       objectReference: {fileID: 902136493}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: FireballMana
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: HealMana
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: FlamethrowMana
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: AoeMana
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: FirewallMana
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil6mana
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8126148366295863378, guid: a90c505a73259ff43a8d88c6df9f0a2b,
         type: 3}
       propertyPath: m_IsActive

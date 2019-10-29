@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fireball : MonoBehaviour
 {
+    public RawImage fireballCooldown;
     public GameObject projectile;
     float timer = 0;
     bool active = false;
     [SerializeField] float cooldown;
+    Vector3 Empty = new Vector3(0, 1, 1);
+    Vector3 Full= new Vector3(1, 1, 1);
+    AbilityManager theManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
     }
     /// <summary>
     /// this triggers the fireball.
@@ -22,6 +27,8 @@ public class Fireball : MonoBehaviour
         if(!active)
         {
             Debug.Log("Fireball");
+
+            fireballCooldown.rectTransform.localScale = Empty;
 
             GameObject fireballHandler;
             Vector3 mousePos = new Vector3((Input.mousePosition.x - gameObject.transform.position.x), (Input.mousePosition.y - gameObject.transform.position.y), 0f);
@@ -48,6 +55,10 @@ public class Fireball : MonoBehaviour
             float fireballSpeed = 20f;
             float fireballHeight = .1f;
             fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
+            timer = cooldown;
+            active = true;
+            theManager.currentMana -= theManager.FireballMana;
+
 
         }
     }
@@ -57,7 +68,10 @@ public class Fireball : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0 && active)
         {
+            
+            fireballCooldown.rectTransform.localScale = Full;
             active = false;
         }
     }
+
 }

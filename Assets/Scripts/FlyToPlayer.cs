@@ -20,7 +20,7 @@ public class FlyToPlayer : MonoBehaviour
     {
         if (active)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed*Time.deltaTime);
         }
         if(Vector3.Distance(player.transform.position, transform.position) <= max_distance)
         {

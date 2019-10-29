@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class AbilityManager : MonoBehaviour
 {
     public RawImage manabar;
-    public RawImage fireballCooldown;
+ 
     public RawImage AOECooldown;
+    public RawImage HealCooldown;
+    public RawImage Firebreath;
+
     //hold the events for each script ability
     [SerializeField] UnityEngine.Events.UnityEvent abil1Trigger;
     [SerializeField] UnityEngine.Events.UnityEvent abil2Trigger;
@@ -18,17 +21,17 @@ public class AbilityManager : MonoBehaviour
 
     [SerializeField] float mana;
     [SerializeField] float manaRegenMod;
-    private float currentMana;
+    [HideInInspector] public float currentMana;
 
     
     //mana amounts
     [SerializeField] float allcool;// = .5f;
-    [SerializeField] float abil1mana;
-    [SerializeField] float abil2mana;
-    [SerializeField] float abil3mana;
-    [SerializeField] float abil4mana;
-    [SerializeField] float abil5mana;
-    [SerializeField] float abil6mana;
+    public float FireballMana;
+    public float HealMana;
+    public float FlamethrowMana;
+    public float AoeMana;
+    public float FirewallMana;
+    public float abil6mana;
     float timer;
     bool fire = true;
     // Start is called before the first frame update
@@ -63,7 +66,7 @@ public class AbilityManager : MonoBehaviour
         if(currentMana < mana)
         {
             currentMana += manaRegenMod*Time.deltaTime;
-            Debug.Log(currentMana);
+            //Debug.Log(currentMana);
         }
         else if(currentMana > mana)
         {
@@ -82,10 +85,11 @@ public class AbilityManager : MonoBehaviour
             //Debug.Log("Melee");
             //melee goes here
         }
-        if (Input.GetButtonDown("1") && fire && currentMana >= abil1mana)
+        if (Input.GetButtonDown("1") && fire && currentMana >= FireballMana)
         {
-            currentMana -= abil1mana;
+            //currentMana -= FireballMana;
             fire = false;
+            
             // test code for cool down take out later 
             //fireballCooldown.rectTransform.localScale = new Vector3(0, 1, 1);
 
@@ -94,9 +98,9 @@ public class AbilityManager : MonoBehaviour
             abil1Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("2") && fire && currentMana >= abil2mana)
+        if (Input.GetButtonDown("2") && fire && currentMana >= AoeMana)
         {
-            currentMana -= abil2mana;
+            //currentMana -= AoeMana;
             fire = false;
             // test code for cool down take out later 
             //AOECooldown.rectTransform.localScale = new Vector3(0, 1, 1);
@@ -106,27 +110,27 @@ public class AbilityManager : MonoBehaviour
             abil2Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("3") && fire && currentMana >= abil3mana)
+        if (Input.GetButtonDown("3") && fire && currentMana >= FlamethrowMana)
         {
-            currentMana -= abil3mana;
+            //currentMana -= FlamethrowMana;
             fire = false;
             timer = allcool;
             //Debug.Log("3");
             abil3Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("4") && fire && currentMana >= abil4mana)
+        if (Input.GetButtonDown("4") && fire && currentMana >= FirewallMana)
         {
-            currentMana -= abil4mana;
+            //currentMana -= FirewallMana;
             fire = false;
             timer = allcool;
             //Debug.Log("4");
             abil4Trigger.Invoke();
             //to be bound
         }
-        if (Input.GetButtonDown("5") && fire && currentMana >= abil5mana)
+        if (Input.GetButtonDown("5") && fire && currentMana >= HealMana)
         {
-            currentMana -= abil5mana;
+            //currentMana -= HealMana;
             fire = false;
             timer = allcool;
             //Debug.Log("5");
@@ -135,7 +139,7 @@ public class AbilityManager : MonoBehaviour
         }
         if (Input.GetButtonDown("6") && fire && currentMana >= abil6mana)
         {
-            currentMana -= abil6mana;
+            //currentMana -= abil6mana;
             fire = false;
             timer = allcool;
             //Debug.Log("6");

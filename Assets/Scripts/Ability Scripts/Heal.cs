@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Heal : MonoBehaviour
 {
@@ -8,17 +9,28 @@ public class Heal : MonoBehaviour
     private float lastTrigger;
     [SerializeField] float waitTime;
 
+    public RawImage HealCooldown;
+
+    Vector3 Empty = new Vector3(0, 1, 1);
+    Vector3 Full = new Vector3(1, 1, 1);
+    AbilityManager theManager;
     // Start is called before the first frame update
     void Start()
     {
-
+        theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
         //waitTime = gameObject.GetComponent<AbilityManager>().allcool;
     }
     public void Fire()
     {
-        Debug.Log("Heal");
-        healing = true;
-        lastTrigger = Time.time;
+        if (!healing)
+        {
+            Debug.Log("Heal");
+            healing = true;
+            lastTrigger = Time.time;
+            theManager.currentMana -= theManager.HealMana;
+            HealCooldown.rectTransform.localScale = Empty;
+        }
+        
     }
     // Update is called once per frame
     void Update()
@@ -26,6 +38,7 @@ public class Heal : MonoBehaviour
 
         if (Time.time >= lastTrigger + waitTime)
         {
+            HealCooldown.rectTransform.localScale = Full;
             healing = false;
         }
     }
