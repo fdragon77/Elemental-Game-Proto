@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbilityManager : MonoBehaviour
 {
+    public RawImage manabar;
+    public RawImage fireballCooldown;
+    public RawImage AOECooldown;
     //hold the events for each script ability
     [SerializeField] UnityEngine.Events.UnityEvent abil1Trigger;
     [SerializeField] UnityEngine.Events.UnityEvent abil2Trigger;
@@ -34,6 +38,12 @@ public class AbilityManager : MonoBehaviour
         currentMana = mana;
         //Debug.Log(allcool);
     }
+
+    private void updateManabar()
+    {
+        float ratio = currentMana / mana;
+        manabar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+    }
     public float Mana()
     {
         return mana;
@@ -46,6 +56,9 @@ public class AbilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        updateManabar();
+
         timer -= Time.deltaTime;
         if(currentMana < mana)
         {
@@ -73,6 +86,9 @@ public class AbilityManager : MonoBehaviour
         {
             currentMana -= abil1mana;
             fire = false;
+            // test code for cool down take out later 
+            //fireballCooldown.rectTransform.localScale = new Vector3(0, 1, 1);
+
             timer = allcool;
             //Debug.Log("1");
             abil1Trigger.Invoke();
@@ -82,6 +98,9 @@ public class AbilityManager : MonoBehaviour
         {
             currentMana -= abil2mana;
             fire = false;
+            // test code for cool down take out later 
+            //AOECooldown.rectTransform.localScale = new Vector3(0, 1, 1);
+
             timer = allcool;
             //Debug.Log("2");
             abil2Trigger.Invoke();
