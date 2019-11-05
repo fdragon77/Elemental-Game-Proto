@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class AbilityManager : MonoBehaviour
 {
+    //sound
+    public AudioClip fireballsnd;
+    public AudioSource Playersnd;
+
+
+
     [Header("UI")]
     public RawImage manabar;
  
@@ -51,6 +57,9 @@ public class AbilityManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get audio source
+        Playersnd.clip = fireballsnd;
+      
         float timer = allcool;
         currentMana = mana;
         //Debug.Log(allcool);
@@ -73,7 +82,10 @@ public class AbilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+      
+
+
         updateManabar();
 
         timer -= Time.deltaTime;
@@ -101,6 +113,10 @@ public class AbilityManager : MonoBehaviour
         }
         if (Input.GetButtonDown("1") && fire && currentMana >= FireballMana)
         {
+            // play sound for fireball
+
+            Playersnd.Play();
+            Playersnd.pitch = Random.Range(0.7f, 3f);
             //currentMana -= FireballMana;
             fire = false;
             
