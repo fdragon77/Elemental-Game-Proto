@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class AbilityManager : MonoBehaviour
 {
+    [Header("UI")]
     public RawImage manabar;
  
     public RawImage AOECooldown;
     public RawImage HealCooldown;
     public RawImage Firebreath;
+    [Space]
 
     //hold the events for each script ability
+    [Header("Triggers")]
     [SerializeField] UnityEngine.Events.UnityEvent abil1Trigger;
     [SerializeField] UnityEngine.Events.UnityEvent abil2Trigger;
     [SerializeField] UnityEngine.Events.UnityEvent abil3Trigger;
@@ -23,8 +26,9 @@ public class AbilityManager : MonoBehaviour
     [SerializeField] float manaRegenMod;
     [HideInInspector] public float currentMana;
 
-    
+    [Space]
     //mana amounts
+    [Header("Mana")]
     [SerializeField] float allcool;// = .5f;
     public float FireballMana;
     public float HealMana;
@@ -34,6 +38,16 @@ public class AbilityManager : MonoBehaviour
     public float abil6mana;
     float timer;
     bool fire = true;
+    [Space]
+
+    //Damage amounts
+    [Header("Damage")]
+    [SerializeField] public float FireballDMG = 1f;
+    [SerializeField] public float FlamethrowDMG = 1f;
+    [SerializeField] public float AoeDMG = 1f;
+    [SerializeField] public float FirewallDMG = 1f;
+    [SerializeField] public float abil6DMG = 1f;
+
     // Start is called before the first frame update
     void Start()
     {

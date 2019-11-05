@@ -6,6 +6,8 @@ public class Destructable1 : MonoBehaviour
 {
     public enum destroyType {normal, explode, burn};
 
+    [Header("Health")]
+    [SerializeField] float health = 1f;
     [Header("Destructable types")]
     [SerializeField] bool FireballsDestroy;
     [SerializeField] bool FirebreathsDestroy;
@@ -23,6 +25,13 @@ public class Destructable1 : MonoBehaviour
     [Header("Misc")]
     [SerializeField] GameObject HealFlame = null;
 
+    private AbilityManager AM;
+
+    private void Start()
+    {
+        AM = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<AbilityManager>();
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         
@@ -37,14 +46,21 @@ public class Destructable1 : MonoBehaviour
                 case "Fireball(Clone)":
                     if (FireballsDestroy)
                     {
-                        destruct();
+                        health -= AM.FireballDMG;
+                        if (health <= 0)
+                        {
+                            destruct();
+                        }
                     }
                     break;
                 case "fireCone":
                     if (FirebreathsDestroy)
                     {
-                        Debug.Log("Breath Destroy");
-                        destruct();
+                        health -= AM.FlamethrowDMG;
+                        if (health <= 0)
+                        {
+                            destruct();
+                        }
                     }
                     break;
                     //FIXME Fill in with prefabs as we work on it.
