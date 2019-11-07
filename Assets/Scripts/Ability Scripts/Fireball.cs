@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Fireball : MonoBehaviour
 {
+    //sound
+    public AudioClip fireballsnd;
+    public AudioSource Playersnd;
+
+
     public RawImage fireballCooldown;
     public GameObject projectile;
     float timer = 0;
@@ -16,6 +22,10 @@ public class Fireball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        // get audio source
+        Playersnd.clip = fireballsnd;
+
         theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
     }
     /// <summary>
@@ -27,6 +37,10 @@ public class Fireball : MonoBehaviour
         if(!active)
         {
             Debug.Log("Fireball");
+          
+            // play sound for fireball
+            Playersnd.Play();
+            Playersnd.pitch = Random.Range(0.7f, 3f);
 
             fireballCooldown.rectTransform.localScale = Empty;
 
