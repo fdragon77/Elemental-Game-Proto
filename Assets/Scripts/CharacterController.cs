@@ -32,18 +32,25 @@ public class CharacterController : MonoBehaviour
             moveSpeed = regSpeed;
             dash = false;
         }
-        if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
+        //if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
+        if((Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) || ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)))
         {
+            if(Input.GetButtonDown("Dash"))
+            {
+                timer = .25f;
+                dash = true;
+                moveSpeed = boost;
+            }
             Move();
         }
-        if ((Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))&& Input.GetKeyUp("space"))
-        {
-            timer = .25f;
-            dash = true;
-            moveSpeed = boost;
-            Move();
-            
-        }
+        //if ((Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))&& Input.GetKeyUp("space"))
+        //if(Input.GetButtonDown("Dash") && (Input.GetButtonDown("Horizontal")||Input.GetButtonDown("Vertical")))
+        //{
+        //    timer = .25f;
+        //    dash = true;
+        //    moveSpeed = boost;
+        //    Move();  
+        //}
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
