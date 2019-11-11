@@ -6,10 +6,10 @@ public class BasicEnemy : MonoBehaviour
 {
     GameObject player;
     Transform playerLoc;
-    int MoveSpeed = 3;
-    float MaxDist = 30f;
-    float MinDist = 5f;
-    float attackRange = 10f;
+    [SerializeField] int MoveSpeed;
+    [SerializeField] float MaxDist;
+    [SerializeField] float MinDist;
+    [SerializeField] float attackRange;
     float yLoc;
 
     public GameObject projectile;

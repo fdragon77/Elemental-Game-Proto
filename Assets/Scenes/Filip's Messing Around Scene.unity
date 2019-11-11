@@ -11888,7 +11888,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3bccbe0c08e58c24bafc0eeababcb673,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3bccbe0c08e58c24bafc0eeababcb673,
         type: 3}
@@ -27007,8 +27007,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3fb9201dc7fc6a4f82da52069aa8e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 5
+  MaxDist: 40
+  MinDist: 10
+  attackRange: 20
   projectile: {fileID: 3571667651687711307, guid: 5a75d844ac8349144bc13a7984a561bf,
     type: 3}
+--- !u!54 &1853920633
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853920629}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1853920634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853920629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.387375, y: 5.6247053, z: 4.1795826}
+  m_Center: {x: -0.07359886, y: 2.444193, z: 0.47106075}
 --- !u!1 &1861462544
 GameObject:
   m_ObjectHideFlags: 0
@@ -30994,26 +31027,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElementalPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 6296993653634895283, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: FlamethrowerCooldown
-      value: 
-      objectReference: {fileID: 1188743149}
-    - target: {fileID: 6296993653634895289, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: AoeCooldown
-      value: 
-      objectReference: {fileID: 1512554310}
-    - target: {fileID: 6296993653634895286, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: fireballCooldown
-      value: 
-      objectReference: {fileID: 1524765733}
-    - target: {fileID: 6296993653634895285, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: HealCooldown
-      value: 
-      objectReference: {fileID: 2088593254}
     - target: {fileID: 5183334575601779376, guid: a90c505a73259ff43a8d88c6df9f0a2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31069,6 +31082,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895283, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: FlamethrowerCooldown
+      value: 
+      objectReference: {fileID: 1188743149}
+    - target: {fileID: 6296993653634895289, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: AoeCooldown
+      value: 
+      objectReference: {fileID: 1512554310}
+    - target: {fileID: 6296993653634895286, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: fireballCooldown
+      value: 
+      objectReference: {fileID: 1524765733}
+    - target: {fileID: 6296993653634895285, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: HealCooldown
+      value: 
+      objectReference: {fileID: 2088593254}
     - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
         type: 3}
       propertyPath: manabar
