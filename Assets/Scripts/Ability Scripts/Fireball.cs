@@ -31,7 +31,7 @@ public class Fireball : MonoBehaviour
             fireballCooldown.rectTransform.localScale = Empty;
 
             GameObject fireballHandler;
-            Vector3 mousePos = new Vector3((Input.mousePosition.x - gameObject.transform.position.x), (Input.mousePosition.y - gameObject.transform.position.y), 0f);
+            Vector3 mousePos = new Vector3((Input.mousePosition.x), (Input.mousePosition.y), 0f);
             Vector3 worldPos;
             Vector3 fireDirection;
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
