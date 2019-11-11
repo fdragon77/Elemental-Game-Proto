@@ -33,7 +33,6 @@ public class Fireball : MonoBehaviour
     /// </summary>
     public void Fire()
     {
-        
         if(!active)
         {
             Debug.Log("Fireball");
@@ -45,9 +44,10 @@ public class Fireball : MonoBehaviour
             fireballCooldown.rectTransform.localScale = Empty;
 
             GameObject fireballHandler;
-            Vector3 mousePos = new Vector3((Input.mousePosition.x), (Input.mousePosition.y), 0f);
-            Vector3 worldPos;
             Vector3 fireDirection;
+            /*
+            Vector3 mousePos = new Vector3((Input.mousePosition.x - gameObject.transform.position.x), (Input.mousePosition.y - gameObject.transform.position.y), 0f);
+            Vector3 worldPos;
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 1000f)) //click hit something
@@ -63,17 +63,17 @@ public class Fireball : MonoBehaviour
             fireDirection.y = transform.position.y; //might matter for different height enviornments
             fireDirection.Normalize();
             fireDirection *= 2.1f;
+            */
+            fireDirection = transform.forward;
 
             fireballHandler = Instantiate(projectile, transform.position, projectile.transform.rotation) as GameObject;
 
-            float fireballSpeed = 20f;
-            float fireballHeight = .1f;
+            float fireballSpeed = 40f;
+            float fireballHeight = .15f;
             fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
             timer = cooldown;
             active = true;
             theManager.currentMana -= theManager.FireballMana;
-
-
         }
     }
     // Update is called once per frame
