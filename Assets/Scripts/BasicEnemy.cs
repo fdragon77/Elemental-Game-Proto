@@ -32,10 +32,14 @@ public class BasicEnemy : MonoBehaviour
      
         projectileHandler = Instantiate(projectile, transform.position, projectile.transform.rotation) as GameObject;
 
-        float projectileSpeed = 20f;
-        float projectileHeight = .1f;
-        //projectileHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * projectileSpeed, fireDirection.y * projectileHeight, fireDirection.z * projectileSpeed);
-        
+        float projectileSpeed = 25f;
+        float projectileHeight = 10f;
+        Vector3 aim;
+        aim = player.transform.position -transform.position;
+        aim *= .1f;
+        aim.Normalize();
+        projectileHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(aim.x * projectileSpeed, aim.y * projectileHeight, aim.z * projectileSpeed);
+
 
 
 
