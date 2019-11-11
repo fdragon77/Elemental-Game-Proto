@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac07250732dc8345ac9a1a1afe2364c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10.01
 --- !u!54 &5568972609783603190
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,10 +134,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3971c25d2bb0dae40978b5970e052f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballsnd: {fileID: 8300000, guid: 4f1333ee9b265b4478e1e2510000b993, type: 3}
+  Playersnd: {fileID: 0}
+  manabar: {fileID: 0}
+  AOECooldown: {fileID: 0}
+  HealCooldown: {fileID: 0}
+  Firebreath: {fileID: 0}
   abil1Trigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6296993653634895285}
+      - m_Target: {fileID: 6296993653634895286}
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -152,7 +159,7 @@ MonoBehaviour:
   abil2Trigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6296993653634895283}
+      - m_Target: {fileID: 6296993653634895289}
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -168,7 +175,7 @@ MonoBehaviour:
   abil3Trigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6296993653634895289}
+      - m_Target: {fileID: 6296993653634895283}
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -185,7 +192,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6296993653634895286}
-        m_MethodName: Fire
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -200,8 +207,8 @@ MonoBehaviour:
   abil5Trigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6296993653634895289}
-        m_MethodName: 
+      - m_Target: {fileID: 6296993653634895285}
+        m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -231,13 +238,19 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   mana: 100
   manaRegenMod: 15
+  currentMana: 0
   allcool: 0.5
-  abil1mana: 25
-  abil2mana: 10
-  abil3mana: 75
-  abil4mana: 10
-  abil5mana: 0
+  FireballMana: 10
+  HealMana: 20
+  FlamethrowMana: 30
+  AoeMana: 50
+  FirewallMana: 0
   abil6mana: 0
+  FireballDMG: 1
+  FlamethrowDMG: 1
+  AoeDMG: 1
+  FirewallDMG: 1
+  abil6DMG: 1
 --- !u!114 &6296993653634895285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healing: 0
   waitTime: 2
+  HealCooldown: {fileID: 0}
 --- !u!114 &6296993653634895284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854c621ac4c891a44854e799e3435bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballCooldown: {fileID: 0}
   projectile: {fileID: 8000995428032571935, guid: 7636892f0862faf4bbdc550554f11b22,
     type: 3}
   cooldown: 0.5
@@ -310,6 +325,7 @@ MonoBehaviour:
   AoeObject: {fileID: 3864831498559903643, guid: 1013407b7f435d3408a62d2fa4642303,
     type: 3}
   cooldown: 2.5
+  AoeCooldown: {fileID: 0}
 --- !u!114 &6296993653634895283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flamethrower: {fileID: 1594258658111460574}
   cooldown: 2.5
+  FlamethrowerCooldown: {fileID: 0}
 --- !u!114 &6296993653634895280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5300,7 +5317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8125567737804872457
 Transform:
   m_ObjectHideFlags: 0
