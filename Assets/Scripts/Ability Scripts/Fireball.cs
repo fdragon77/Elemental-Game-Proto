@@ -45,7 +45,9 @@ public class Fireball : MonoBehaviour
             fireballCooldown.rectTransform.localScale = Empty;
 
             GameObject fireballHandler;
-            Vector3 mousePos = new Vector3((Input.mousePosition.x - gameObject.transform.position.x), (Input.mousePosition.y - gameObject.transform.position.y), 0f);
+            //Vector3 mousePos = new Vector3((Input.mousePosition.x - gameObject.transform.position.x), (Input.mousePosition.y - gameObject.transform.position.y), 0f);
+
+            Vector3 mousePos = new Vector3((Input.mousePosition.x), (Input.mousePosition.y), 0f);
             Vector3 worldPos;
             Vector3 fireDirection;
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
@@ -68,7 +70,9 @@ public class Fireball : MonoBehaviour
 
             float fireballSpeed = 20f;
             float fireballHeight = .1f;
-            fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
+            //fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
+            fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, .1f, fireDirection.z * fireballSpeed);
+
             timer = cooldown;
             active = true;
             theManager.currentMana -= theManager.FireballMana;
