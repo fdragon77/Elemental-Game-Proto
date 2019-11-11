@@ -10,6 +10,7 @@ public class BasicEnemy : MonoBehaviour
     [SerializeField] float MaxDist;
     [SerializeField] float MinDist;
     [SerializeField] float attackRange;
+    [SerializeField] float projAdj;
     float yLoc;
 
     public GameObject projectile;
@@ -28,12 +29,13 @@ public class BasicEnemy : MonoBehaviour
         Debug.Log("EnemyAttack");
         
 
-        GameObject projectileHandler;      
-     
-        projectileHandler = Instantiate(projectile, transform.position, projectile.transform.rotation) as GameObject;
+        GameObject projectileHandler;
+        Vector3 startPos = transform.position;
+        startPos.y += projAdj;
+        projectileHandler = Instantiate(projectile, startPos, projectile.transform.rotation) as GameObject;
 
         float projectileSpeed = 25f;
-        float projectileHeight = 10f;
+        float projectileHeight = .1f;
         Vector3 aim;
         aim = player.transform.position -transform.position;
         aim *= .1f;
