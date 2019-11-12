@@ -368,7 +368,7 @@ BoxCollider:
   m_GameObject: {fileID: 856809389371772005}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 9.767925, y: 9.678229, z: 3.9538345}
   m_Center: {x: -0.03360176, y: 3.7703395, z: -0.18368149}
@@ -381,9 +381,9 @@ MeshCollider:
   m_GameObject: {fileID: 856809389371772005}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -6831440722055496184, guid: 622529c74fe9a624dad49f7d90c1fc9a, type: 3}
 --- !u!1 &1594258658111460574
@@ -24402,8 +24402,8 @@ GameObject:
   - component: {fileID: 5625976648495083626}
   - component: {fileID: 703278827669161443}
   m_Layer: 8
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: fireCone
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24417,7 +24417,7 @@ Transform:
   m_GameObject: {fileID: 2859378913833555614}
   m_LocalRotation: {x: 0.11238212, y: -0, z: -0, w: 0.9936651}
   m_LocalPosition: {x: 0, y: -0.66, z: 6.74}
-  m_LocalScale: {x: 15.395, y: 14.9, z: 13.993804}
+  m_LocalScale: {x: 9.138914, y: 12.653676, z: 13.993804}
   m_Children: []
   m_Father: {fileID: 9050310903432149165}
   m_RootOrder: 1
