@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3110635564696635310}
   - component: {fileID: 7504155402666957746}
   - component: {fileID: 3566915170966045945}
+  - component: {fileID: 1449962889460478171}
   m_Layer: 15
   m_Name: thrown rock 5
   m_TagString: Untagged
@@ -89,7 +90,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8357107000235186375}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 6c383fbc598e23b4b8c891542b8490b5, type: 3}
   m_Controller: {fileID: 9100000, guid: b471e0e793dac514c8eee5a2a4d9a6f4, type: 2}
   m_CullingMode: 0
@@ -130,3 +131,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -2599248232004495819, guid: 6c383fbc598e23b4b8c891542b8490b5, type: 3}
+--- !u!114 &1449962889460478171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357107000235186375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dedddb5c4c672468af364e6ee2753c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
+  theObject: {fileID: 8357107000235186375}

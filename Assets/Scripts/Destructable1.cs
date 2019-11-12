@@ -97,7 +97,7 @@ public class Destructable1 : MonoBehaviour
                 break;
             case destroyType.explode:
                 Vector3 pos = transform.position;
-                Tourge= Instantiate(explodeObj, pos, Quaternion.identity);
+                Tourge= Instantiate(explodeObj, pos, transform.rotation);
                 Rigidbody[] theBodies = Tourge.GetComponentsInChildren<Rigidbody>();
                 if (theBodies.Length > 0)
                 {
