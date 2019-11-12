@@ -22,7 +22,7 @@ public class Fireball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        timer = cooldown;
         // get audio source
         Playersnd.clip = fireballsnd;
 
@@ -41,7 +41,7 @@ public class Fireball : MonoBehaviour
             Playersnd.Play();
             Playersnd.pitch = Random.Range(0.7f, 3f);
 
-            fireballCooldown.rectTransform.localScale = Empty;
+            //fireballCooldown.rectTransform.localScale = Empty;
 
             GameObject fireballHandler;
             Vector3 fireDirection;
@@ -65,13 +65,15 @@ public class Fireball : MonoBehaviour
             fireDirection *= 2.1f;
             */
             fireDirection = transform.forward;
+            Vector3 center = transform.position;
+            center.y += 4;
 
-            fireballHandler = Instantiate(projectile, transform.position, projectile.transform.rotation) as GameObject;
+            fireballHandler = Instantiate(projectile, center, projectile.transform.rotation) as GameObject;
 
             float fireballSpeed = 40f;
             float fireballHeight = .15f;
             fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
-            timer = cooldown;
+            timer = 0;
             active = true;
             theManager.currentMana -= theManager.FireballMana;
         }
@@ -79,13 +81,18 @@ public class Fireball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0 && active)
+        if (timer <= cooldown)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer >= cooldown && active)
         {
             
-            fireballCooldown.rectTransform.localScale = Full;
+            //fireballCooldown.rectTransform.localScale = Full;
             active = false;
         }
+        float ratio = timer/cooldown;
+        fireballCooldown.rectTransform.localScale= new Vector3(ratio, 1, 1);
     }
 
 }

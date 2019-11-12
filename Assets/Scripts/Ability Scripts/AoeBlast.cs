@@ -21,29 +21,36 @@ public class AoeBlast : MonoBehaviour
     void Start()
     {
         theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
+        timer = cooldown;
     }
     public void Fire()
     {
         if (!active)
         {
             Debug.Log("AoeBlast");
-            timer = cooldown;
+            timer = 0;
             Blast = Instantiate(AoeObject, transform.position, AoeObject.transform.rotation) as GameObject;
             //aoeRing.SetActive(true);
             active = true;
             theManager.currentMana -= theManager.AoeMana;
-            AoeCooldown.rectTransform.localScale = Empty;
+            //AoeCooldown.rectTransform.localScale = Empty;
         }
     }
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0 && active)
+        if (timer <= cooldown)
+        {
+            timer += Time.deltaTime;
+        }
+        
+        if (timer >= cooldown && active)
         {
             aoeRing.SetActive(false);
             active = false;
-            AoeCooldown.rectTransform.localScale = Full;
+            //AoeCooldown.rectTransform.localScale = Full;
         }
+        float ratio = timer / cooldown;
+        AoeCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 }

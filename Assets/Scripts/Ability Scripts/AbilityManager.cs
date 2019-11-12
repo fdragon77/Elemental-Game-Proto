@@ -12,9 +12,9 @@ public class AbilityManager : MonoBehaviour
     [Header("UI")]
     public RawImage manabar;
  
-    public RawImage AOECooldown;
-    public RawImage HealCooldown;
-    public RawImage Firebreath;
+    //public RawImage AOECooldown;
+    //public RawImage HealCooldown;
+    //public RawImage Firebreath;
     [Space]
 
     //hold the events for each script ability

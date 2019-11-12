@@ -32,18 +32,22 @@ public class Explosion : MonoBehaviour
         }*/
         if (!hasCollided)
         {
-            transform.localScale *= 7;
-            myBody.Sleep();
-            myBody.isKinematic = true;
-            theExplosion.SetActive(true);
-            fireMiddle.SetActive(false);
-            //Debug.Log("BOOM");
-            //renderer.SetActive(false);
-
-            hasCollided = true;
+            Boom();
         }
 
 
+    }
+    void Boom()
+    {
+        transform.localScale *= 7;
+        myBody.Sleep();
+        myBody.isKinematic = true;
+        theExplosion.SetActive(true);
+        fireMiddle.SetActive(false);
+        //Debug.Log("BOOM");
+        //renderer.SetActive(false);
+
+        hasCollided = true;
     }
     void Update()
     {
