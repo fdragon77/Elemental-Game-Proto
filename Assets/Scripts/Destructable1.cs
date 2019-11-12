@@ -15,7 +15,10 @@ public class Destructable1 : MonoBehaviour
     [SerializeField] bool HealDestroy;
     [SerializeField] bool AOEDestroy;
     [SerializeField] bool TargetedAOEDestroy;
-
+    [SerializeField] int explosiveForce;
+    [SerializeField] float GracePeriod;
+    bool canDestroy = true;
+    float timer = 0;
     GameObject Tourge;
     [Header("How Does this become destroyed?")]
     [SerializeField] destroyType DestructionType = destroyType.normal;
@@ -39,7 +42,7 @@ public class Destructable1 : MonoBehaviour
         Debug.Log("Collision");
         Debug.Log(collision.gameObject.name + " asd");
         //Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag == "Attack")
+        if ((collision.gameObject.tag == "Attack") && (canDestroy))
         {
             
             switch (collision.gameObject.name)
@@ -47,10 +50,18 @@ public class Destructable1 : MonoBehaviour
                 case "Fireball(Clone)":
                     if (FireballsDestroy)
                     {
+                        
                         health -= AM.FireballDMG;
+                        Debug.Log(health);
                         if (health <= 0)
                         {
                             destruct();
+                        }
+                        else
+                        {
+                            canDestroy = false;
+                            Debug.Log("GraceBall");
+                            timer = GracePeriod;
                         }
                     }
                     break;
@@ -61,6 +72,11 @@ public class Destructable1 : MonoBehaviour
                         if (health <= 0)
                         {
                             destruct();
+                        }
+                        else
+                        {
+                            canDestroy = false;
+                            timer = GracePeriod;
                         }
                     }
                     break;
@@ -87,7 +103,7 @@ public class Destructable1 : MonoBehaviour
                 {
                     foreach (Rigidbody body in theBodies)
                     {
-                        body.AddExplosionForce(5000, transform.position, 1);
+                        body.AddExplosionForce(explosiveForce, transform.position, 1);
                     }
                 }
                 
@@ -123,6 +139,19 @@ public class Destructable1 : MonoBehaviour
                 break;
             case destroyType.burn:
                 break;
+        }
+    }
+    
+    void Update()
+    {
+        if (timer > 0 && !canDestroy)
+        {
+            timer-= Time.deltaTime;
+            Debug.Log("Tick");
+        }
+        else if(timer <= 0 && !canDestroy)
+        {
+            canDestroy = true;
         }
     }
 }

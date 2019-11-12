@@ -13428,6 +13428,8 @@ MonoBehaviour:
   HealDestroy: 0
   AOEDestroy: 0
   TargetedAOEDestroy: 0
+  explosiveForce: 0
+  GracePeriod: 0
   DestructionType: 0
   burnmat: {fileID: 0}
   explodeObj: {fileID: 0}
@@ -24565,26 +24567,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 316235277}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1755199310 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 856809389371772005, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2235436168830853954}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1755199324
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755199310}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -6831440722055496184, guid: 622529c74fe9a624dad49f7d90c1fc9a, type: 3}
 --- !u!4 &1776546635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7539767047276406661, guid: 491a92aa652b3bf4e94cefbf0967ba62,
@@ -37300,26 +37282,6 @@ PrefabInstance:
       propertyPath: manabar
       value: 
       objectReference: {fileID: 26455094}
-    - target: {fileID: 3615736467579548218, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3615736467579548218, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3615736467579548218, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0c945548503c3984fbc137dad709b44f, type: 2}
-    - target: {fileID: 856809389371772002, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90c505a73259ff43a8d88c6df9f0a2b, type: 3}
 --- !u!1001 &2686292097125448282
