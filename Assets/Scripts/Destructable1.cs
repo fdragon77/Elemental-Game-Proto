@@ -16,6 +16,7 @@ public class Destructable1 : MonoBehaviour
     [SerializeField] bool AOEDestroy;
     [SerializeField] bool TargetedAOEDestroy;
 
+    GameObject Tourge;
     [Header("How Does this become destroyed?")]
     [SerializeField] destroyType DestructionType = destroyType.normal;
 
@@ -80,7 +81,17 @@ public class Destructable1 : MonoBehaviour
                 break;
             case destroyType.explode:
                 Vector3 pos = transform.position;
-                Instantiate(explodeObj, pos, new Quaternion());
+                Tourge= Instantiate(explodeObj, pos, Quaternion.identity);
+                Rigidbody[] theBodies = Tourge.GetComponentsInChildren<Rigidbody>();
+                if (theBodies.Length > 0)
+                {
+                    foreach (Rigidbody body in theBodies)
+                    {
+                        body.AddExplosionForce(5000, transform.position, 1);
+                    }
+                }
+                
+
                 Destroy(gameObject);
                 break;
             case destroyType.burn:             
