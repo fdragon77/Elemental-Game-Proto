@@ -32,7 +32,7 @@ public class BasicEnemy : MonoBehaviour
         startPos.y += projAdj;
         projectileHandler = Instantiate(projectile, startPos, projectile.transform.rotation) as GameObject;
 
-        float projectileSpeed = 25f;
+        float projectileSpeed = 30f;
         float projectileHeight = .1f;
         Vector3 aim;
         aim = player.transform.position - transform.position;
