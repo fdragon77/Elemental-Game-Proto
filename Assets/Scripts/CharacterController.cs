@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour
     float timer =2.5f;
     bool dash = false;
     GameController GAME;
+    float dash_stick_sens = 0.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,27 @@ public class CharacterController : MonoBehaviour
             moveSpeed = regSpeed;
             dash = false;
         }
+        //dash with the rjoystick
+        if((Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens) || (Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens))
+        {
+            timer = .25f;
+            dash = true;
+            moveSpeed = boost;
+
+            //Just took all the code from Move() here, pretty jank
+            Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Dash_H") * GameController.gamespeed;
+            Vector3 upMovement = forward * moveSpeed * Time.deltaTime * -Input.GetAxis("Dash_V") * GameController.gamespeed;
+
+            Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+
+            transform.forward = heading;
+            transform.position += rightMovement;
+            transform.position += upMovement;
+
+            return;
+        }
         //if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
+        //move with ljoystick or arrows
         if((Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) || ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)))
         {
             if(Input.GetButtonDown("Dash"))
@@ -54,8 +75,9 @@ public class CharacterController : MonoBehaviour
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
-    {
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+    { 
+        //direction isn't used for anything? Somebody should refactor all this eventually
+        //Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal") * GameController.gamespeed;
         Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical") * GameController.gamespeed;
 
