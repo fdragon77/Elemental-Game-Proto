@@ -80,7 +80,7 @@ public class Destructable1 : MonoBehaviour
                         }
                     }
                     break;
-                case "fire wall(clone)":
+                case "fire wall(Clone)":
                     if (WallDestroy)
                     {
                         health -= AM.FirewallDMG;
