@@ -11,7 +11,7 @@ public class Destructable1 : MonoBehaviour
     [Header("Destructable types")]
     [SerializeField] bool FireballsDestroy;
     [SerializeField] bool FirebreathsDestroy;
-    [SerializeField] bool BeamDestroy;
+    [SerializeField] bool WallDestroy;
     [SerializeField] bool HealDestroy;
     [SerializeField] bool AOEDestroy;
     [SerializeField] bool TargetedAOEDestroy;
@@ -41,7 +41,7 @@ public class Destructable1 : MonoBehaviour
         
         Debug.Log("Collision");
         Debug.Log(collision.gameObject.name + " asd");
-        //Debug.Log(collision.gameObject.name);
+        Debug.Log(collision.gameObject.name);
         if ((collision.gameObject.tag == "Attack") && (canDestroy))
         {
             
@@ -70,6 +70,21 @@ public class Destructable1 : MonoBehaviour
                     {
                         health -= AM.FlamethrowDMG;
                         if (health <= 0)
+                        {
+                            destruct();
+                        }
+                        else
+                        {
+                            canDestroy = false;
+                            timer = GracePeriod;
+                        }
+                    }
+                    break;
+                case "fire wall(clone)":
+                    if (WallDestroy)
+                    {
+                        health -= AM.FirewallDMG;
+                        if(health <= 0)
                         {
                             destruct();
                         }
