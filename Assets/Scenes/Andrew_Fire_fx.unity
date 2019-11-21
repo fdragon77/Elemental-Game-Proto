@@ -4093,6 +4093,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8017eed36771dc243a92aaab96e18265, type: 3}
+--- !u!114 &447602622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8207018861601615800, guid: e3e80125841b16b40950f80f67c68b61,
+    type: 3}
+  m_PrefabInstance: {fileID: 8207018863360935241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &451648745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7852823753657627377, guid: 565c020d970f9434197b3e753acdfe46,
@@ -13208,6 +13220,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1577617488}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1441940131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 856809389371772005, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2235436168830853954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441940146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441940131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d289400b332574348bc6122136434f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballsnd: {fileID: 0}
+  Playersnd: {fileID: 0}
+  firewallSpeed: 4
+  firewallCooldown: {fileID: 447602622}
+  projectile: {fileID: 3363087655363660389, guid: a221cfc7514a6184faa7ef6c60862f6f,
+    type: 3}
+  cooldown: 0.5
 --- !u!1001 &1443267129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23518,31 +23555,41 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.49693
       objectReference: {fileID: 0}
-    - target: {fileID: 6296993653634895283, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: FlamethrowerCooldown
-      value: 
-      objectReference: {fileID: 1921977621}
-    - target: {fileID: 6296993653634895289, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: AoeCooldown
-      value: 
-      objectReference: {fileID: 902136493}
-    - target: {fileID: 6296993653634895286, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: fireballCooldown
-      value: 
-      objectReference: {fileID: 725328350}
-    - target: {fileID: 6296993653634895285, guid: a90c505a73259ff43a8d88c6df9f0a2b,
-        type: 3}
-      propertyPath: HealCooldown
-      value: 
-      objectReference: {fileID: 1791116417}
     - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
         type: 3}
       propertyPath: manabar
       value: 
       objectReference: {fileID: 26455094}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil4Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441940146}
+    - target: {fileID: 6296993653634895288, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: abil4Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296993653634895285, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: HealCooldown
+      value: 
+      objectReference: {fileID: 1791116417}
+    - target: {fileID: 6296993653634895286, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: fireballCooldown
+      value: 
+      objectReference: {fileID: 725328350}
+    - target: {fileID: 6296993653634895289, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: AoeCooldown
+      value: 
+      objectReference: {fileID: 902136493}
+    - target: {fileID: 6296993653634895283, guid: a90c505a73259ff43a8d88c6df9f0a2b,
+        type: 3}
+      propertyPath: FlamethrowerCooldown
+      value: 
+      objectReference: {fileID: 1921977621}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90c505a73259ff43a8d88c6df9f0a2b, type: 3}
 --- !u!1001 &2686292097125448282
@@ -24434,6 +24481,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207018861601615782, guid: e3e80125841b16b40950f80f67c68b61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3e80125841b16b40950f80f67c68b61, type: 3}
