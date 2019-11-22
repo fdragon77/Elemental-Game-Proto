@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 856809389371772002}
   - component: {fileID: 1755199324}
   - component: {fileID: 4911747041839703155}
+  - component: {fileID: 8763576709139618300}
   m_Layer: 9
   m_Name: ElementalPlayer
   m_TagString: Player
@@ -406,6 +407,30 @@ MonoBehaviour:
   projectile: {fileID: 3363087655363660389, guid: a221cfc7514a6184faa7ef6c60862f6f,
     type: 3}
   cooldown: 1
+--- !u!114 &8763576709139618300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856809389371772005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55582bbd030cb9941b4e8637fa1de467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balla: {fileID: 0}
+  ballb: {fileID: 0}
+  ballc: {fileID: 0}
+  breatha: {fileID: 0}
+  breathb: {fileID: 0}
+  breathc: {fileID: 0}
+  walla: {fileID: 0}
+  wallb: {fileID: 0}
+  wallc: {fileID: 0}
+  AoEa: {fileID: 0}
+  AoEb: {fileID: 0}
+  AoEc: {fileID: 0}
 --- !u!1 &1594258658111460574
 GameObject:
   m_ObjectHideFlags: 0

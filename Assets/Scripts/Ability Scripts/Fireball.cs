@@ -19,6 +19,8 @@ public class Fireball : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full= new Vector3(1, 1, 1);
     AbilityManager theManager;
+
+    [HideInInspector] public float fireballSpeed = 40f;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +72,6 @@ public class Fireball : MonoBehaviour
 
             fireballHandler = Instantiate(projectile, center, projectile.transform.rotation) as GameObject;
 
-            float fireballSpeed = 40f;
             float fireballHeight = .15f;
             fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
             timer = 0;
