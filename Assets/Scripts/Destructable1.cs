@@ -48,6 +48,7 @@ public class Destructable1 : MonoBehaviour
             switch (collision.gameObject.name)
             {
                 case "Fireball(Clone)":
+                case "Fireball Variant(Clone)":
                     if (FireballsDestroy)
                     {
                         

@@ -18871,11 +18871,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e38014bb4d918b41be5cff1c7dfcad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 4278555317394053800, guid: ce50623e0d44e704da24853f6254ee50,
+    type: 3}
   myBody: {fileID: 8000995428032571906}
   theExplosion: {fileID: 3666472957314551301}
   fireMiddle: {fileID: 378440668505885084}
   trigger: {fileID: 8000995428032571934}
   rigid: {fileID: 8000995428032571934}
+  Cluster: 1
 --- !u!135 &898541388304688344
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18962,7 +18965,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 4f1333ee9b265b4478e1e2510000b993, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.118
-  m_Pitch: 1.2634673
+  m_Pitch: 1.2609522
   Loop: 0
   Mute: 0
   Spatialize: 0
