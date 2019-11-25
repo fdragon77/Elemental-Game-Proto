@@ -61,7 +61,7 @@ public class Fireball : MonoBehaviour
     }
     private void fire(bool deviate)
     {
-        Debug.Log("Fireball");
+        //Debug.Log("Fireball");
 
         // play sound for fireball
         Playersnd.Play();

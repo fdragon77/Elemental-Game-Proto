@@ -32,7 +32,7 @@ public class RockGolem : MonoBehaviour
     {
         
         
-        Debug.Log("EnemyAttack");
+        //Debug.Log("EnemyAttack");
         GameObject projectileHandler;
         Vector3 startPos = transform.position;
         startPos += transform.forward * 3;

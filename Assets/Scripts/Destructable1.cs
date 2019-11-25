@@ -39,8 +39,8 @@ public class Destructable1 : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         
-        Debug.Log("Collision");
-        Debug.Log(collision.gameObject.name + " asd");
+        //Debug.Log("Collision");
+        //Debug.Log(collision.gameObject.name + " asd");
         //Debug.Log(collision.gameObject.name);
         if ((collision.gameObject.tag == "Attack") && (canDestroy))
         {
