@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class BlazeUp : MonoBehaviour
 {
+    LevelingUp lup;
     public GameObject nextStage;
     public GameObject effect;
     GameObject currentPlayer;
     //public Transform oldTarget;
     public CameraFollow cameraTargeter;
+
+    private bool timing = false;
+    public float waitTime = 1f;
+    private float starttime;
     // Start is called before the first frame update
     void Start()
     {
         currentPlayer = GameObject.FindGameObjectWithTag("Player");
+ 
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -42,12 +48,14 @@ public class BlazeUp : MonoBehaviour
                     enemy.GetComponent<RockGolem>().TargetAcquire();
                 }
             }
+            lup = nextStage.GetComponent<LevelingUp>();
+            lup.popup();
         }
 
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -309,14 +309,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854c621ac4c891a44854e799e3435bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireballsnd: {fileID: 8300000, guid: 4f1333ee9b265b4478e1e2510000b993, type: 3}
-  Playersnd: {fileID: 6641890711637356742, guid: 7636892f0862faf4bbdc550554f11b22,
-    type: 3}
   fireballCooldown: {fileID: 0}
   projectile: {fileID: 8000995428032571935, guid: 7636892f0862faf4bbdc550554f11b22,
     type: 3}
   cooldown: 0.5
-  Multishot: 1
+  Multishot: 0
   fireballSpeed: 40
 --- !u!114 &6296993653634895289
 MonoBehaviour:
@@ -81346,11 +81343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5183334575601779376}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 54b422c8e010c5945aed14b4c61613ef,
-        type: 3}
-      propertyPath: m_Name
-      value: blazeMask
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 54b422c8e010c5945aed14b4c61613ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81406,6 +81398,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 54b422c8e010c5945aed14b4c61613ef,
+        type: 3}
+      propertyPath: m_Name
+      value: blazeMask
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 54b422c8e010c5945aed14b4c61613ef,
         type: 3}
       propertyPath: m_CastShadows
@@ -81431,11 +81428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5183334575601779376}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: dddac2a9d4db0254997d7fa3be4c6114,
-        type: 3}
-      propertyPath: m_Name
-      value: tinyRocks
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dddac2a9d4db0254997d7fa3be4c6114,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81506,6 +81498,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 146.1098
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dddac2a9d4db0254997d7fa3be4c6114,
+        type: 3}
+      propertyPath: m_Name
+      value: tinyRocks
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dddac2a9d4db0254997d7fa3be4c6114, type: 3}
 --- !u!4 &3871235308054809541 stripped
@@ -81521,16 +81518,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5183334575601779376}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 7b4008a9954b98e41a7602d8eae745e7,
-        type: 3}
-      propertyPath: m_Name
-      value: shoulderPads
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 7b4008a9954b98e41a7602d8eae745e7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7b4008a9954b98e41a7602d8eae745e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81601,6 +81588,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7b4008a9954b98e41a7602d8eae745e7,
+        type: 3}
+      propertyPath: m_Name
+      value: shoulderPads
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7b4008a9954b98e41a7602d8eae745e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4008a9954b98e41a7602d8eae745e7, type: 3}
 --- !u!4 &3871235308948579503 stripped
@@ -81616,16 +81613,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5183334575601779376}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: a363cbe6f5b4fbb418b1a493f6f78197,
-        type: 3}
-      propertyPath: m_Name
-      value: gauntlets
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: a363cbe6f5b4fbb418b1a493f6f78197,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a363cbe6f5b4fbb418b1a493f6f78197,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81695,6 +81682,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 117.20044
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a363cbe6f5b4fbb418b1a493f6f78197,
+        type: 3}
+      propertyPath: m_Name
+      value: gauntlets
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a363cbe6f5b4fbb418b1a493f6f78197,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4815258759933791312, guid: a363cbe6f5b4fbb418b1a493f6f78197,
         type: 3}
