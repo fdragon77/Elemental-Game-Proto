@@ -163,7 +163,7 @@ public class Destructable1 : MonoBehaviour
         if (timer > 0 && !canDestroy)
         {
             timer-= Time.deltaTime;
-            Debug.Log("Tick");
+            //Debug.Log("Tick");
         }
         else if(timer <= 0 && !canDestroy)
         {

@@ -123,16 +123,22 @@ public class LevelingUp : MonoBehaviour
                 case upgrade.a:
                     ball.fireballSpeed = ballaSpeed;
                     Abilitys.FireballDMG = ballaDamage;
-                    //Debug.Log("upgraded fireball a");
+                    ballLevel = level.a;
                     break;
                 case upgrade.b:
                     ball.Multishot = true;
-                    //ball.projectile = ballb;
+                    Debug.Log("upgraded fireball multishot");
+                    ballLevel = level.b;
                     break;
                 case upgrade.c:
                     ball.projectile = ballc;
+                    ballLevel = level.c;
                     break;
             }
+        }
+        else
+        {
+            popup();
         }
     }
 
@@ -144,14 +150,21 @@ public class LevelingUp : MonoBehaviour
             {
                 case upgrade.a:
                     wall.projectile = walla;
+                    wallLevel = level.a;
                     break;
                 case upgrade.b:
                     wall.projectile = wallb;
+                    wallLevel = level.b;
                     break;
                 case upgrade.c:
                     wall.projectile = wallc;
+                    wallLevel = level.c;
                     break;
             }
+        }
+        else
+        {
+            popup();
         }
     }
 
@@ -162,12 +175,19 @@ public class LevelingUp : MonoBehaviour
             switch (u)
             {
                 case upgrade.a:
+                    breathLevel = level.a;
                     break;
                 case upgrade.b:
+                    breathLevel = level.b;
                     break;
                 case upgrade.c:
+                    breathLevel = level.c;
                     break;
             }
+        }
+        else
+        {
+            popup();
         }
     }
 
@@ -178,12 +198,19 @@ public class LevelingUp : MonoBehaviour
             switch (u)
             {
                 case upgrade.a:
+                    AoELevel = level.a;
                     break;
                 case upgrade.b:
+                    AoELevel = level.b;
                     break;
                 case upgrade.c:
+                    AoELevel = level.c;
                     break;
             }
+        }
+        else
+        {
+            popup();
         }
     }
 
@@ -194,12 +221,19 @@ public class LevelingUp : MonoBehaviour
             switch (u)
             {
                 case upgrade.a:
+                    DashLevel = level.a;
                     break;
                 case upgrade.b:
+                    DashLevel = level.b;
                     break;
                 case upgrade.c:
+                    DashLevel = level.c;
                     break;
             }
+        }
+        else
+        {
+            popup();
         }
     }
 
@@ -324,82 +358,69 @@ public class LevelingUp : MonoBehaviour
 
     public void powerballup()
     {
-        ballLevel = level.a;
+        Debug.Log("upgrade powerball up");
         fireballupgrade(upgrade.a);
     }
 
     public void rapidfireup()
     {
-        ballLevel = level.b;
+        Debug.Log("upgrade multishot");
         fireballupgrade(upgrade.b);
     }
 
     public void bombup()
     {
-        ballLevel = level.c;
         fireballupgrade(upgrade.c);
     }
 
     public void powerbreathup()
     {
-        breathLevel = level.a;
         BreathUpgrade(upgrade.a);
     }
     public void lavalancheup()
     {
-        breathLevel = level.b;
         BreathUpgrade(upgrade.b);
     }
     public void chainup()
     {
-        breathLevel = level.c;
         BreathUpgrade(upgrade.c);
     }
 
     public void powerAoEup()
     {
-        AoELevel = level.a;
         AoEUpgrade(upgrade.a);
     }
     public void earthquakeup()
     {
-        AoELevel = level.b;
         AoEUpgrade(upgrade.b);
     }
     public void minionsup()
     {
-        AoELevel = level.c;
         AoEUpgrade(upgrade.c);
     }
 
     public void powerwallup()
     {
-        wallLevel = level.a;
         fireWALLupgrade(upgrade.a);
     }
     public void tornadoup()
     {
-        wallLevel = level.b;
         fireWALLupgrade(upgrade.b);
     }
     public void trapup()
     {
-        wallLevel = level.c;
         fireWALLupgrade(upgrade.c);
     }
     public void powerdashup()
     {
-        DashLevel = level.a;
         DashUpgrade(upgrade.a);
     }
     public void chargeup()
     {
-        DashLevel = level.b;
         DashUpgrade(upgrade.b);
     }
     public void eruptup()
     {
-        DashLevel = level.c;
         DashUpgrade(upgrade.c);
     }
 }

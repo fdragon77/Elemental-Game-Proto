@@ -23,8 +23,8 @@ public class Destructable : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         
-        Debug.Log("Collision");
-        Debug.Log(collision.gameObject.name + " asd");
+        //Debug.Log("Collision");
+        //Debug.Log(collision.gameObject.name + " asd");
         //Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Attack")
         {
@@ -40,7 +40,7 @@ public class Destructable : MonoBehaviour
                 case "fireCone":
                     if (FirebreathsDestroy)
                     {
-                        Debug.Log("Breath Destroy");
+                        //Debug.Log("Breath Destroy");
                         destruct();
                     }
                     break;
