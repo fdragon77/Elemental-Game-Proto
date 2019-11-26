@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6530655149744308450}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 121.053894, y: -0.25, z: 164.28844}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3554721369023979593}
   - {fileID: 1573311581522569227}
@@ -59,15 +59,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4ccb4141cc7b34294743941131597f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
   FireballsDestroy: 1
   FirebreathsDestroy: 1
-  BeamDestroy: 0
+  WallDestroy: 0
   HealDestroy: 0
   AOEDestroy: 0
   TargetedAOEDestroy: 0
-  DestructionType: 2
+  explosiveForce: 0
+  GracePeriod: 0
+  DestructionType: 1
   burnmat: {fileID: 2100000, guid: e0af8c35d67f6fc40b434982d1cb24a8, type: 2}
-  explodeObj: {fileID: 0}
+  explodeObj: {fileID: 4679564098210059769, guid: 96a29be6fe460e24ab755e3853e218b3,
+    type: 3}
   HealFlame: {fileID: 1573311581522569231}
 --- !u!1 &7670791274581844488
 GameObject:

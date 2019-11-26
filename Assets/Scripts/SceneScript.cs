@@ -27,13 +27,21 @@ public class SceneScript : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
-        if (Input.GetKeyDown(KeyCode.I))
+        else if (Input.GetKeyDown(KeyCode.I))
         {
             SceneManager.LoadScene("Andrew_Fire_fx");
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        else if (Input.GetKeyDown(KeyCode.O))
         {
             SceneManager.LoadScene("Filip's Messing Around Scene");
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("StartLevel");
+        }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            SceneManager.LoadScene("Rework-mine");
         }
 
     }
