@@ -131,7 +131,7 @@ public class LevelingUp : MonoBehaviour
                     ballLevel = level.b;
                     break;
                 case upgrade.c:
-                    ball.projectile = ballc;
+                    //ball.projectile = ballc;
                     ballLevel = level.c;
                     break;
             }
@@ -149,15 +149,15 @@ public class LevelingUp : MonoBehaviour
             switch (u)
             {
                 case upgrade.a:
-                    wall.projectile = walla;
+                    //wall.projectile = walla;
                     wallLevel = level.a;
                     break;
                 case upgrade.b:
-                    wall.projectile = wallb;
+                    //wall.projectile = wallb;
                     wallLevel = level.b;
                     break;
                 case upgrade.c:
-                    wall.projectile = wallc;
+                    //wall.projectile = wallc;
                     wallLevel = level.c;
                     break;
             }
