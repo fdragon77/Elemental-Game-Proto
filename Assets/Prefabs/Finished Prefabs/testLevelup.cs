@@ -17,7 +17,8 @@ public class testLevelup : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("HIT");
-            lup.fireballupgrade(LevelingUp.upgrade.a);
+            //lup.fireballupgrade(LevelingUp.upgrade.a);
+            lup.popup();
         }
     }
 }

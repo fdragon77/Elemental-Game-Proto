@@ -37,7 +37,7 @@ public class RockGolem : MonoBehaviour
         Vector3 startPos = transform.position;
         startPos += transform.forward * 3;
         //startPos.x -= .25f;
-        startPos.y += 5f;
+        startPos.y += 3.5f;
         //startPos.z += 2.5f;
         //startPos.y += projAdj;
         projectileHandler = Instantiate(projectile, startPos, projectile.transform.rotation) as GameObject;
@@ -68,7 +68,7 @@ public class RockGolem : MonoBehaviour
         if (timer <= 0 && (Vector3.Distance(transform.position, player.transform.position) <= attackRange))
         {
             animator.Play("rock pre throw");
-            delay = 1.75f;
+            delay = 1.6f;
             hasFired = false;
             timer = 4.0f;
         }
