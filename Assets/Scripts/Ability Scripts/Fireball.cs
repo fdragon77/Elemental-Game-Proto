@@ -7,8 +7,8 @@ using UnityEngine.Audio;
 public class Fireball : MonoBehaviour
 {
     //sound
-    public AudioClip fireballsnd;
-    public AudioSource Playersnd;
+  //public AudioClip fireballsnd;
+    //public AudioSource Playersnd;
 
 
     public RawImage fireballCooldown;
@@ -28,7 +28,7 @@ public class Fireball : MonoBehaviour
     {
         timer = cooldown;
         // get audio source
-        Playersnd.clip = fireballsnd;
+       // Playersnd.clip = fireballsnd;
         fireballCooldown = GameObject.Find("FireballFill").GetComponent<RawImage>();
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
@@ -64,8 +64,8 @@ public class Fireball : MonoBehaviour
         //Debug.Log("Fireball");
 
         // play sound for fireball
-        Playersnd.Play();
-        Playersnd.pitch = Random.Range(0.7f, 3f);
+        //Playersnd.Play();
+       // Playersnd.pitch = Random.Range(0.7f, 3f);
 
         //fireballCooldown.rectTransform.localScale = Empty;
 
