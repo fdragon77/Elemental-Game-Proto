@@ -6928,6 +6928,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f25fa682ab5f3d4083bf5bac037757e, type: 3}
+--- !u!82 &1100565574 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7445486253291036465, guid: 7f25fa682ab5f3d4083bf5bac037757e,
+    type: 3}
+  m_PrefabInstance: {fileID: 402507310007663419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1115141111
 GameObject:
   m_ObjectHideFlags: 0
@@ -9400,11 +9406,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3002255105893342284, guid: 0e82fe43b1f343542a76f02074c922b3,
-        type: 3}
-      propertyPath: m_Name
-      value: GameController
-      objectReference: {fileID: 0}
     - target: {fileID: 3002255105893342286, guid: 0e82fe43b1f343542a76f02074c922b3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9464,6 +9465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002255105893342284, guid: 0e82fe43b1f343542a76f02074c922b3,
+        type: 3}
+      propertyPath: m_Name
+      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e82fe43b1f343542a76f02074c922b3, type: 3}
@@ -10169,6 +10175,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7445486253291036465, guid: 7f25fa682ab5f3d4083bf5bac037757e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8553482836880576049, guid: 7f25fa682ab5f3d4083bf5bac037757e,
         type: 3}
       propertyPath: m_Name
@@ -10594,7 +10605,16 @@ PrefabInstance:
       propertyPath: AOEDestroy
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1154518454, guid: 7f25fa682ab5f3d4083bf5bac037757e, type: 3}
+      propertyPath: rockthrowAudioSource
+      value: 
+      objectReference: {fileID: 1100565574}
+    - target: {fileID: 1154518454, guid: 7f25fa682ab5f3d4083bf5bac037757e, type: 3}
+      propertyPath: rockthrowsnd
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a02a6bc093082b4c86d7e2dbf4fe0e3, type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7f25fa682ab5f3d4083bf5bac037757e, type: 3}
 --- !u!23 &426989332509073407
 MeshRenderer:

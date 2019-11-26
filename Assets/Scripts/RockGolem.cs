@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RockGolem : MonoBehaviour
 {
+    //sound stuff
+    public AudioClip rockthrowsnd;
+    public AudioSource rockthrowAudioSource;
     GameObject player;
     Transform playerLoc;
     [SerializeField] int MoveSpeed;
@@ -22,6 +25,9 @@ public class RockGolem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get audio source
+         rockthrowAudioSource.clip = rockthrowsnd;
+
         animator = GetComponent<Animator>();
         //playerLoc = player.position;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -72,6 +78,7 @@ public class RockGolem : MonoBehaviour
 
         if (timer <= 0 && (Vector3.Distance(transform.position, player.transform.position) <= attackRange))
         {
+            rockthrowAudioSource.Play();
             animator.Play("rock pre throw");
             delay = 1.6f;
             hasFired = false;
