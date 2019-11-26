@@ -59,6 +59,7 @@ public class AbilityManager : MonoBehaviour
       
         float timer = allcool;
         currentMana = mana;
+        manabar = GameObject.Find("mana bar fill").GetComponent<RawImage>();
         //Debug.Log(allcool);
     }
 

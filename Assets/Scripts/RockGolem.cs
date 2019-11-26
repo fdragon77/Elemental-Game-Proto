@@ -27,7 +27,12 @@ public class RockGolem : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         yLoc = transform.position.y;
     }
-
+    public void TargetAcquire()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Target Acquired");
+        Debug.Log(player);
+    }
     public void Fire()
     {
         

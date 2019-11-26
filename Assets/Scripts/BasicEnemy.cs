@@ -40,6 +40,12 @@ public class BasicEnemy : MonoBehaviour
         aim.Normalize();
         projectileHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(aim.x * projectileSpeed, aim.y * projectileHeight, aim.z * projectileSpeed);
     }
+    public void TargetAcquire()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Target Acquired");
+        Debug.Log(player);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -58,5 +64,6 @@ public class BasicEnemy : MonoBehaviour
             Fire();
             timer = 4.0f;
         }
+        
     }
 }

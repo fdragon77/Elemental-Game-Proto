@@ -29,7 +29,7 @@ public class Fireball : MonoBehaviour
         timer = cooldown;
         // get audio source
         Playersnd.clip = fireballsnd;
-
+        fireballCooldown = GameObject.Find("FireballFill").GetComponent<RawImage>();
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     /// <summary>

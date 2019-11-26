@@ -28,7 +28,7 @@ public class firewall : MonoBehaviour
         {
             Playersnd.clip = firewallsnd;
         }
-
+        firewallCooldown = GameObject.Find("FirewallFill").GetComponent<RawImage>();
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     /// <summary>

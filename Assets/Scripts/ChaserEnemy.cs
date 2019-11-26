@@ -14,7 +14,10 @@ public class ChaserEnemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
+    public void TargetAcquire()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     // Update is called once per frame
     void Update()
     {

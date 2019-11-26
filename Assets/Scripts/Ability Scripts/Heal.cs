@@ -18,6 +18,7 @@ public class Heal : MonoBehaviour
     void Start()
     {
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
+        //HealCooldown = GameObject.Find("HealFill").GetComponent<RawImage>();
         //waitTime = gameObject.GetComponent<AbilityManager>().allcool;
     }
     public void Fire()
@@ -28,7 +29,7 @@ public class Heal : MonoBehaviour
             healing = true;
             lastTrigger = Time.time;
             theManager.currentMana -= theManager.HealMana;
-            HealCooldown.rectTransform.localScale = Empty;
+            //HealCooldown.rectTransform.localScale = Empty;
         }
         
     }
@@ -38,7 +39,7 @@ public class Heal : MonoBehaviour
 
         if (Time.time >= lastTrigger + waitTime)
         {
-            HealCooldown.rectTransform.localScale = Full;
+            //HealCooldown.rectTransform.localScale = Full;
             healing = false;
         }
     }
