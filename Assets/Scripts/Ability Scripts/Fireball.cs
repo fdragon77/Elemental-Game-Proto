@@ -13,6 +13,8 @@ public class Fireball : MonoBehaviour
 
     public RawImage fireballCooldown;
     public GameObject projectile;
+    public GameObject projectileCluster;
+    public bool cluster;
     float timer = 0;
     bool active = false;
     [SerializeField] float cooldown;
@@ -75,8 +77,12 @@ public class Fireball : MonoBehaviour
         fireDirection = transform.forward;
         Vector3 center = transform.position;
         center.y += 4;
-
-        fireballHandler = Instantiate(projectile, center, projectile.transform.rotation) as GameObject;
+        if (cluster)
+        {
+            fireballHandler = Instantiate(projectileCluster, center, projectile.transform.rotation) as GameObject;
+        }
+        else
+            fireballHandler = Instantiate(projectile, center, projectile.transform.rotation) as GameObject;
         if (deviate)
         {
             fireDirection.x+= Random.Range(-.1f, .1f);

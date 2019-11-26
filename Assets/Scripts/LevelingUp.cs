@@ -131,7 +131,7 @@ public class LevelingUp : MonoBehaviour
                     ballLevel = level.b;
                     break;
                 case upgrade.c:
-                    //ball.projectile = ballc;
+                    ball.cluster = true;
                     ballLevel = level.c;
                     break;
             }
