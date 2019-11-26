@@ -65,7 +65,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428425002130465276}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12, y: 1, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -130,8 +130,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.767925, y: 9.527221, z: 3.9538345}
-  m_Center: {x: -0.03360176, y: 3.8458438, z: -0.18368149}
+  m_Size: {x: 6.3485785, y: 6.3040705, z: 5.0038443}
+  m_Center: {x: -0.008826733, y: 2.2342687, z: 0.34132338}
 --- !u!114 &6985969154474090705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballaDamage: 2
   ballaSpeed: 60
-  ballb: {fileID: 0}
   ballc: {fileID: 0}
   breatha: {fileID: 0}
   breathb: {fileID: 0}
@@ -81915,11 +81914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 227808574002707295, guid: 4c5814a0ef9831b4cb040f4f8927c8d2,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 227808574002707295, guid: 4c5814a0ef9831b4cb040f4f8927c8d2,
         type: 3}
