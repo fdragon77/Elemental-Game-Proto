@@ -20,7 +20,7 @@ public class BasicEnemy : MonoBehaviour
     void Start()
     {
         //playerLoc = player.position;
-        player = GameObject.Find("ElementalPlayer");
+        player = GameObject.FindGameObjectWithTag("Player");
         yLoc = transform.position.y;
     }
 

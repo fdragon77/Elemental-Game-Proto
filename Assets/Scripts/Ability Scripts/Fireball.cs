@@ -30,7 +30,7 @@ public class Fireball : MonoBehaviour
         // get audio source
         Playersnd.clip = fireballsnd;
 
-        theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
+        theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     /// <summary>
     /// this triggers the fireball.

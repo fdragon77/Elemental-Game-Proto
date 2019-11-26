@@ -18,7 +18,7 @@ public class Flamethrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
+        theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     public void Fire()
     {

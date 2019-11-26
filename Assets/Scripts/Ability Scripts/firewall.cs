@@ -29,7 +29,7 @@ public class firewall : MonoBehaviour
             Playersnd.clip = firewallsnd;
         }
 
-        theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
+        theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     /// <summary>
     /// this triggers the fireball.
@@ -48,7 +48,7 @@ public class firewall : MonoBehaviour
             }
 
             //fireballCooldown.rectTransform.localScale = Empty;
-
+            Debug.Log("Blah");
             GameObject firewallHandler;
             Vector3 fireDirection;
 

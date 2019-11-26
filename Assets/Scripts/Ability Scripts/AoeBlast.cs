@@ -20,7 +20,7 @@ public class AoeBlast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        theManager = GameObject.Find("ElementalPlayer").GetComponent<AbilityManager>();
+        theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
         timer = cooldown;
     }
     public void Fire()

@@ -24,7 +24,7 @@ public class RockGolem : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         //playerLoc = player.position;
-        player = GameObject.Find("ElementalPlayer");
+        player = GameObject.FindGameObjectWithTag("Player");
         yLoc = transform.position.y;
     }
 
