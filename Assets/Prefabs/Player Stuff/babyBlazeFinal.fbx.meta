@@ -1,24 +1,29 @@
 fileFormatVersion: 2
-guid: 7cedb4d8149d8e0419c578bf374a7eec
+guid: 2bd0b4a4c5572444ab1c5a9ed6113627
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Walk
+    second: walking
+  - first:
+      74: -9064363216764605613
+    second: fireball
   - first:
       74: -998496362607748373
-    second: Firewall
+    second: aoe
   - first:
-      74: 8046689404674467441
-    second: AOE
+      74: 8291913034352490637
+    second: firewall
   - first:
-      74: -8336052407366623631
-    second: Flamethrower
+      74: -170483783734404937
+    second: flamethrower
+  externalObjects:
   - first:
-      74: -9177712138394292723
-    second: Fireball
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: babyBlazeTest_initialShadingGroup1
+    second: {fileID: 2100000, guid: 0c945548503c3984fbc137dad709b44f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,11 +52,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: walking
       takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 60
+      lastFrame: 70
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -59,6 +64,35 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fireball
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 70
+      lastFrame: 105
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -76,11 +110,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Firewall
+      name: aoe
       takeName: Take 001
       internalID: 0
       firstFrame: 110
-      lastFrame: 160
+      lastFrame: 165
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -105,11 +139,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: AOE
+      name: firewall
       takeName: Take 001
       internalID: 0
       firstFrame: 170
-      lastFrame: 210
+      lastFrame: 215
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -134,40 +168,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Flamethrower
+      name: flamethrower
       takeName: Take 001
       internalID: 0
       firstFrame: 220
       lastFrame: 280
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Fireball
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 70
-      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
