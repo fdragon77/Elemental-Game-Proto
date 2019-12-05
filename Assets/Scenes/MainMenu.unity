@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
@@ -17660,9 +17660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eac2e236f15e294da4a6166b5b87865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPos: {x: 0, y: 0, z: 0}
-  TargetLook: {x: 0, y: 0, z: 0, w: 0}
-  speed: 1
 --- !u!1 &789909579
 GameObject:
   m_ObjectHideFlags: 0
@@ -33955,7 +33952,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Andrew_Fire_fx
+          m_StringArgument: StartLevel
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
