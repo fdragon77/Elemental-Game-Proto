@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2bd0b4a4c5572444ab1c5a9ed6113627
+guid: 95a4f50e012db0d4bb12bad5f6607e44
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
@@ -7,11 +7,11 @@ ModelImporter:
       74: 1827226128182048838
     second: walking
   - first:
-      74: -9064363216764605613
+      74: -998496362607748373
     second: fireball
   - first:
-      74: -998496362607748373
-    second: aoe
+      74: 3060872287085348379
+    second: AOE
   - first:
       74: 8291913034352490637
     second: firewall
@@ -22,7 +22,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: babyBlazeTest_initialShadingGroup1
+      name: lambert2
     second: {fileID: 2100000, guid: 7c5ebf49b315fa04888a2aba4f49fbc4, type: 2}
   materials:
     importMaterials: 1
@@ -55,8 +55,8 @@ ModelImporter:
       name: walking
       takeName: Take 001
       internalID: 0
-      firstFrame: 1
-      lastFrame: 70
+      firstFrame: 0
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -85,7 +85,7 @@ ModelImporter:
       takeName: Take 001
       internalID: 0
       firstFrame: 70
-      lastFrame: 105
+      lastFrame: 170
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -110,11 +110,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: aoe
+      name: AOE
       takeName: Take 001
       internalID: 0
-      firstFrame: 110
-      lastFrame: 165
+      firstFrame: 170
+      lastFrame: 240
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -142,8 +142,8 @@ ModelImporter:
       name: firewall
       takeName: Take 001
       internalID: 0
-      firstFrame: 170
-      lastFrame: 215
+      firstFrame: 250
+      lastFrame: 290
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -166,13 +166,13 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     - serializedVersion: 16
       name: flamethrower
       takeName: Take 001
       internalID: 0
-      firstFrame: 220
-      lastFrame: 280
+      firstFrame: 300
+      lastFrame: 340
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -195,7 +195,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:
     lODScreenPercentages: []
