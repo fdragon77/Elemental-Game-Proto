@@ -29,6 +29,7 @@ public class BlazeUp : MonoBehaviour
             Vector3 loc = currentPlayer.transform.position;
             nextStage = Instantiate(nextStage, loc, currentPlayer.transform.rotation) as GameObject;
             cameraTargeter.target= nextStage.transform;
+            
             currentPlayer.SetActive(false);
             gameObject.SetActive(false);
             effect = Instantiate(effect, loc, currentPlayer.transform.rotation);

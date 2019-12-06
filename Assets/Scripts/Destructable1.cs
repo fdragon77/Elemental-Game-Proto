@@ -96,6 +96,23 @@ public class Destructable1 : MonoBehaviour
                         }
                     }
                     break;
+                case "AoeDam":
+                case "AoeKnock":
+                    if (AOEDestroy)
+                    {
+                        health -= AM.AoeDMG;
+                        if (health <= 0)
+                        {
+                            destruct();
+                        }
+                        else
+                        {
+                            canDestroy = false;
+                            timer = GracePeriod;
+                        }
+                    }
+                    break;
+
                     //FIXME Fill in with prefabs as we work on it.
             }
         }
