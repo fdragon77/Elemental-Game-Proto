@@ -8,7 +8,7 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     float regSpeed;
-    float boost = 40f;
+    [SerializeField] float boost = 40f;
     Vector3 forward, right;
     public float timer = .5f;
     float holdtimer;
