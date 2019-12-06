@@ -253,8 +253,8 @@ public class LevelingUp : MonoBehaviour
         q_popup.Data.Buttons[3].gameObject.SetActive(false);
         q_popup.Data.Buttons[4].gameObject.SetActive(false);
         q_popup.HideOnAnyButton = true;
-        q_popup.HideOnClickOverlay = false;
-        q_popup.HideOnBackButton = false;
+        q_popup.HideOnClickOverlay = true;
+        q_popup.HideOnBackButton = true;
         q_popup.HideOnClickContainer = false;
 
         q_popup.Show();
