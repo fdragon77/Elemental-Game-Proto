@@ -47,7 +47,7 @@ public class AoeBlast : MonoBehaviour
         
         if (timer >= cooldown && active)
         {
-            aoeRing.SetActive(false);
+            //aoeRing.SetActive(false);
             active = false;
             //AoeCooldown.rectTransform.localScale = Full;
         }
