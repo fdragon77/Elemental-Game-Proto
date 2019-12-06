@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 7504155402666957746}
   - component: {fileID: 3566915170966045945}
   - component: {fileID: 1449962889460478171}
+  - component: {fileID: -4432187909508091210}
   m_Layer: 15
   m_Name: thrown rock 6
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,3 +146,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 5
   theObject: {fileID: 8357107000235186375}
+--- !u!65 &-4432187909508091210
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357107000235186375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8052446, y: 2.0380273, z: 2.1857166}
+  m_Center: {x: 0.03364116, y: -0.10360554, z: 0.0124335885}

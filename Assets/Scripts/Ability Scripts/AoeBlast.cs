@@ -17,6 +17,7 @@ public class AoeBlast : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full = new Vector3(1, 1, 1);
     AbilityManager theManager;
+    float ratio;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,7 @@ public class AoeBlast : MonoBehaviour
             active = false;
             //AoeCooldown.rectTransform.localScale = Full;
         }
-        float ratio = timer / cooldown;
+        ratio= timer / cooldown;
         AoeCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 }

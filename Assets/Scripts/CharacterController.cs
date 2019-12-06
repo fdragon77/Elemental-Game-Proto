@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //This whole thing exists to make up mean up.
 
@@ -18,9 +19,22 @@ public class CharacterController : MonoBehaviour
     GameController GAME;
     float dash_stick_sens = 0.3f;
 
+    private int health = 100;
+    //public Text healthText;
+    public Sprite armor1;
+    Sprite[] armorSprites;
+
+
+    public RawImage DashCooldown;
+
+    Vector3 Empty = new Vector3(0, 1, 1);
+    Vector3 Full = new Vector3(1, 1, 1);
+    float ratio;
     // Start is called before the first frame update
     void Start()
     {
+        DashCooldown = GameObject.Find("DashFill").GetComponent<RawImage>();
+        //LoadAllSprites();
         holdtimer = timer;
         dashtimerhold = dashTimer;
         regSpeed = moveSpeed;
@@ -33,22 +47,24 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        dashTimer -= Time.deltaTime;
-        if (dashTimer <= 0 && dash)
+        if(timer <= holdtimer)
+            timer += Time.deltaTime;
+        if(dashTimer<=dashtimerhold)
+            dashTimer += Time.deltaTime;
+        if (dashTimer >=dashtimerhold && dash)
         {
             moveSpeed = regSpeed;
 
         }
-        if (timer <= 0)
+        if (timer >= holdtimer)
         {
             dash = false;
         }
         //dash with the rjoystick
         if (((Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens) || (Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens)) && !dash)
         {
-            timer = holdtimer;
-            dashTimer = dashtimerhold;
+            timer = 0;
+            dashTimer = 0;
             dash = true;
             moveSpeed = boost;
 
@@ -70,21 +86,18 @@ public class CharacterController : MonoBehaviour
         {
             if (Input.GetButtonDown("Dash") && !dash)
             {
-                timer = holdtimer;
-                dashTimer = dashtimerhold;
+                timer = 0;
+                dashTimer = 0;
                 dash = true;
                 moveSpeed = boost;
             }
             Move();
         }
-        //if ((Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))&& Input.GetKeyUp("space"))
-        //if(Input.GetButtonDown("Dash") && (Input.GetButtonDown("Horizontal")||Input.GetButtonDown("Vertical")))
-        //{
-        //    timer = .25f;
-        //    dash = true;
-        //    moveSpeed = boost;
-        //    Move();  
-        //}
+
+        ratio = dashTimer / dashtimerhold;
+        DashCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+
+
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
@@ -100,4 +113,23 @@ public class CharacterController : MonoBehaviour
         transform.position += rightMovement;
         transform.position += upMovement;
     }
+    void LoadAllSprites()
+    {
+
+        armorSprites = Resources.LoadAll<Sprite>("armor_stuff");
+        armor1 = armorSprites[100 - health];
+        foreach (Sprite s in armorSprites)
+        {
+            Debug.Log(s.name);
+        }
+    }
+    /*private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.tag == "EnemyAttack")
+        {
+            health -= 5;
+            armor1 = armorSprites[100 - health];
+            this.gameObject.GetComponent<Image>().sprite = (armor1);
+        }
+    }*/
 }
