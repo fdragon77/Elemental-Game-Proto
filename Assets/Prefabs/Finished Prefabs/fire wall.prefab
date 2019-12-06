@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2441925602299883824}
   - component: {fileID: 7154852947846439016}
   - component: {fileID: 5511962960882163175}
+  - component: {fileID: 1760890940776465170}
   m_Layer: 8
   m_Name: fire wall
   m_TagString: Attack
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3363087655363660389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.25, y: 4.18, z: 16.03}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3363087655363660389}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -220,3 +221,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1760890940776465170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3363087655363660389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b0fc526ae01474198abe4af3f93c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WallObject: {fileID: 3407578377609922113, guid: 5e8f2c8034618764b9788c81754e75bf,
+    type: 3}

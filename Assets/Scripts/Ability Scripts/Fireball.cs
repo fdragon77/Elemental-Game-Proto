@@ -23,6 +23,9 @@ public class Fireball : MonoBehaviour
     [HideInInspector] public float fireballSpeed = 10f;
     int NumShots = 3;
     float shotDelay = .2f;
+
+    Vector4 color;
+    Vector4 fadeColor = new Vector4(60, 60, 60, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class Fireball : MonoBehaviour
         // get audio source
        // Playersnd.clip = fireballsnd;
         fireballCooldown = GameObject.Find("FireballFill").GetComponent<RawImage>();
+        color = fireballCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     /// <summary>
@@ -101,6 +105,14 @@ public class Fireball : MonoBehaviour
         }
         float ratio = timer/cooldown;
         fireballCooldown.rectTransform.localScale= new Vector3(ratio, 1, 1);
+        if (theManager.currentMana < theManager.FireballMana)
+        {
+            fireballCooldown.color = fadeColor;
+        }
+        else
+        {
+            fireballCooldown.color = color;
+        }
     }
 
 }

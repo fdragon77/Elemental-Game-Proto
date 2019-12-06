@@ -18,10 +18,14 @@ public class AoeBlast : MonoBehaviour
     Vector3 Full = new Vector3(1, 1, 1);
     AbilityManager theManager;
     float ratio;
+
+    Vector4 color;
+    Vector4 fadeColor = new Vector4(60, 60, 60, 0);
     // Start is called before the first frame update
     void Start()
     {
         AoeCooldown = GameObject.Find("AoeFill").GetComponent<RawImage>();
+        color = AoeCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
         timer = cooldown;
     }
@@ -54,5 +58,13 @@ public class AoeBlast : MonoBehaviour
         }
         ratio= timer / cooldown;
         AoeCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+        if (theManager.currentMana < theManager.AoeMana)
+        {
+            AoeCooldown.color = fadeColor;
+        }
+        else
+        {
+            AoeCooldown.color = color;
+        }
     }
 }

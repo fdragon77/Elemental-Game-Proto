@@ -19,7 +19,8 @@ public class firewall : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full = new Vector3(1, 1, 1);
     AbilityManager theManager;
-
+    Vector4 color;
+    Vector4 fadeColor = new Vector4(60, 60, 60, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class firewall : MonoBehaviour
             Playersnd.clip = firewallsnd;
         }
         firewallCooldown = GameObject.Find("FirewallFill").GetComponent<RawImage>();
+        color = firewallCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     /// <summary>
@@ -57,7 +59,7 @@ public class firewall : MonoBehaviour
             Vector3 center = transform.position;
             center.y += 4;
 
-            firewallHandler = Instantiate(projectile, center, projectile.transform.rotation);
+            firewallHandler = Instantiate(projectile, center+gameObject.transform.forward*10, projectile.transform.rotation);
 
             float Height = .15f;
             firewallHandler.transform.rotation = transform.rotation;
@@ -82,6 +84,14 @@ public class firewall : MonoBehaviour
         }
         float ratio = timer / cooldown;
         firewallCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+        if (theManager.currentMana < theManager.FirewallMana)
+        {
+            firewallCooldown.color = fadeColor;
+        }
+        else
+        {
+            firewallCooldown.color = color;
+        }
     }
 
 }

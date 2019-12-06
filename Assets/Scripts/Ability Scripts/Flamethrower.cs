@@ -15,10 +15,13 @@ public class Flamethrower : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full = new Vector3(1, 1, 1);
     AbilityManager theManager;
+    Vector4 color;
+    Vector4 fadeColor = new Vector4(60, 60, 60, 0);
     // Start is called before the first frame update
     void Start()
     {
         FlamethrowerCooldown = GameObject.Find("FlamethrowerFill").GetComponent<RawImage>();
+        color = FlamethrowerCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
     }
     public void Fire()
@@ -43,6 +46,14 @@ public class Flamethrower : MonoBehaviour
             flamethrower.SetActive(false);
             active = false;
             FlamethrowerCooldown.rectTransform.localScale = Full;
+        }
+        if (theManager.currentMana < theManager.FlamethrowMana)
+        {
+            FlamethrowerCooldown.color = fadeColor;
+        }
+        else
+        {
+            FlamethrowerCooldown.color = color;
         }
     }
     
