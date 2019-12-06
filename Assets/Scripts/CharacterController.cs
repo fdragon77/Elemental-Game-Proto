@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
     GameController GAME;
     float dash_stick_sens = 0.3f;
 
-    private int health = 100;
+    public int health = 100;
     //public Text healthText;
     public Sprite armor1;
     Sprite[] armorSprites;
@@ -30,6 +30,7 @@ public class CharacterController : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full = new Vector3(1, 1, 1);
     float ratio;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -123,13 +124,14 @@ public class CharacterController : MonoBehaviour
             Debug.Log(s.name);
         }
     }
-    /*private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "EnemyAttack")
         {
             health -= 5;
-            armor1 = armorSprites[100 - health];
-            this.gameObject.GetComponent<Image>().sprite = (armor1);
+            Debug.Log("Ouch");
+            //armor1 = armorSprites[100 - health];
+            //this.gameObject.GetComponent<Image>().sprite = (armor1);
         }
-    }*/
+    }
 }

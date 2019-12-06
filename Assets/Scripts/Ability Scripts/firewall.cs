@@ -19,6 +19,7 @@ public class firewall : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full = new Vector3(1, 1, 1);
     AbilityManager theManager;
+
     // Start is called before the first frame update
     void Start()
     {

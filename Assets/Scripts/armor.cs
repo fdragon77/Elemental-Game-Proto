@@ -7,28 +7,39 @@ public class armor : MonoBehaviour
 {
 
     private int health = 100;
-    public Text healthText;
+    //public Text healthText;
     public Sprite armor1;
     Sprite[] armorSprites;
+    private CharacterController watchHealth;
     private void Awake()
     {
-        LoadAllSprites();
-        //this.gameObject.GetComponent<SpriteRenderer>().sprite = (armor1);
         
+        //this.gameObject.GetComponent<SpriteRenderer>().sprite = (armor1);
+        watchHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
+        LoadAllSprites();
 
     }
 
     void Update()
     {
-        healthText.text = "Health : " + health;
+        //healthText.text = "Health : " + health;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             health--;
 
-            armor1 = armorSprites[100 - health];
+            Debug.Log(watchHealth.health);
 
         }
+        if (watchHealth.health >0)
+        {
+            armor1 = armorSprites[100 - watchHealth.health];
+        }
+        else
+        {
+            armor1 = armorSprites[99];
+        }
+        
         this.gameObject.GetComponent<Image>().sprite = (armor1);
        
     }
@@ -41,7 +52,7 @@ public class armor : MonoBehaviour
        
         
 
-        armor1 = armorSprites[100 - health];
+        armor1 = armorSprites[100 - watchHealth.health];
         
         foreach (Sprite s in armorSprites)
         {

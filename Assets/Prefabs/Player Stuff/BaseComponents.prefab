@@ -51,7 +51,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1648267869931282354
 Transform:
   m_ObjectHideFlags: 0
@@ -11980,13 +11980,14 @@ GameObject:
   - component: {fileID: 8207018862537458246}
   - component: {fileID: 8207018862537458264}
   - component: {fileID: 8207018862537458265}
+  - component: {fileID: 4683203465288923852}
   m_Layer: 5
   m_Name: manabar border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8207018862537458246
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12044,6 +12045,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4683203465288923852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207018862537458247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0193379b8e9414780d68b7bbf050cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  armor1: {fileID: 21300000, guid: d827d42ef96aed34793535f76ec8b890, type: 3}
 --- !u!1 &8207018862566896633
 GameObject:
   m_ObjectHideFlags: 0
