@@ -247,6 +247,7 @@ public class LevelingUp : MonoBehaviour
             return;
         }
         q_popup.Data.SetButtonsCallbacks(fireballPopup, fireWallPopup, fireBreathPopup, AoEPopup, DashPopup);
+        q_popup.Data.Buttons[0].SelectButton();
         q_popup.HideOnAnyButton = true;
         q_popup.HideOnClickOverlay = false;
         q_popup.HideOnBackButton = false;
@@ -264,8 +265,10 @@ public class LevelingUp : MonoBehaviour
             Debug.Log("The fireball popup wasn't found!");
             return;
         }
+        q_popup.Data.SetLabelsTexts("Fireball upgrades!", "");
         q_popup.Data.SetButtonsLabels("Powerball", "Multishot", "bomb");
         q_popup.Data.SetButtonsCallbacks(FBA, FBB, FBC);
+        q_popup.Data.Buttons[0].SelectButton();
         q_popup.HideOnAnyButton = true;
         q_popup.HideOnClickOverlay = false;
         q_popup.HideOnBackButton = false;
@@ -283,8 +286,10 @@ public class LevelingUp : MonoBehaviour
             Debug.Log("The wall popup wasn't found!");
             return;
         }
+        q_popup.Data.SetLabelsTexts("Firewall upgrades!", "These have not been implimented yet. Press back to go back to choices.");
         q_popup.Data.SetButtonsLabels("Powerful Wall", "Tornado", "Meteor Trap");
         q_popup.Data.SetButtonsCallbacks(FWA, FWB, FWC);
+        q_popup.Data.Buttons[0].SelectButton();
         q_popup.HideOnAnyButton = true;
         q_popup.HideOnClickOverlay = false;
         q_popup.HideOnBackButton = false;
@@ -302,8 +307,10 @@ public class LevelingUp : MonoBehaviour
             Debug.Log("The breath popup wasn't found!");
             return;
         }
+        q_popup.Data.SetLabelsTexts("Fire breath upgrades!", "These have not been implimented yet. Press back to go back to choices.");
         q_popup.Data.SetButtonsLabels("Power Breath", "Lavalanche", "Chain flame");
         q_popup.Data.SetButtonsCallbacks(BA, BB, BC);
+        q_popup.Data.Buttons[0].SelectButton();
         q_popup.HideOnAnyButton = true;
         q_popup.HideOnClickOverlay = false;
         q_popup.HideOnBackButton = false;
@@ -321,8 +328,10 @@ public class LevelingUp : MonoBehaviour
             Debug.Log("The AoE popup wasn't found!");
             return;
         }
+        q_popup.Data.SetLabelsTexts("AOE upgrades!", "These have not been implimented yet. Press back to go back to choices.");
         q_popup.Data.SetButtonsLabels("Power throwback", "Earthquake", "Minions");
         q_popup.Data.SetButtonsCallbacks(AA, AB, AC);
+        q_popup.Data.Buttons[0].SelectButton();
         q_popup.HideOnAnyButton = true;
         q_popup.HideOnClickOverlay = false;
         q_popup.HideOnBackButton = false;
@@ -340,8 +349,10 @@ public class LevelingUp : MonoBehaviour
             Debug.Log("The Dash popup wasn't found!");
             return;
         }
+        q_popup.Data.SetLabelsTexts("Dash upgrades!", "These have not been implimented yet. Press back to go back to choices.");
         q_popup.Data.SetButtonsLabels("power dash", "Charge", "Erupt");
         q_popup.Data.SetButtonsCallbacks(DA, DB, DC);
+        q_popup.Data.Buttons[0].SelectButton();
         q_popup.HideOnAnyButton = true;
         q_popup.HideOnClickOverlay = false;
         q_popup.HideOnBackButton = false;
