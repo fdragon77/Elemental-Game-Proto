@@ -6,11 +6,14 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 7f;
-    float regSpeed = 7f;
-    float boost = 30f;
+    [SerializeField] float moveSpeed;
+    float regSpeed;
+    float boost = 40f;
     Vector3 forward, right;
-    float timer =2.5f;
+    public float timer = .5f;
+    float holdtimer;
+    public float dashTimer = .25f;
+    float dashtimerhold;
     bool dash = false;
     GameController GAME;
     float dash_stick_sens = 0.3f;
@@ -18,6 +21,9 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        holdtimer = timer;
+        dashtimerhold = dashTimer;
+        regSpeed = moveSpeed;
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
@@ -28,15 +34,21 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if (timer <=0 && dash)
+        dashTimer -= Time.deltaTime;
+        if (dashTimer <= 0 && dash)
         {
             moveSpeed = regSpeed;
+
+        }
+        if (timer <= 0)
+        {
             dash = false;
         }
         //dash with the rjoystick
-        if((Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens) || (Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens))
+        if (((Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens) || (Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens)) && !dash)
         {
-            timer = .25f;
+            timer = holdtimer;
+            dashTimer = dashtimerhold;
             dash = true;
             moveSpeed = boost;
 
@@ -54,11 +66,12 @@ public class CharacterController : MonoBehaviour
         }
         //if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
         //move with ljoystick or arrows
-        if((Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) || ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)))
+        if ((Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) || ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)))
         {
-            if(Input.GetButtonDown("Dash"))
+            if (Input.GetButtonDown("Dash") && !dash)
             {
-                timer = .25f;
+                timer = holdtimer;
+                dashTimer = dashtimerhold;
                 dash = true;
                 moveSpeed = boost;
             }
@@ -75,7 +88,7 @@ public class CharacterController : MonoBehaviour
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
-    { 
+    {
         //direction isn't used for anything? Somebody should refactor all this eventually
         //Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal") * GameController.gamespeed;
