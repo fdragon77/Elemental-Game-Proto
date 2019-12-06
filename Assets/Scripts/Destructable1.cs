@@ -53,6 +53,7 @@ public class Destructable1 : MonoBehaviour
                     {
                         
                         health -= AM.FireballDMG;
+                        Debug.Log("Damage" + AM.FireballDMG.ToString());
                         Debug.Log(health);
                         if (health <= 0)
                         {

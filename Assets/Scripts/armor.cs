@@ -28,7 +28,7 @@ public class armor : MonoBehaviour
         {
             health--;
 
-            Debug.Log(watchHealth.health);
+            //Debug.Log(watchHealth.health);
 
         }
         if (watchHealth.health >0)
@@ -56,7 +56,7 @@ public class armor : MonoBehaviour
         
         foreach (Sprite s in armorSprites)
         {
-            Debug.Log(s.name);
+           // Debug.Log(s.name);
             
         }
     
