@@ -44,11 +44,17 @@ public class BlazeUp : MonoBehaviour
                 {
                     enemy.GetComponent<ChaserEnemy>().TargetAcquire();
                 }
+                else if (enemy.GetComponent<NavFollow>() != null)
+                {
+                    enemy.GetComponent<NavFollow>().TargetAcquire();
+                }
                 else if (enemy.GetComponent<RockGolem>() != null)
                 {
                     enemy.GetComponent<RockGolem>().TargetAcquire();
                 }
             }
+            armor temp = GameObject.Find("manabar border").GetComponent<armor>(); 
+            temp.TargetAcquire();
             lup = nextStage.GetComponent<LevelingUp>();
             lup.popup();
         }

@@ -16,6 +16,13 @@ public class NavFollow : MonoBehaviour
         thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    public void TargetAcquire()
+    {
+        thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        // Debug.Log("Target Acquired");
+        // Debug.Log(player);
+    }
+
     // Update is called once per frame
     void Update()
     {

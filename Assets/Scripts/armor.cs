@@ -19,6 +19,12 @@ public class armor : MonoBehaviour
         LoadAllSprites();
 
     }
+    public void TargetAcquire()
+    {
+        watchHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
+       // Debug.Log("Target Acquired");
+       // Debug.Log(player);
+    }
 
     void Update()
     {
