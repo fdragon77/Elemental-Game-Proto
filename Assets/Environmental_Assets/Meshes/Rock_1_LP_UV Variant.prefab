@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 89157314926949071}
   - component: {fileID: 89157314926949070}
   - component: {fileID: 8633582676352945393}
+  - component: {fileID: 2555616997944948028}
   m_Layer: 0
   m_Name: Rock_1_LP:Group29484
   m_TagString: Untagged
@@ -93,6 +94,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 8487321644084423498, guid: 3043863c05f73574e9ab116cb7bdcc06, type: 3}
+--- !u!208 &2555616997944948028
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89157314926949068}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.2660003, y: 6.2070003, z: 5.135}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.574, y: 3.1030002, z: 0.882}
+  m_TimeToStationary: 0.5
 --- !u!1 &89157316409922908
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 89157316409922909}
+  - component: {fileID: 4210575717688608005}
   m_Layer: 0
   m_Name: Rock_1_LP_UV Variant
   m_TagString: Untagged
@@ -124,3 +142,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 78.603004}
+--- !u!208 &4210575717688608005
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89157316409922908}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7852823753657627377}
   - component: {fileID: 2990497182095771834}
   - component: {fileID: 2990497182095771835}
+  - component: {fileID: 4924015216459535631}
   m_Layer: 0
   m_Name: Cactus001
   m_TagString: Untagged
@@ -73,6 +74,22 @@ MonoBehaviour:
   explodeObj: {fileID: 4679564098210059769, guid: 96a29be6fe460e24ab755e3853e218b3,
     type: 3}
   HealFlame: {fileID: 1573311581522569231}
+--- !u!208 &4924015216459535631
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530655149744308450}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 2.125, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.22, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7670791274581844488
 GameObject:
   m_ObjectHideFlags: 0
