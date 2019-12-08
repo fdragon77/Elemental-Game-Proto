@@ -41,7 +41,7 @@ public class SceneScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.J))
         {
-            SceneManager.LoadScene("Rework-mine");
+            SceneManager.LoadScene("backupmine");
         }
 
     }
