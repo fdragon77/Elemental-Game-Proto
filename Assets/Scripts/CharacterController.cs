@@ -95,7 +95,7 @@ public class CharacterController : MonoBehaviour
             Move();
         }
 
-        ratio = dashTimer / dashtimerhold;
+        ratio = timer / holdtimer;
         DashCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
 
 
