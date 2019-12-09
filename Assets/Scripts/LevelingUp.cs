@@ -248,10 +248,6 @@ public class LevelingUp : MonoBehaviour
         }
         q_popup.Data.SetButtonsCallbacks(fireballPopup, fireWallPopup, fireBreathPopup, AoEPopup, DashPopup);
         q_popup.Data.Buttons[0].SelectButton();
-        q_popup.Data.Buttons[1].gameObject.SetActive(false);
-        q_popup.Data.Buttons[2].gameObject.SetActive(false);
-        q_popup.Data.Buttons[3].gameObject.SetActive(false);
-        q_popup.Data.Buttons[4].gameObject.SetActive(false);
         q_popup.HideOnAnyButton = true;
         q_popup.HideOnClickOverlay = true;
         q_popup.HideOnBackButton = true;
