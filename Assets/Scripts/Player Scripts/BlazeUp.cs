@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class BlazeUp : MonoBehaviour
 {
+    //a reference to give the player the ability to upgrade an ability upon transformation.
     LevelingUp lup;
+    //reference to new prefab
     public GameObject nextStage;
+    //visual effect reference
     public GameObject effect;
+    //reference to identify the player
     GameObject currentPlayer;
     //public Transform oldTarget;
     public CameraFollow cameraTargeter;
 
-    private bool timing = false;
-    public float waitTime = 1f;
-    private float starttime;
     // Start is called before the first frame update
     void Start()
     {
+        //sets the player reference
         currentPlayer = GameObject.FindGameObjectWithTag("Player");
  
     }
     private void OnTriggerEnter(Collider collision)
     {
         
-
+        //on player collision, deactivate current player and instantiate the next player, then reset anything with a reference to the old player to the new instance.
         if ((collision.gameObject.tag == "Player"))
         {
             Vector3 loc = currentPlayer.transform.position;
