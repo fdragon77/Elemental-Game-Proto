@@ -72,6 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6530947637591524305}
   - component: {fileID: 6530947637591524318}
+  - component: {fileID: 1895826090789548063}
   - component: {fileID: 6530947637591524304}
   - component: {fileID: 6530947637591524307}
   - component: {fileID: 6530947637591524306}
@@ -104,7 +105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6530947637591524319}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 547f2a046a6f92b429fd97604b70e1ab, type: 3}
   m_Name: 
@@ -115,6 +116,27 @@ MonoBehaviour:
   attackRange: 20
   projAdj: 10
   projectile: {fileID: 8357107000235186375, guid: c0cf37bb64fa6224587559a9e832b4dd,
+    type: 3}
+--- !u!114 &1895826090789548063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530947637591524319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1c85225af88314d944bd6d74b0f796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 3
+  MaxDist: 40
+  MinDist: 10
+  attackRange: 20
+  projAdj: 10
+  projectile: {fileID: 8357107000235186375, guid: c0cf37bb64fa6224587559a9e832b4dd,
+    type: 3}
+  bossAttack: {fileID: 8357107000235186375, guid: e47955b604ec15e49989a55e0c2d9a01,
     type: 3}
 --- !u!64 &6530947637591524304
 MeshCollider:
