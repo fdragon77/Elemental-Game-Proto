@@ -6,15 +6,19 @@ using UnityEngine.Events;
 
 public class LevelingUp : MonoBehaviour
 {
+    //Used for basic types of upgrades.
     public enum upgrade { a, b, c };
+    //Used for what level/upgrades are used. 
     public enum level { basic, a, b, c };
 
+    //Set the default level for all abilities.
     level ballLevel = level.basic;
     level wallLevel = level.basic;
     level breathLevel = level.basic;
     level AoELevel = level.basic;
     level DashLevel = level.basic;
 
+    //All the stuff used for upgrading abilities for editor.
     [Header("Fire ball upgrades")]
     [SerializeField] float ballaDamage = 2;
     [SerializeField] float ballaSpeed = 60f;
@@ -33,6 +37,7 @@ public class LevelingUp : MonoBehaviour
     [SerializeField] GameObject AoEb;
     [SerializeField] GameObject AoEc;
 
+    //References to the players abilities scripts. 
     private AbilityManager Abilitys;
     private Fireball ball;
     private Flamethrower breath;
@@ -74,6 +79,7 @@ public class LevelingUp : MonoBehaviour
 
     private void Start()
     {
+        //Get references to player abilites. 
         Abilitys = gameObject.GetComponent<AbilityManager>();
         ball = gameObject.GetComponent<Fireball>();
         wall = gameObject.GetComponent<firewall>();
@@ -120,16 +126,19 @@ public class LevelingUp : MonoBehaviour
         {
             switch (u)
             {
+                //Basic upgrade to fireball.
                 case upgrade.a:
                     ball.fireballSpeed = ballaSpeed;
                     Abilitys.FireballDMG = ballaDamage;
                     ballLevel = level.a;
                     break;
+                //Upgrade to multishot.
                 case upgrade.b:
                     ball.Multishot = true;
                     Debug.Log("upgraded fireball multishot");
                     ballLevel = level.b;
                     break;
+                //Upgrade to explosion shot. 
                 case upgrade.c:
                     ball.projectile = ballc;
                     ballLevel = level.c;
@@ -138,7 +147,7 @@ public class LevelingUp : MonoBehaviour
         }
         else
         {
-            popup();
+            //popup();
         }
     }
 
@@ -164,7 +173,7 @@ public class LevelingUp : MonoBehaviour
         }
         else
         {
-            popup();
+            //popup();
         }
     }
 
@@ -187,7 +196,7 @@ public class LevelingUp : MonoBehaviour
         }
         else
         {
-            popup();
+            //popup();
         }
     }
 
@@ -210,7 +219,7 @@ public class LevelingUp : MonoBehaviour
         }
         else
         {
-            popup();
+            //popup();
         }
     }
 
@@ -233,7 +242,7 @@ public class LevelingUp : MonoBehaviour
         }
         else
         {
-            popup();
+            //popup();
         }
     }
 
@@ -364,7 +373,7 @@ public class LevelingUp : MonoBehaviour
     //For unity events below here. 
     public void nothing()
     {
-
+        //placeholder for buttons that don't trigger any events. 
     }
 
     public void powerballup()
