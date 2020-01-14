@@ -35,7 +35,7 @@ public class BossAttackBehavior : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == player.gameObject.tag)
         {
