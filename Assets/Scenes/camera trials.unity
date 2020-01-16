@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.062
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 825795894}
-  m_IndirectSpecularColor: {r: 0.011177627, g: 0.013994337, b: 0.019029284, a: 0.062}
+  m_IndirectSpecularColor: {r: 0.011177597, g: 0.013994291, b: 0.01902919, a: 0.062}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -526,8 +526,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155138844}
-  m_LocalRotation: {x: -0.1820321, y: 0.7217807, z: -0.20694906, w: -0.6348772}
-  m_LocalPosition: {x: 894.9661, y: 37.739998, z: 180.20853}
+  m_LocalRotation: {x: -0.21161194, y: 0.7045256, z: -0.23460701, w: -0.6354712}
+  m_LocalPosition: {x: 875.1996, y: 27.740002, z: 177.16174}
   m_LocalScale: {x: 8.030087, y: 8.030092, z: 8.0300865}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1242,8 +1242,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236694506}
-  m_LocalRotation: {x: -0.1820321, y: 0.7217807, z: -0.20694906, w: -0.6348772}
-  m_LocalPosition: {x: 894.9661, y: 37.739998, z: 180.20853}
+  m_LocalRotation: {x: -0.21161194, y: 0.7045256, z: -0.23460701, w: -0.6354712}
+  m_LocalPosition: {x: 875.1996, y: 27.74, z: 177.16174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1868045655}
@@ -1269,14 +1269,14 @@ MonoBehaviour:
   m_TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_MinimumDistanceFromTarget: 0.1
+  m_MinimumDistanceFromTarget: 1
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
   m_CameraRadius: 0.1
   m_Strategy: 1
   m_MaximumEffort: 4
-  m_SmoothingTime: 0
+  m_SmoothingTime: 1
   m_Damping: 0
   m_DampingWhenOccluded: 0
   m_OptimalTargetDistance: 0
@@ -7461,7 +7461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 3, y: 30, z: -40}
+  m_FollowOffset: {x: 3, y: 20, z: -20}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
