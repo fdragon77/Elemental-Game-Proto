@@ -31,6 +31,8 @@ public class CharacterController : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full = new Vector3(1, 1, 1);
     float ratio;
+
+    private Plane ground;
     
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,8 @@ public class CharacterController : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
+
+        ground = new Plane(new Vector3(0, 0, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1));
     }
 
     // Update is called once per frame
@@ -103,7 +107,8 @@ public class CharacterController : MonoBehaviour
         }
         if (Input.GetButtonDown("Horizontal") || (Input.GetAxis("Horizontal") != 0))
         {
-            transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+            transform.position += Camera.main.transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+            //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
         }
 
         ratio = timer / holdtimer;
@@ -113,7 +118,7 @@ public class CharacterController : MonoBehaviour
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
     {
-        transform.position += transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         /*
         //direction isn't used for anything? Somebody should refactor all this eventually
         //Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
