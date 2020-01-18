@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour
 {
-    public enum destroyType {normal, explode, burn};
+    public enum destroyType {normal, explode, burn, trigger};
 
     [Header("Health")]
     [SerializeField] float health = 1f;
@@ -156,6 +156,14 @@ public class Destructable : MonoBehaviour
                     renderer.material = burnmat;
                 }
                 
+                break;
+            case destroyType.trigger:
+                puzzleTorch T;
+                if (gameObject.TryGetComponent<puzzleTorch>(out T))
+                {
+                    T.burn();
+                }
+                health = 1;
                 break;
         }
     }

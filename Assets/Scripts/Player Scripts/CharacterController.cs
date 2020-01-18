@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour
     bool dash = false;
     GameController GAME;
     float dash_stick_sens = 0.3f;
+    public float rotateSpeed = 0.01f;
 
     public int health = 100;
     //public Text healthText;
@@ -30,6 +31,8 @@ public class CharacterController : MonoBehaviour
     Vector3 Empty = new Vector3(0, 1, 1);
     Vector3 Full = new Vector3(1, 1, 1);
     float ratio;
+
+    private Plane ground;
     
     // Start is called before the first frame update
     void Start()
@@ -43,6 +46,8 @@ public class CharacterController : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
+
+        ground = new Plane(new Vector3(0, 0, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1));
     }
 
     // Update is called once per frame
@@ -61,17 +66,21 @@ public class CharacterController : MonoBehaviour
         {
             dash = false;
         }
+        
         //dash with the rjoystick
-        if (((Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens) || (Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens)) && !dash)
+        if (Input.GetAxis("Dash") > 0 && !dash)
         {
+            moveSpeed = boost;
+
+            /*
             timer = 0;
             dashTimer = 0;
             dash = true;
             moveSpeed = boost;
 
             //Just took all the code from Move() here, pretty jank
-            Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Dash_H") * GameController.gamespeed;
-            Vector3 upMovement = forward * moveSpeed * Time.deltaTime * -Input.GetAxis("Dash_V") * GameController.gamespeed;
+            Vector3 rightMovement = transform.right * moveSpeed * Time.deltaTime * Input.GetAxis("Dash_H") * GameController.gamespeed * rotateSpeed;
+            Vector3 upMovement = transform.forward * moveSpeed * Time.deltaTime * -Input.GetAxis("Dash_V") * GameController.gamespeed;
 
             Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
@@ -80,10 +89,12 @@ public class CharacterController : MonoBehaviour
             transform.position += upMovement;
 
             return;
+            */
+            Move();
         }
         //if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
         //move with ljoystick or arrows
-        if ((Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) || ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)))
+        if (Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0)
         {
             if (Input.GetButtonDown("Dash") && !dash)
             {
@@ -94,25 +105,35 @@ public class CharacterController : MonoBehaviour
             }
             Move();
         }
+        if (Input.GetButtonDown("Horizontal") || (Input.GetAxis("Horizontal") != 0))
+        {
+            transform.position += Camera.main.transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+            //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+        }
 
         ratio = timer / holdtimer;
         DashCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
-
-
+        
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
     {
+        transform.rotation = Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal")));
+        //transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+        /*
         //direction isn't used for anything? Somebody should refactor all this eventually
         //Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal") * GameController.gamespeed;
-        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical") * GameController.gamespeed;
+        Vector3 rightMovement = transform.right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal") * GameController.gamespeed * rotateSpeed;
+        Vector3 upMovement = transform.forward * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical") * GameController.gamespeed;
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
         transform.forward = heading;
         transform.position += rightMovement;
         transform.position += upMovement;
+        */
     }
     void LoadAllSprites()
     {
