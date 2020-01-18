@@ -68,7 +68,7 @@ public class CharacterController : MonoBehaviour
         }
         
         //dash with the rjoystick
-        if (((Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens) || (Input.GetAxis("Dash_H") > dash_stick_sens) || (Input.GetAxis("Dash_H") < -dash_stick_sens)) && !dash)
+        if (Input.GetAxis("Dash") > 0 && !dash)
         {
             moveSpeed = boost;
 
@@ -118,7 +118,10 @@ public class CharacterController : MonoBehaviour
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
     {
-        transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal")));
+        //transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
         /*
         //direction isn't used for anything? Somebody should refactor all this eventually
         //Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
