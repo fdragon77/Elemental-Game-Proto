@@ -39,6 +39,7 @@ public class BossAttackBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == player.gameObject.tag)
         {
+            
             Boom();
         }
     }
