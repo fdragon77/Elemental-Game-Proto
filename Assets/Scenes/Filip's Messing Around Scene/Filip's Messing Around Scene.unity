@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 6398797171498876025, guid: 323193daab11dab459d2f428f1e8b8e2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.064058155
+      value: -0.064058185
       objectReference: {fileID: 0}
     - target: {fileID: 6398797171498876025, guid: 323193daab11dab459d2f428f1e8b8e2,
         type: 3}
@@ -145,12 +145,12 @@ PrefabInstance:
     - target: {fileID: 6398797171498876025, guid: 323193daab11dab459d2f428f1e8b8e2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4821543
+      value: -0.48215437
       objectReference: {fileID: 0}
     - target: {fileID: 6398797171498876025, guid: 323193daab11dab459d2f428f1e8b8e2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5775143
+      value: -0.5775142
       objectReference: {fileID: 0}
     - target: {fileID: 6398797171498876025, guid: 323193daab11dab459d2f428f1e8b8e2,
         type: 3}
@@ -12533,6 +12533,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7883826010311985268, guid: e3e80125841b16b40950f80f67c68b61,
+        type: 3}
+      propertyPath: m_TagString
+      value: Reticle
+      objectReference: {fileID: 0}
     - target: {fileID: 5457604320339087671, guid: e3e80125841b16b40950f80f67c68b61,
         type: 3}
       propertyPath: m_Enabled
@@ -12688,7 +12693,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312163109}
-  m_LocalRotation: {x: -0.23229057, y: 0.7168013, z: -0.2798929, w: -0.5948924}
+  m_LocalRotation: {x: -0.23229055, y: 0.71680135, z: -0.27989292, w: -0.5948923}
   m_LocalPosition: {x: 31.8, y: 20.45, z: 14.799999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13020,6 +13025,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fd71a300675e94d9209888d8ab53d3, type: 3}
+--- !u!114 &1420718245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 128205181301377818, guid: e3e80125841b16b40950f80f67c68b61,
+    type: 3}
+  m_PrefabInstance: {fileID: 1288279058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561d905729a87224a97e4e8cb8e082e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1425184393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16187,6 +16204,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6985969154474090712, guid: 7d2e05ecfb2005e4e9fb90c4e787f25b,
+        type: 3}
+      propertyPath: reticleRef
+      value: 
+      objectReference: {fileID: 1420718245}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d2e05ecfb2005e4e9fb90c4e787f25b, type: 3}
 --- !u!1 &2068157072

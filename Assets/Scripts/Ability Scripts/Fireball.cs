@@ -7,10 +7,10 @@ using UnityEngine.Audio;
 public class Fireball : MonoBehaviour
 {
     //sound
-  //public AudioClip fireballsnd;
+    //public AudioClip fireballsnd;
     //public AudioSource Playersnd;
 
-
+    [SerializeField] TargetLock reticleRef;
     public RawImage fireballCooldown;
     public GameObject projectile;
     float timer = 0;
@@ -35,6 +35,7 @@ public class Fireball : MonoBehaviour
         fireballCooldown = GameObject.Find("FireballFill").GetComponent<RawImage>();
         color = fireballCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
+        reticleRef = GameObject.FindGameObjectWithTag("Reticle").GetComponent<TargetLock>();
     }
     /// <summary>
     /// this triggers the fireball.
@@ -75,17 +76,29 @@ public class Fireball : MonoBehaviour
 
         GameObject fireballHandler;
         Vector3 fireDirection;
-
-        fireDirection = transform.forward;
+        
+        
         Vector3 center = transform.position;
         center.y += 4;
 
         fireballHandler = Instantiate(projectile, center, projectile.transform.rotation) as GameObject;
+
+        if (reticleRef.IsLocked())
+        {
+            fireDirection = reticleRef.CurrentTarget().transform.position;
+            fireDirection = (fireDirection - center);
+            fireDirection.Normalize();
+        }
+        else
+        {
+            fireDirection = transform.forward;
+        }
         if (deviate)
         {
             fireDirection.x+= Random.Range(-.1f, .1f);
             fireDirection.z += Random.Range(-.1f, .1f);
         }
+        
         float fireballHeight = .15f;
         fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
         

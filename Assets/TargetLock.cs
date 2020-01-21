@@ -22,7 +22,14 @@ public class TargetLock : MonoBehaviour
         lockedEnemy = 0;
 
     }
-
+    public bool IsLocked()
+    {
+        return lockedOn;
+    }
+    public GameObject CurrentTarget()
+    {
+        return lockedEnemyOb;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -62,6 +69,22 @@ public class TargetLock : MonoBehaviour
             if (lockedEnemy == 0)
             {
                 //If End Of List Has Been Reached, Start Over
+                /*if(targetableEnemies[targetableEnemies.Count-1] == null)
+                {
+                    bool valid = false;
+                    while (!valid)
+                    {
+                        if (targetableEnemies[targetableEnemies.Count - 1] == null)
+                        {
+                            targetableEnemies.Remove(targetableEnemies.Count - 1);
+                        }
+                        else
+                        {
+                            valid = true;
+                        }
+                    }
+                    
+                }*/
                 lockedEnemy = targetableEnemies.Count - 1;
                 lockedEnemyOb = targetableEnemies[lockedEnemy];
             }

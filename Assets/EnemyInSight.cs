@@ -14,6 +14,13 @@ public class EnemyInSight : MonoBehaviour
 
     }
 
+    public void RemoveThyself()
+    {
+        if (beenAdded)
+        {
+            TargetLock.targetableEnemies.Remove(gameObject);
+        }
+    }
     // Update is called once per frame
     void Update()
     {

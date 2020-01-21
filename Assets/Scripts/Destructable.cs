@@ -127,9 +127,11 @@ public class Destructable : MonoBehaviour
         switch (DestructionType)
         {
             case destroyType.normal:
+                enemyCheck();
                 Destroy(gameObject);
                 break;
             case destroyType.explode:
+                enemyCheck();
                 Vector3 pos = transform.position;
                 Tourge= Instantiate(explodeObj, pos, transform.rotation);
                 Rigidbody[] theBodies = Tourge.GetComponentsInChildren<Rigidbody>();
@@ -144,8 +146,9 @@ public class Destructable : MonoBehaviour
 
                 Destroy(gameObject);
                 break;
-            case destroyType.burn:             
-                if(HealFlame != null)
+            case destroyType.burn:
+                enemyCheck();
+                if (HealFlame != null)
                 {
                     HealFlame.SetActive(true);
                 }
@@ -165,6 +168,14 @@ public class Destructable : MonoBehaviour
                 }
                 health = 1;
                 break;
+        }
+    }
+
+    private void enemyCheck()
+    {
+        if(gameObject.GetComponent<EnemyInSight>() != null)
+        {
+            gameObject.GetComponent<EnemyInSight>().RemoveThyself();
         }
     }
 
