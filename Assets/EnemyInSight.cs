@@ -10,14 +10,15 @@ public class EnemyInSight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        theCamera = GameObject.FindObjectWithTag("MainCamera");
+        //theCamera = GameObject.FindObjectWithTag("MainCamera");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 EnemyPos = theCamera.WorldToViewportPoint(gameobject.transform.position);
+        /*
+        Vector3 EnemyPos = theCamera.WorldToViewportPoint(gameObject.transform.position);
 
         if (EnemyPos.z > 0 && EnemyPos.x > 0 && EnemyPos.z < 1 && EnemyPos.x < 1)
         {
@@ -29,6 +30,6 @@ public class EnemyInSight : MonoBehaviour
         {
             beenAdded = true;
             //add to list TargetLock.nearbyEnemies.add(gameobject);
-        }
+        }*/
     }
 }

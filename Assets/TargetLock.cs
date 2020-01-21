@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class TargetLock : MonoBehaviour
 {
-    [] Camera PlayerCam;
-    Gameobject lockedEnemyOb;
-    Image crosshair;
+    [SerializeField] Camera PlayerCam;
+    GameObject lockedEnemyOb;
+    //Image crosshair;
 
     bool lockedOn;
 
     int lockedEnemyList;
 
-    public static list<Gameobject> targetableEnemies = new list<Gameobject>();
+    public static List<GameObject> targetableEnemies = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        PlayerCam = GameObject.FindObjectWithTag("MainCamera");
+        //PlayerCam = GameObject.FindObjectWithTag("MainCamera");
 
     }
 
