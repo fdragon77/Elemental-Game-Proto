@@ -20,6 +20,7 @@ public class TargetLock : MonoBehaviour
         PlayerCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         lockedOn = false;
         lockedEnemy = 0;
+        crosshair.enabled = false;
 
     }
     public bool IsLocked()

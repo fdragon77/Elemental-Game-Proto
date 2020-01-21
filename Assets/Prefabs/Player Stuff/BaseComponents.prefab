@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 128205181301377818}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Reticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,6 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561d905729a87224a97e4e8cb8e082e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 0}
+  crosshair: {fileID: 5457604320339087671}
 --- !u!1 &8207018861491780336
 GameObject:
   m_ObjectHideFlags: 0
