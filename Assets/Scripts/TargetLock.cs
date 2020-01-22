@@ -37,7 +37,7 @@ public class TargetLock : MonoBehaviour
         {
             lockedOn = false;
             crosshair.enabled = false;
-            //lockedEnemy = 0;
+            lockedEnemy = 0;
         }
         targetableEnemies.Remove(tbr);
         

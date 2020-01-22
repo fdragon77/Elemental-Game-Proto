@@ -7,10 +7,12 @@ public class EnemyInSight : MonoBehaviour
     Camera theCamera;
     bool beenAdded = false;
     bool visible = true;
+    [SerializeField] TargetLock reticle;
     // Start is called before the first frame update
     void Start()
     {
         theCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        reticle = GameObject.FindGameObjectWithTag("Reticle").GetComponent<TargetLock>();
 
     }
 
@@ -18,7 +20,8 @@ public class EnemyInSight : MonoBehaviour
     {
         if (beenAdded)
         {
-            TargetLock.targetableEnemies.Remove(gameObject);
+            beenAdded = false;
+            reticle.RemoveLock(gameObject);
         }
     }
     // Update is called once per frame
@@ -44,9 +47,8 @@ public class EnemyInSight : MonoBehaviour
         }
         else if (!gameObject.GetComponentInChildren<Renderer>().isVisible && beenAdded)
         {
-            beenAdded = false;
-
-            TargetLock.targetableEnemies.Remove(gameObject);
+            
+            RemoveThyself();
         }
     }
 }
