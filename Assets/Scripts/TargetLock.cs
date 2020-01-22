@@ -31,6 +31,18 @@ public class TargetLock : MonoBehaviour
     {
         return lockedEnemyOb;
     }
+    public void RemoveLock(GameObject tbr)
+    {
+        if (lockedOn && tbr == targetableEnemies[lockedEnemy])
+        {
+            lockedOn = false;
+            crosshair.enabled = false;
+            //lockedEnemy = 0;
+        }
+        targetableEnemies.Remove(tbr);
+        
+
+    }
     // Update is called once per frame
     void Update()
     {

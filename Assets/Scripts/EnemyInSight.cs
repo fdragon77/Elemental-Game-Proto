@@ -42,5 +42,11 @@ public class EnemyInSight : MonoBehaviour
            
             TargetLock.targetableEnemies.Add(gameObject);
         }
+        else if (!gameObject.GetComponentInChildren<Renderer>().isVisible && beenAdded)
+        {
+            beenAdded = false;
+
+            TargetLock.targetableEnemies.Remove(gameObject);
+        }
     }
 }
