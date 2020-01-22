@@ -10,6 +10,7 @@ public class EnemyInSight : MonoBehaviour
     [SerializeField] TargetLock reticle;
     Vector3 distance = new Vector3();
     GameObject thePlayer;
+    int range = 150;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,13 +47,13 @@ public class EnemyInSight : MonoBehaviour
             */
         distance = thePlayer.transform.position - gameObject.transform.position;
         Debug.Log(gameObject.GetComponentInChildren<Renderer>().isVisible);
-        if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded && distance.x < 150 && distance.z < 150)
+        if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded && distance.x < range && distance.z < range)
         {
             beenAdded = true;
            
             TargetLock.targetableEnemies.Add(gameObject);
         }
-        else if ((!gameObject.GetComponentInChildren<Renderer>().isVisible || distance.x > 150 || distance.z > 150) && beenAdded)
+        else if ((!gameObject.GetComponentInChildren<Renderer>().isVisible || distance.x > range || distance.z > range) && beenAdded)
         {
             
             RemoveThyself();
