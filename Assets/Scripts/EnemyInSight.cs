@@ -8,14 +8,20 @@ public class EnemyInSight : MonoBehaviour
     bool beenAdded = false;
     bool visible = true;
     [SerializeField] TargetLock reticle;
+    Vector3 distance = new Vector3();
+    GameObject thePlayer;
     // Start is called before the first frame update
     void Start()
     {
         theCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         reticle = GameObject.FindGameObjectWithTag("Reticle").GetComponent<TargetLock>();
+        thePlayer = GameObject.FindGameObjectWithTag("Player");
 
     }
-
+    public void FindPlayer()
+    {
+        thePlayer = GameObject.FindGameObjectWithTag("Player");
+    }
     public void RemoveThyself()
     {
         if (beenAdded)
@@ -38,14 +44,15 @@ public class EnemyInSight : MonoBehaviour
         else
             visible = false;
             */
+        distance = thePlayer.transform.position - gameObject.transform.position;
         Debug.Log(gameObject.GetComponentInChildren<Renderer>().isVisible);
-        if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded)
+        if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded && distance.x < 150 && distance.z < 150)
         {
             beenAdded = true;
            
             TargetLock.targetableEnemies.Add(gameObject);
         }
-        else if (!gameObject.GetComponentInChildren<Renderer>().isVisible && beenAdded)
+        else if ((!gameObject.GetComponentInChildren<Renderer>().isVisible || distance.x > 150 || distance.z > 150) && beenAdded)
         {
             
             RemoveThyself();
