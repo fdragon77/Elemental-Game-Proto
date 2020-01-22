@@ -34,10 +34,12 @@ public class Conversable : MonoBehaviour
     /// </summary>
     public void Update()
     {
+        /*
         //For testing press C to get a default popup.
         if (Input.GetKeyDown(KeyCode.C) && GameController.gamespeed > 0)
         {
             Converse();
         }
+        */
     }
 }

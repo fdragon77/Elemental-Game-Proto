@@ -24,7 +24,7 @@ public class EnemyInSight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         /*Vector3 EnemyPos = theCamera.WorldToViewportPoint(gameObject.transform.position);
 
         if (EnemyPos.z > 0 && EnemyPos.x > 0 && EnemyPos.z < 1 && EnemyPos.x < 1)
@@ -35,7 +35,8 @@ public class EnemyInSight : MonoBehaviour
         else
             visible = false;
             */
-        if(visible && !beenAdded)
+        Debug.Log(gameObject.GetComponentInChildren<Renderer>().isVisible);
+        if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded)
         {
             beenAdded = true;
            
