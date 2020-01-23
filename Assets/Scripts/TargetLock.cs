@@ -13,6 +13,9 @@ public class TargetLock : MonoBehaviour
     bool beenLocked;
     int lockedEnemy;
 
+    [SerializeField] GameObject camera1;
+    [SerializeField] GameObject camera2;
+
     public static List<GameObject> targetableEnemies = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -50,6 +53,8 @@ public class TargetLock : MonoBehaviour
         if (Input.GetButtonDown("LockOn") && !lockedOn)
         {
             Debug.Log("LockOn");
+            camera1.SetActive(false);
+            camera2.SetActive(true);
             if (targetableEnemies.Count >= 1)
             {
                 lockedOn = true;
@@ -65,6 +70,8 @@ public class TargetLock : MonoBehaviour
         }
         else if (Input.GetButtonDown("LockOn") && lockedOn)
         {
+            camera1.SetActive(true);
+            camera2.SetActive(false);
             lockedOn = false;
             crosshair.enabled = false;
             //lockedEnemy = 0;
