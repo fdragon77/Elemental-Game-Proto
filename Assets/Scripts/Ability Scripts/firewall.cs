@@ -66,7 +66,7 @@ public class firewall : MonoBehaviour
             firewallHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * firewallSpeed, fireDirection.y * Height, fireDirection.z * firewallSpeed);
             timer = 0;
             active = true;
-            theManager.currentMana -= theManager.FirewallMana;
+            //theManager.currentMana -= theManager.FirewallMana;
         }
     }
     // Update is called once per frame

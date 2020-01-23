@@ -51,7 +51,7 @@ public class Fireball : MonoBehaviour
             fire(false);
             timer = 0;
             active = true;
-            theManager.currentMana -= theManager.FireballMana;
+            //theManager.currentMana -= theManager.FireballMana;
         }
 
     }
