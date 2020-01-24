@@ -118,7 +118,8 @@ public class CharacterController : MonoBehaviour
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
     {
-        transform.rotation = Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal")));
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal"))), 0.1f);
+        //transform.rotation = Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal")));
         //transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
