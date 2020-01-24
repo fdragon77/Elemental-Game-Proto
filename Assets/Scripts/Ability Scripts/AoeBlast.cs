@@ -38,7 +38,7 @@ public class AoeBlast : MonoBehaviour
             Blast = Instantiate(AoeObject, transform.position, AoeObject.transform.rotation) as GameObject;
             //aoeRing.SetActive(true);
             active = true;
-            theManager.currentMana -= theManager.AoeMana;
+            //theManager.currentMana -= theManager.AoeMana;
             //AoeCooldown.rectTransform.localScale = Empty;
         }
     }

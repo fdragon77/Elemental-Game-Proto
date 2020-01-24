@@ -33,7 +33,7 @@ public class Flamethrower : MonoBehaviour
             flamethrower.SetActive(true);
             active = true;
             FlamethrowerCooldown.rectTransform.localScale = Empty;
-            theManager.currentMana -= theManager.FlamethrowMana;
+            //theManager.currentMana -= theManager.FlamethrowMana;
         }
         
     }

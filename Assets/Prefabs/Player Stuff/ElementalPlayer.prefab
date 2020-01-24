@@ -1001,6 +1001,7 @@ MonoBehaviour:
   boost: 75
   timer: 1
   dashTimer: 0.25
+  rotateSpeed: 0.01
   health: 100
   armor1: {fileID: 0}
   DashCooldown: {fileID: 0}
@@ -1031,6 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854c621ac4c891a44854e799e3435bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reticleRef: {fileID: 0}
   fireballCooldown: {fileID: 0}
   projectile: {fileID: 4278555317394053800, guid: ce50623e0d44e704da24853f6254ee50,
     type: 3}
@@ -1103,7 +1105,7 @@ MonoBehaviour:
   firewallCooldown: {fileID: 0}
   projectile: {fileID: 3363087655363660389, guid: a221cfc7514a6184faa7ef6c60862f6f,
     type: 3}
-  cooldown: 1
+  cooldown: 2
 --- !u!114 &5365121245407018103
 MonoBehaviour:
   m_ObjectHideFlags: 0
