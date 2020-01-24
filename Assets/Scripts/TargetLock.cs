@@ -38,6 +38,8 @@ public class TargetLock : MonoBehaviour
     {
         if (lockedOn && tbr == targetableEnemies[lockedEnemy])
         {
+            camera1.SetActive(true);
+            camera2.SetActive(false);
             lockedOn = false;
             crosshair.enabled = false;
             lockedEnemy = 0;
@@ -80,6 +82,8 @@ public class TargetLock : MonoBehaviour
 
         if (lockedOn && lockedEnemyOb == null)
         {
+            camera1.SetActive(true);
+            camera2.SetActive(false);
             lockedOn = false;
             crosshair.enabled = false;
             targetableEnemies.Remove(lockedEnemyOb);
