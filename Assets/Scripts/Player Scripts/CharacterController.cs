@@ -33,7 +33,9 @@ public class CharacterController : MonoBehaviour
     float ratio;
 
     private Plane ground;
-    
+
+    private GameObject DamageDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class CharacterController : MonoBehaviour
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
 
         ground = new Plane(new Vector3(0, 0, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1));
+
+        DamageDisplay = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DamageCounter;
     }
 
     // Update is called once per frame
@@ -151,9 +155,17 @@ public class CharacterController : MonoBehaviour
         if(collision.gameObject.tag == "EnemyAttack")
         {
             health -= 5;
+            displayDamage("5");
             Debug.Log("Ouch");
             //armor1 = armorSprites[100 - health];
             //this.gameObject.GetComponent<Image>().sprite = (armor1);
         }
+    }
+
+    void displayDamage(string damage)
+    {
+        GameObject disp = Instantiate(DamageDisplay, transform.position + new Vector3(0, 5, 0), transform.rotation);
+        disp.GetComponent<movingEnviroment>().Goal = disp.transform.up * 100;
+        //disp.GetComponent<TextMesh>().text = damage;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movingEnviroment : MonoBehaviour
 {
-    [SerializeField] Vector3 Goal;
+    [SerializeField] public Vector3 Goal;
     [SerializeField] Vector3 ResetZone;
     [SerializeField] float speed = 3;
     [SerializeField] float tollerance = 0.1f;

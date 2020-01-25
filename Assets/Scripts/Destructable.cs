@@ -30,10 +30,12 @@ public class Destructable : MonoBehaviour
     [SerializeField] GameObject HealFlame = null;
 
     private AbilityManager AM;
+    private GameObject DamageDisplay;
 
     private void Start()
     {
         AM = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<AbilityManager>();
+        DamageDisplay = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DamageCounter;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -53,6 +55,7 @@ public class Destructable : MonoBehaviour
                     {
                         
                         health -= AM.FireballDMG;
+                        displayDamage(AM.FireballDMG.ToString());
                         Debug.Log("Damage" + AM.FireballDMG.ToString());
                         Debug.Log(health);
                         if (health <= 0)
@@ -71,6 +74,7 @@ public class Destructable : MonoBehaviour
                     if (FirebreathsDestroy)
                     {
                         health -= AM.FlamethrowDMG;
+                        displayDamage(AM.FlamethrowDMG.ToString());
                         if (health <= 0)
                         {
                             destruct();
@@ -86,6 +90,7 @@ public class Destructable : MonoBehaviour
                     if (FirebreathsDestroy)
                     {
                         health -= AM.FirewallDMG;
+                        displayDamage(AM.FirewallDMG.ToString());
                         if (health <= 0)
                         {
                             destruct();
@@ -102,6 +107,7 @@ public class Destructable : MonoBehaviour
                     if (AOEDestroy)
                     {
                         health -= AM.AoeDMG;
+                        displayDamage(AM.AoeDMG.ToString());
                         if (health <= 0)
                         {
                             destruct();
@@ -206,5 +212,12 @@ public class Destructable : MonoBehaviour
         {
             canDestroy = true;
         }
+    }
+
+    void displayDamage(string damage)
+    {
+        GameObject disp = Instantiate(DamageDisplay, transform.position + new Vector3(0, 5, 0), transform.rotation);
+        disp.GetComponent<movingEnviroment>().Goal = disp.transform.up * 100;
+        //disp.GetComponent<TextMesh>().text = damage;
     }
 }

@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     UnityAction quitAction;
     //DOES NOTHING.
     UnityAction nullAction;
+
+    [SerializeField] public GameObject DamageCounter;
     // Start is called before the first frame update
     void Awake()
     {
