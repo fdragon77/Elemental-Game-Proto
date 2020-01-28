@@ -21,6 +21,7 @@ public class puzzleTorchGroup : MonoBehaviour
         {
             //Do something here to activate stuff!
             Debug.Log("ITS LIT IN HERE!");
+            Destroy(toActivate);
         }
     }
 }
