@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
+    [SerializeField] public float moveSpeed;
     float regSpeed;
     [SerializeField] float boost = 40f;
     Vector3 forward, right;
@@ -167,5 +167,10 @@ public class CharacterController : MonoBehaviour
         GameObject disp = Instantiate(DamageDisplay, transform.position + new Vector3(0, 5, 0), transform.rotation);
         disp.GetComponent<movingEnviroment>().Goal = disp.transform.up * 100;
         //disp.GetComponent<TextMesh>().text = damage;
+    }
+
+    public bool playerMoving()
+    {
+        return Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0 || Input.GetButtonDown("Horizontal") || (Input.GetAxis("Horizontal") != 0) || Input.GetAxis("Dash") > 0 || dash;
     }
 }

@@ -26,6 +26,8 @@ public class Fireball : MonoBehaviour
 
     Vector4 color;
     Vector4 fadeColor = new Vector4(60, 60, 60, 0);
+
+    CharacterController CC;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class Fireball : MonoBehaviour
         color = fireballCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
         reticleRef = GameObject.FindGameObjectWithTag("Reticle").GetComponent<TargetLock>();
+        CC = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
     }
     /// <summary>
     /// this triggers the fireball.
@@ -100,7 +103,12 @@ public class Fireball : MonoBehaviour
         }
         
         float fireballHeight = .15f;
-        fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed);
+        float spd = fireballSpeed;
+        if (CC.playerMoving())
+        {
+            spd += CC.moveSpeed;
+        }
+        fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * spd, fireDirection.y * fireballHeight, fireDirection.z * spd);
         
     }
     // Update is called once per frame
