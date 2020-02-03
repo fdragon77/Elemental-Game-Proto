@@ -50,7 +50,7 @@ public class EnemyInSight : MonoBehaviour
         if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded && distance.x < range && distance.z < range)
         {
             beenAdded = true;
-           
+            Debug.Log("I am " + gameObject);
             TargetLock.targetableEnemies.Add(gameObject);
         }
         else if ((!gameObject.GetComponentInChildren<Renderer>().isVisible || distance.x > range || distance.z > range) && beenAdded)

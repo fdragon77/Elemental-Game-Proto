@@ -55,18 +55,22 @@ public class TargetLock : MonoBehaviour
         if (Input.GetButtonDown("LockOn") && !lockedOn)
         {
             Debug.Log("LockOn");
+            Debug.Log("There are " + targetableEnemies.Count + " enemies");
             camera1.SetActive(false);
             camera2.SetActive(true);
             if (targetableEnemies.Count >= 1)
             {
                 lockedOn = true;
                 crosshair.enabled = true;
+                Debug.Log("I am locked on to " + lockedEnemyOb);
                 if (!beenLocked || lockedEnemyOb == null)
                 {
                     //Lock On To First Enemy In List By Default
                     lockedEnemy = 0;
                     lockedEnemyOb = targetableEnemies[lockedEnemy];
                     beenLocked = true;
+
+                    Debug.Log("I am locked on to " + lockedEnemyOb);
                 }               
             }           
         }
