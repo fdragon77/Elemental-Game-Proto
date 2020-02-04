@@ -38,10 +38,7 @@ public class TargetLock : MonoBehaviour
     {
         if (lockedOn && tbr == targetableEnemies[lockedEnemy])
         {
-            camera1.SetActive(true);
-            camera2.SetActive(false);
-            lockedOn = false;
-            crosshair.enabled = false;
+            Unlock();
             lockedEnemy = 0;
         }
         targetableEnemies.Remove(tbr);
@@ -56,12 +53,9 @@ public class TargetLock : MonoBehaviour
         {
             Debug.Log("LockOn");
             Debug.Log("There are " + targetableEnemies.Count + " enemies");
-            camera1.SetActive(false);
-            camera2.SetActive(true);
             if (targetableEnemies.Count >= 1)
             {
-                lockedOn = true;
-                crosshair.enabled = true;
+                Lock();
                 Debug.Log("I am locked on to " + lockedEnemyOb);
                 if (!beenLocked || lockedEnemyOb == null)
                 {
@@ -76,20 +70,14 @@ public class TargetLock : MonoBehaviour
         }
         else if (Input.GetButtonDown("LockOn") && lockedOn)
         {
-            camera1.SetActive(true);
-            camera2.SetActive(false);
-            lockedOn = false;
-            crosshair.enabled = false;
+            Unlock();
             //lockedEnemy = 0;
             //lockedEnemyOb = null;
         }
 
         if (lockedOn && lockedEnemyOb == null)
         {
-            camera1.SetActive(true);
-            camera2.SetActive(false);
-            lockedOn = false;
-            crosshair.enabled = false;
+            Unlock();
             targetableEnemies.Remove(lockedEnemyOb);
         }
         if (Input.GetButtonDown("SwitchLeft")&& lockedOn)
@@ -149,7 +137,22 @@ public class TargetLock : MonoBehaviour
             //Rotate Crosshair
             gameObject.transform.Rotate(new Vector3(0, 0, -1));
         }
-        
+    }
 
+    private void Lock()
+    {
+        camera1.SetActive(false);
+        camera2.SetActive(true);
+        lockedOn = true;
+        crosshair.enabled = true;
+        //GameObject.FindGameObjectWithTag("Player").transform.LookAt(lockedEnemyOb.transform);
+    }
+
+    private void Unlock()
+    {
+        camera1.SetActive(true);
+        camera2.SetActive(false);
+        lockedOn = false;
+        crosshair.enabled = false;
     }
 }
