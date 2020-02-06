@@ -10,6 +10,7 @@ public class firewall : MonoBehaviour
     public AudioClip firewallsnd;
     public AudioSource Playersnd;
     [SerializeField] float firewallSpeed = 4f;
+    [SerializeField] float dist = 20f;
 
     public RawImage firewallCooldown;
     public GameObject projectile;
@@ -59,7 +60,7 @@ public class firewall : MonoBehaviour
             Vector3 center = transform.position;
             center.y += 4;
 
-            firewallHandler = Instantiate(projectile, center+gameObject.transform.forward*10, projectile.transform.rotation);
+            firewallHandler = Instantiate(projectile, center+gameObject.transform.forward*dist, projectile.transform.rotation);
 
             float Height = .15f;
             firewallHandler.transform.rotation = transform.rotation;
