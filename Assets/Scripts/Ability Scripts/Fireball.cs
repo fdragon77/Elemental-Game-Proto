@@ -103,13 +103,15 @@ public class Fireball : MonoBehaviour
         }
         
         float fireballHeight = .15f;
-        float spd = fireballSpeed;
+        Vector3 playermovement = transform.forward * fireballSpeed;
         if (CC.playerMoving())
         {
-            spd += CC.moveSpeed;
+            playermovement += CC.moveDirection();
         }
-        fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * spd, fireDirection.y * fireballHeight, fireDirection.z * spd);
-        
+        Debug.Log("Fireball velocity: " + (playermovement).ToString());
+        //fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed) + playermovement;
+        fireballHandler.GetComponent<Rigidbody>().velocity = playermovement;
+
     }
     // Update is called once per frame
     void Update()

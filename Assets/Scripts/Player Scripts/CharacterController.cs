@@ -173,4 +173,18 @@ public class CharacterController : MonoBehaviour
     {
         return Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0 || Input.GetButtonDown("Horizontal") || (Input.GetAxis("Horizontal") != 0) || Input.GetAxis("Dash") > 0 || dash;
     }
+
+    public Vector3 moveDirection()
+    {
+        Vector3 dir = new Vector3(0, 0, 0);
+        if (Input.GetButtonDown("Horizontal") || (Input.GetAxis("Horizontal") != 0))
+        {
+            dir += Camera.main.transform.right * Input.GetAxis("Horizontal") * moveSpeed * .5f;
+        }
+        if (Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0)
+        {
+            dir += transform.forward * moveSpeed;
+        }
+        return dir;
+    }
 }
