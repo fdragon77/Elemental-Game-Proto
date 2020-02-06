@@ -49,7 +49,7 @@ public class TargetLock : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetButtonDown("LockOn") && !lockedOn)
+        if ((Input.GetButtonDown("LockOn") && !lockedOn) || ((Input.GetAxis("LockOn")!=0f) && !lockedOn))
         {
             Debug.Log("LockOn");
             Debug.Log("There are " + targetableEnemies.Count + " enemies");
@@ -68,7 +68,7 @@ public class TargetLock : MonoBehaviour
                 }               
             }           
         }
-        else if (Input.GetButtonDown("LockOn") && lockedOn)
+        else if ((Input.GetButtonDown("LockOn") && lockedOn) || ((Input.GetAxis("LockOn") != 0f) && lockedOn))
         {
             Unlock();
             //lockedEnemy = 0;
@@ -80,7 +80,7 @@ public class TargetLock : MonoBehaviour
             Unlock();
             targetableEnemies.Remove(lockedEnemyOb);
         }
-        if (Input.GetButtonDown("SwitchLeft")&& lockedOn)
+        if ((Input.GetButtonDown("SwitchLeft")&& lockedOn) || ((Input.GetAxis("LockOn") <= 0f) && lockedOn))
         {
             if (lockedEnemy == 0)
             {
@@ -111,7 +111,7 @@ public class TargetLock : MonoBehaviour
                 lockedEnemyOb = targetableEnemies[lockedEnemy];
             }
         }
-        if (Input.GetButtonDown("SwitchRight") && lockedOn)
+        if ((Input.GetButtonDown("SwitchRight") && lockedOn) || ((Input.GetAxis("LockOn") >= 0f) && lockedOn))
         {
             if (lockedEnemy == targetableEnemies.Count - 1)
             {
