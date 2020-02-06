@@ -536,6 +536,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flamethrower: {fileID: 6985969153443781241}
   cooldown: 2.5
+  animationLenth: 1
+  slowSpeed: 10
   FlamethrowerCooldown: {fileID: 0}
 --- !u!114 &6985969154474090719
 MonoBehaviour:
@@ -601,6 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 32.5
+  regSpeed: 0
   boost: 75
   timer: 1
   dashTimer: 0.2
@@ -16057,7 +16060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6985969153443781242
 Transform:
   m_ObjectHideFlags: 0
@@ -16326,7 +16329,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2

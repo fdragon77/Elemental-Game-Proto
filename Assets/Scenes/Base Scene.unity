@@ -20236,7 +20236,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 16
+  near clip plane: 20
   far clip plane: 5000
   field of view: 40
   orthographic: 0
@@ -31701,7 +31701,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314683032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
   m_Name: 
@@ -31747,7 +31747,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 16
+    NearClipPlane: 20
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -44668,6 +44668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: firewallSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985969154474090718, guid: 8279a2792e2d5c4459ae497df9f3dae3,
+        type: 3}
+      propertyPath: animationLenth
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8279a2792e2d5c4459ae497df9f3dae3, type: 3}

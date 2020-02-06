@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] public float moveSpeed;
-    float regSpeed;
+    public float regSpeed;
     [SerializeField] float boost = 40f;
     Vector3 forward, right;
     public float timer = .5f;

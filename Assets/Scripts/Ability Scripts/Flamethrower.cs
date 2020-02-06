@@ -7,8 +7,13 @@ public class Flamethrower : MonoBehaviour
 {
     public GameObject flamethrower;
     float timer = 0;
+    float t2 = 0;
     bool active = false;
     [SerializeField] float cooldown;
+    [SerializeField] float animationLenth = 1;
+    [SerializeField] float slowSpeed = 10;
+    private float spd = 0;
+    private CharacterController CC;
 
     public RawImage FlamethrowerCooldown;
 
@@ -23,6 +28,8 @@ public class Flamethrower : MonoBehaviour
         FlamethrowerCooldown = GameObject.Find("FlamethrowerFill").GetComponent<RawImage>();
         color = FlamethrowerCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
+        CC = gameObject.GetComponent<CharacterController>();
+        spd = CC.regSpeed;
     }
     public void Fire()
     {
@@ -30,6 +37,7 @@ public class Flamethrower : MonoBehaviour
         if (!active)
         {
             timer = cooldown;
+            t2 = animationLenth;
             flamethrower.SetActive(true);
             active = true;
             FlamethrowerCooldown.rectTransform.localScale = Empty;
@@ -41,6 +49,7 @@ public class Flamethrower : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        t2 -= Time.deltaTime;
         if (timer <= 0 && active)
         {
             flamethrower.SetActive(false);
@@ -54,6 +63,15 @@ public class Flamethrower : MonoBehaviour
         else
         {
             FlamethrowerCooldown.color = color;
+        }
+
+        if(t2 > 0)
+        {
+            CC.moveSpeed = slowSpeed;
+        }
+        else
+        {
+            CC.moveSpeed = spd;
         }
     }
     
