@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour
     //public Text healthText;
     public Sprite armor1;
     Sprite[] armorSprites;
-
+    [HideInInspector] public bool dashLock = false;
 
     public RawImage DashCooldown;
 
@@ -72,7 +72,7 @@ public class CharacterController : MonoBehaviour
         }
         
         //dash with the rjoystick
-        if (Input.GetAxis("Dash") > 0 && !dash)
+        if (Input.GetAxis("Dash") > 0 && !dash && !dashLock)
         {
             moveSpeed = boost;
 
@@ -100,7 +100,7 @@ public class CharacterController : MonoBehaviour
         //move with ljoystick or arrows
         if (Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0)
         {
-            if (Input.GetButtonDown("Dash") && !dash)
+            if (Input.GetButtonDown("Dash") && !dash && !dashLock)
             {
                 timer = 0;
                 dashTimer = 0;

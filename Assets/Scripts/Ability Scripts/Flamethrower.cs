@@ -68,10 +68,12 @@ public class Flamethrower : MonoBehaviour
         if(t2 > 0)
         {
             CC.moveSpeed = slowSpeed;
+            CC.dashLock = true;
         }
         else
         {
             CC.moveSpeed = spd;
+            CC.dashLock = false;
         }
     }
     
