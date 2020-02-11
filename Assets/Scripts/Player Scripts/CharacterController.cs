@@ -63,7 +63,7 @@ public class CharacterController : MonoBehaviour
         ground = new Plane(new Vector3(0, 0, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1));
 
         DamageDisplay = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DamageCounter;
-        targeter = gameObject.GetComponent<TargetLock>();
+        targeter = GameObject.FindGameObjectWithTag("Reticle").GetComponent<TargetLock>();
     }
 
     // Update is called once per frame
@@ -136,14 +136,15 @@ public class CharacterController : MonoBehaviour
             HighBlaze.SetActive(true);
             MidBlaze.SetActive(false);
             LowBlaze.SetActive(false);
+            Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
             targeter.camera2 = HighCam;
-
         }
         else if(health >= LowHealth)
         {
             HighBlaze.SetActive(false);
             MidBlaze.SetActive(true);
             LowBlaze.SetActive(false);
+            Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
             targeter.camera2 = MidCam;
         }
         else
@@ -151,6 +152,7 @@ public class CharacterController : MonoBehaviour
             HighBlaze.SetActive(false);
             MidBlaze.SetActive(false);
             LowBlaze.SetActive(true);
+            Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
             targeter.camera2 = LowCam;
         }
         
