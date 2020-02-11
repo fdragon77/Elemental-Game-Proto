@@ -15,6 +15,7 @@ public class Destructable : MonoBehaviour
     [SerializeField] bool HealDestroy;
     [SerializeField] bool AOEDestroy;
     [SerializeField] bool TargetedAOEDestroy;
+    [SerializeField] bool Touch;
     [SerializeField] int explosiveForce;
     [SerializeField] float GracePeriod;
     bool canDestroy = true;
@@ -121,6 +122,20 @@ public class Destructable : MonoBehaviour
                     break;
 
                     //FIXME Fill in with prefabs as we work on it.
+            }
+        }
+        else if((collision.gameObject.tag == "Player") && (canDestroy) && Touch)
+        {
+            health -= 1;
+            displayDamage(AM.FlamethrowDMG.ToString());
+            if (health <= 0)
+            {
+                destruct();
+            }
+            else
+            {
+                canDestroy = false;
+                timer = GracePeriod;
             }
         }
     }
