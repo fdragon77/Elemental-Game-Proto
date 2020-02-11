@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour
     //public Text healthText;
     public Sprite armor1;
     Sprite[] armorSprites;
-
+    [HideInInspector] public bool dashLock = false;
 
     public RawImage DashCooldown;
 
@@ -35,6 +35,17 @@ public class CharacterController : MonoBehaviour
     private Plane ground;
 
     private GameObject DamageDisplay;
+
+    //Form change stuff.
+    [SerializeField] GameObject LowBlaze;
+    [SerializeField] GameObject MidBlaze;
+    [SerializeField] GameObject HighBlaze;
+    [SerializeField] GameObject LowCam;
+    [SerializeField] GameObject MidCam;
+    [SerializeField] GameObject HighCam;
+    private TargetLock targeter;
+    [SerializeField] float highHealth;
+    [SerializeField] float LowHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +63,7 @@ public class CharacterController : MonoBehaviour
         ground = new Plane(new Vector3(0, 0, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1));
 
         DamageDisplay = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DamageCounter;
+        targeter = gameObject.GetComponent<TargetLock>();
     }
 
     // Update is called once per frame
@@ -72,7 +84,7 @@ public class CharacterController : MonoBehaviour
         }
         
         //dash with the rjoystick
-        if (Input.GetAxis("Dash") > 0 && !dash)
+        if (Input.GetAxis("Dash") > 0 && !dash && !dashLock)
         {
             moveSpeed = boost;
 
@@ -100,7 +112,7 @@ public class CharacterController : MonoBehaviour
         //move with ljoystick or arrows
         if (Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0)
         {
-            if (Input.GetButtonDown("Dash") && !dash)
+            if (Input.GetButtonDown("Dash") && !dash && !dashLock)
             {
                 timer = 0;
                 dashTimer = 0;
@@ -117,6 +129,30 @@ public class CharacterController : MonoBehaviour
 
         ratio = timer / holdtimer;
         DashCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+
+        //Health/form change stuff.
+        if(health >= highHealth)
+        {
+            HighBlaze.SetActive(true);
+            MidBlaze.SetActive(false);
+            LowBlaze.SetActive(false);
+            targeter.camera2 = HighCam;
+
+        }
+        else if(health >= LowHealth)
+        {
+            HighBlaze.SetActive(false);
+            MidBlaze.SetActive(true);
+            LowBlaze.SetActive(false);
+            targeter.camera2 = MidCam;
+        }
+        else
+        {
+            HighBlaze.SetActive(false);
+            MidBlaze.SetActive(false);
+            LowBlaze.SetActive(true);
+            targeter.camera2 = LowCam;
+        }
         
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up

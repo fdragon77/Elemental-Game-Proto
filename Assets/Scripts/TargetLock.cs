@@ -13,8 +13,8 @@ public class TargetLock : MonoBehaviour
     bool beenLocked;
     int lockedEnemy;
 
-    [SerializeField] GameObject camera1;
-    [SerializeField] GameObject camera2;
+    [SerializeField] public GameObject camera1;
+    [SerializeField] public GameObject camera2;
 
     public static List<GameObject> targetableEnemies = new List<GameObject>();
     // Start is called before the first frame update
