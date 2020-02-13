@@ -31,6 +31,9 @@ public class puzzleTorch : MonoBehaviour
     {
         StartBurningTime = Time.time;
         burning = true;
-        group.check();
+        if (group != null)
+        {
+            group.check();
+        }
     }
 }
