@@ -141,8 +141,8 @@ public class TargetLock : MonoBehaviour
 
     private void Lock()
     {
-        camera1.SetActive(false);
-        camera2.SetActive(true);
+        //camera1.SetActive(false);
+        //camera2.SetActive(true);
         lockedOn = true;
         crosshair.enabled = true;
         //GameObject.FindGameObjectWithTag("Player").transform.LookAt(lockedEnemyOb.transform);
@@ -150,8 +150,8 @@ public class TargetLock : MonoBehaviour
 
     private void Unlock()
     {
-        camera1.SetActive(true);
-        camera2.SetActive(false);
+        //camera1.SetActive(true);
+        //camera2.SetActive(false);
         lockedOn = false;
         crosshair.enabled = false;
     }
