@@ -41986,6 +41986,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1577597983}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1532037249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6985969153443781241, guid: 8279a2792e2d5c4459ae497df9f3dae3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1892252713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1532208547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51342,8 +51348,13 @@ PrefabInstance:
     - target: {fileID: 6985969154474090715, guid: 8279a2792e2d5c4459ae497df9f3dae3,
         type: 3}
       propertyPath: health
-      value: 24
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6985969154474090715, guid: 8279a2792e2d5c4459ae497df9f3dae3,
+        type: 3}
+      propertyPath: firebreath
+      value: 
+      objectReference: {fileID: 1532037249}
     - target: {fileID: 1472862033689716371, guid: 8279a2792e2d5c4459ae497df9f3dae3,
         type: 3}
       propertyPath: m_IsActive
