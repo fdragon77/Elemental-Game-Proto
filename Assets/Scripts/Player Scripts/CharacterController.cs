@@ -37,6 +37,7 @@ public class CharacterController : MonoBehaviour
     private GameObject DamageDisplay;
 
     //Form change stuff.
+    [Header("Form change adjustments")]
     [SerializeField] GameObject LowBlaze;
     [SerializeField] GameObject MidBlaze;
     [SerializeField] GameObject HighBlaze;
@@ -46,6 +47,19 @@ public class CharacterController : MonoBehaviour
     private TargetLock targeter;
     [SerializeField] float highHealth;
     [SerializeField] float LowHealth;
+    //Firebreath adjustment
+    [Header("Flamethrower adjustments:")]
+    [SerializeField] GameObject firebreath;
+    [SerializeField] float FTlowy = 1.71f;
+    [SerializeField] float FTmidy = 4.21f;
+    [SerializeField] float FThighy = 5.33f;
+
+    //Fireball adjustments
+    [Header("Fireball height adjustments:")]
+    [SerializeField] float FBlow = 4;
+    [SerializeField] float FBmid = 8;
+    [SerializeField] float FBhigh = 10;
+    private Fireball fireballcontroller;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +78,9 @@ public class CharacterController : MonoBehaviour
 
         DamageDisplay = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DamageCounter;
         targeter = GameObject.FindGameObjectWithTag("Reticle").GetComponent<TargetLock>();
+
+        //Fireball script reference
+        fireballcontroller = gameObject.GetComponent<Fireball>();
     }
 
     // Update is called once per frame
@@ -133,29 +150,50 @@ public class CharacterController : MonoBehaviour
         //Health/form change stuff.
         if(health >= highHealth)
         {
+            //form change stuff.
             HighBlaze.SetActive(true);
             MidBlaze.SetActive(false);
             LowBlaze.SetActive(false);
             Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
             targeter.camera2 = HighCam;
+
+            //flamethrower height:
+            firebreath.transform.localPosition = new Vector3(0, FThighy, 1.33f);
+
+            //fireball adjustment
+            fireballcontroller.YOffset = FBhigh;
         }
         else if(health >= LowHealth)
         {
+            //form change stuff.
             HighBlaze.SetActive(false);
             MidBlaze.SetActive(true);
             LowBlaze.SetActive(false);
             Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
             targeter.camera2 = MidCam;
+
+            //flamethrower height:
+            firebreath.transform.localPosition = new Vector3(0, FTmidy, 1.33f);
+
+            //fireball adjustment
+            fireballcontroller.YOffset = FBmid;
         }
         else
         {
+            //form change stuff.
             HighBlaze.SetActive(false);
             MidBlaze.SetActive(false);
             LowBlaze.SetActive(true);
             Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
             targeter.camera2 = LowCam;
+
+            //flamethrower height:
+            firebreath.transform.localPosition = new Vector3(0, FTlowy, 1.33f);
+
+            //fireball adjustment
+            fireballcontroller.YOffset = FBlow;
         }
-        
+
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()

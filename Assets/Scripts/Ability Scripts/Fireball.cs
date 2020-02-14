@@ -26,6 +26,7 @@ public class Fireball : MonoBehaviour
 
     Vector4 color;
     Vector4 fadeColor = new Vector4(60, 60, 60, 0);
+    public float YOffset = 4;
 
     CharacterController CC;
     // Start is called before the first frame update
@@ -82,7 +83,7 @@ public class Fireball : MonoBehaviour
         
         
         Vector3 center = transform.position;
-        center.y += 4;
+        center.y += YOffset;
 
         fireballHandler = Instantiate(projectile, center, projectile.transform.rotation) as GameObject;
 
@@ -110,7 +111,14 @@ public class Fireball : MonoBehaviour
         }
         Debug.Log("Fireball velocity: " + (playermovement).ToString());
         //fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed) + playermovement;
-        fireballHandler.GetComponent<Rigidbody>().velocity = playermovement;
+        if (reticleRef.IsLocked())
+        {
+            fireballHandler.GetComponent<Rigidbody>().velocity = fireDirection.normalized * playermovement.magnitude;
+        }
+        else
+        {
+            fireballHandler.GetComponent<Rigidbody>().velocity = playermovement;
+        }
 
     }
     // Update is called once per frame

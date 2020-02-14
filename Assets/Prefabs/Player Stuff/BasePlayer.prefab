@@ -622,6 +622,10 @@ MonoBehaviour:
   HighCam: {fileID: 0}
   highHealth: 75
   LowHealth: 25
+  firebreath: {fileID: 0}
+  FTlowy: 1.71
+  FTmidy: 4.21
+  FThighy: 5.33
 --- !u!82 &1413453585
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10479,13 +10483,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2362269968948204210}
-  m_LocalRotation: {x: 0.11238212, y: -0, z: -0, w: 0.9936651}
-  m_LocalPosition: {x: 0, y: -0.66, z: 6.74}
-  m_LocalScale: {x: 9.138914, y: 12.653676, z: 13.993804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.048, y: -0.357, z: 10.156}
+  m_LocalScale: {x: 9.230303, y: 30.642387, z: 21.522533}
   m_Children: []
   m_Father: {fileID: 6985969153443781242}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 12.905001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2362269968948204206
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16071,7 +16075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6985969153443781242
 Transform:
   m_ObjectHideFlags: 0
@@ -16079,15 +16083,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6985969153443781241}
-  m_LocalRotation: {x: -0.106055856, y: -0, z: -0, w: 0.9943602}
-  m_LocalPosition: {x: 0, y: 0.81, z: 1.52}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.33, z: 1.33}
   m_LocalScale: {x: 0.50137997, y: 0.50137997, z: 0.50137997}
   m_Children:
   - {fileID: 6985969153286353205}
   - {fileID: 2362269968948204205}
   m_Father: {fileID: 2704852619042690031}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -12.176001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &6985969153443781189
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -59106,7 +59110,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4ccad3fe6dcf6de48831df281f90efb1,
         type: 3}
@@ -59207,7 +59211,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0d25bfa808b80b74182d91f3578f4176,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0d25bfa808b80b74182d91f3578f4176,
         type: 3}
