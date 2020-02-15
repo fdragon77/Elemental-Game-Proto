@@ -86,6 +86,14 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health > 100)
+        {
+            health = 100;
+        }
+        else if(health <= 0)
+        {
+            //Game over!
+        }
         if(timer <= holdtimer)
             timer += Time.deltaTime;
         if(dashTimer<=dashtimerhold)

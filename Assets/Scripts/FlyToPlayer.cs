@@ -9,6 +9,7 @@ public class FlyToPlayer : MonoBehaviour
     [SerializeField] float speed = 1;
     [HideInInspector] GameObject player;
     [SerializeField] bool active = false;
+    [SerializeField] int healAmount = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class FlyToPlayer : MonoBehaviour
         if(collision.gameObject.tag == player.gameObject.tag)
         {
             Destroy(gameObject);
+            player.GetComponent<CharacterController>().health += healAmount;
         }
     }
 }

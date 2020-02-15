@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     UnityAction nullAction;
 
     [SerializeField] public GameObject DamageCounter;
+    [SerializeField] public GameObject HealFlame;
     // Start is called before the first frame update
     void Awake()
     {

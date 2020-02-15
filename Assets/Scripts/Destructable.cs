@@ -28,6 +28,7 @@ public class Destructable : MonoBehaviour
     [SerializeField] GameObject explodeObj;
 
     [Header("Misc")]
+    [SerializeField] private bool CreateHeal = true;
     [SerializeField] GameObject HealFlame = null;
 
     private AbilityManager AM;
@@ -37,6 +38,10 @@ public class Destructable : MonoBehaviour
     {
         AM = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<AbilityManager>();
         DamageDisplay = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DamageCounter;
+        if (HealFlame == null)
+        {
+            HealFlame = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().HealFlame;
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -47,7 +52,10 @@ public class Destructable : MonoBehaviour
         //Debug.Log(collision.gameObject.name);
         if ((collision.gameObject.tag == "Attack") && (canDestroy))
         {
-            
+            if (CreateHeal)
+            {
+                Instantiate(HealFlame, transform.position, transform.rotation);
+            }
             switch (collision.gameObject.name)
             {
                 case "Fireball(Clone)":
@@ -126,6 +134,10 @@ public class Destructable : MonoBehaviour
         }
         else if((collision.gameObject.tag == "Player") && (canDestroy) && Touch)
         {
+            if (CreateHeal)
+            {
+                Instantiate(HealFlame, transform.position, transform.rotation);
+            }
             health -= 1;
             displayDamage(AM.FlamethrowDMG.ToString());
             if (health <= 0)
@@ -205,15 +217,7 @@ public class Destructable : MonoBehaviour
     /// </summary>
     private void OnDestroy()
     {
-        switch (DestructionType)
-        {
-            case destroyType.normal:
-                break;
-            case destroyType.explode:
-                break;
-            case destroyType.burn:
-                break;
-        }
+        
     }
     
     void Update()
