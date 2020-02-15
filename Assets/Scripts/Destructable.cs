@@ -52,6 +52,10 @@ public class Destructable : MonoBehaviour
         //Debug.Log(collision.gameObject.name);
         if ((collision.gameObject.tag == "Attack") && (canDestroy))
         {
+            if (CreateHeal)
+            {
+                Instantiate(HealFlame, transform.position, transform.rotation);
+            }
             switch (collision.gameObject.name)
             {
                 case "Fireball(Clone)":
@@ -130,6 +134,10 @@ public class Destructable : MonoBehaviour
         }
         else if((collision.gameObject.tag == "Player") && (canDestroy) && Touch)
         {
+            if (CreateHeal)
+            {
+                Instantiate(HealFlame, transform.position, transform.rotation);
+            }
             health -= 1;
             displayDamage(AM.FlamethrowDMG.ToString());
             if (health <= 0)
@@ -209,10 +217,7 @@ public class Destructable : MonoBehaviour
     /// </summary>
     private void OnDestroy()
     {
-        if (CreateHeal)
-        {
-            Instantiate(HealFlame, transform.position, transform.rotation);
-        }
+        
     }
     
     void Update()
