@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Destructable : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class Destructable : MonoBehaviour
                     {
                         
                         health -= AM.FireballDMG;
-                        displayDamage(AM.FireballDMG.ToString());
+                        displayDamage((AM.FireballDMG * 10).ToString());
                         Debug.Log("Damage" + AM.FireballDMG.ToString());
                         Debug.Log(health);
                         if (health <= 0)
@@ -83,7 +84,7 @@ public class Destructable : MonoBehaviour
                     if (FirebreathsDestroy)
                     {
                         health -= AM.FlamethrowDMG;
-                        displayDamage(AM.FlamethrowDMG.ToString());
+                        displayDamage((AM.FlamethrowDMG * 10).ToString());
                         if (health <= 0)
                         {
                             destruct();
@@ -99,7 +100,7 @@ public class Destructable : MonoBehaviour
                     if (FirebreathsDestroy)
                     {
                         health -= AM.FirewallDMG;
-                        displayDamage(AM.FirewallDMG.ToString());
+                        displayDamage((AM.FirewallDMG * 10).ToString());
                         if (health <= 0)
                         {
                             destruct();
@@ -116,7 +117,7 @@ public class Destructable : MonoBehaviour
                     if (AOEDestroy)
                     {
                         health -= AM.AoeDMG;
-                        displayDamage(AM.AoeDMG.ToString());
+                        displayDamage((AM.AoeDMG * 10).ToString());
                         if (health <= 0)
                         {
                             destruct();
@@ -139,7 +140,7 @@ public class Destructable : MonoBehaviour
                 Instantiate(HealFlame, transform.position, transform.rotation);
             }
             health -= 1;
-            displayDamage(AM.FlamethrowDMG.ToString());
+            displayDamage("5");
             if (health <= 0)
             {
                 destruct();
@@ -235,8 +236,9 @@ public class Destructable : MonoBehaviour
 
     void displayDamage(string damage)
     {
-        GameObject disp = Instantiate(DamageDisplay, transform.position + new Vector3(0, 5, 0), transform.rotation);
+        GameObject disp = Instantiate(DamageDisplay, transform.position + new Vector3(0, 10, 0), transform.rotation);
         disp.GetComponent<movingEnviroment>().Goal = disp.transform.up * 100;
-        //disp.GetComponent<TextMesh>().text = damage;
+        disp.GetComponent<TextMeshPro>().text = damage;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().addPoints(int.Parse(damage));
     }
 }

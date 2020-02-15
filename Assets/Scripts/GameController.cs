@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Doozy.Engine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameController : MonoBehaviour
     //DOES NOTHING.
     UnityAction nullAction;
 
+    private int points = 0;
+    [SerializeField] TextMeshProUGUI PointsDisplay;
     [SerializeField] public GameObject DamageCounter;
     [SerializeField] public GameObject HealFlame;
     // Start is called before the first frame update
@@ -99,5 +102,11 @@ public class GameController : MonoBehaviour
     public void setGameSpeed(float speed)
     {
         gamespeed = speed;
+    }
+
+    public void addPoints(int p)
+    {
+        points += p;
+        PointsDisplay.text = "Points: " + points.ToString();
     }
 }
