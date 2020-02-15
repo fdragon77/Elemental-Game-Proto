@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8000995428032571934, guid: 7636892f0862faf4bbdc550554f11b22,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4357774274454378660, guid: 7636892f0862faf4bbdc550554f11b22,
         type: 3}
       propertyPath: projectile
@@ -92,6 +97,16 @@ PrefabInstance:
       propertyPath: Cluster
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 898541388304688344, guid: 7636892f0862faf4bbdc550554f11b22,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 898541388304688344, guid: 7636892f0862faf4bbdc550554f11b22,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3671990847580832265, guid: 7636892f0862faf4bbdc550554f11b22,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -187,7 +202,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 898541388304688344, guid: 7636892f0862faf4bbdc550554f11b22, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7636892f0862faf4bbdc550554f11b22, type: 3}
 --- !u!1 &4278555317394053800 stripped
 GameObject:
