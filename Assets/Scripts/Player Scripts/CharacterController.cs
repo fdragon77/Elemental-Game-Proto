@@ -61,9 +61,17 @@ public class CharacterController : MonoBehaviour
     [SerializeField] float FBhigh = 10;
     private Fireball fireballcontroller;
 
+    //Checkpoints.
+    public Checkpoint LastCheckpoint;
+
     // Start is called before the first frame update
     void Start()
     {
+        GAME = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        if(GAME.LastCheckpoint != new Vector3())
+        {
+            transform.position = GAME.LastCheckpoint;
+        }
         DashCooldown = GameObject.Find("DashFill").GetComponent<RawImage>();
         //LoadAllSprites();
         holdtimer = timer;
@@ -92,7 +100,7 @@ public class CharacterController : MonoBehaviour
         }
         else if(health <= 0)
         {
-            //Game over!
+            death();
         }
         if(timer <= holdtimer)
             timer += Time.deltaTime;
@@ -270,5 +278,10 @@ public class CharacterController : MonoBehaviour
             dir += transform.forward * moveSpeed;
         }
         return dir;
+    }
+
+    public void death()
+    {
+        LastCheckpoint.ResetScene();
     }
 }
