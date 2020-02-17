@@ -294,6 +294,13 @@ public class Destructable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        
+        if(other.gameObject.name == "fireCone")
+        {
+            Throwing = false;
+        }
+        if (other.gameObject.name == "Player")
+        {
+            Touching = false;
+        }
     }
 }
