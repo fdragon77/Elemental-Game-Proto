@@ -35,6 +35,14 @@ public class Destructable : MonoBehaviour
     private AbilityManager AM;
     private GameObject DamageDisplay;
 
+    [Header("Touch damage timer")]
+    [SerializeField] float TouchTime = 05f;
+    [SerializeField] float ThrowerTime = 0.1f;
+    private bool Touching = false;
+    private bool Throwing = false;
+    private float TouchTimer;
+    private float ThrowTimer;
+
     private void Start()
     {
         AM = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<AbilityManager>();
@@ -43,6 +51,9 @@ public class Destructable : MonoBehaviour
         {
             HealFlame = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().HealFlame;
         }
+        //timers for extended damage.
+        TouchTimer = Time.time;
+        ThrowTimer = Time.time;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -83,6 +94,8 @@ public class Destructable : MonoBehaviour
                 case "fireCone":
                     if (FirebreathsDestroy)
                     {
+                        Throwing = true;
+                        ThrowTimer = Time.time;
                         health -= AM.FlamethrowDMG;
                         displayDamage((AM.FlamethrowDMG * 10).ToString());
                         if (health <= 0)
@@ -135,6 +148,8 @@ public class Destructable : MonoBehaviour
         }
         else if((collision.gameObject.tag == "Player") && (canDestroy) && Touch)
         {
+            Touching = true;
+            TouchTimer = Time.time;
             if (CreateHeal)
             {
                 Instantiate(HealFlame, transform.position, transform.rotation);
@@ -232,6 +247,41 @@ public class Destructable : MonoBehaviour
         {
             canDestroy = true;
         }
+
+        if (Touching && TouchTimer + TouchTime <= Time.time)
+        {
+            TouchTimer = Time.time;
+            if (CreateHeal)
+            {
+                Instantiate(HealFlame, transform.position, transform.rotation);
+            }
+            health -= 1;
+            displayDamage("5");
+            if (health <= 0)
+            {
+                destruct();
+            }
+            else
+            {
+                canDestroy = false;
+                timer = GracePeriod;
+            }
+        }
+        if (Throwing && ThrowTimer + ThrowerTime <= Time.time)
+        {
+            ThrowTimer = Time.time;
+            health -= AM.FlamethrowDMG;
+            displayDamage((AM.FlamethrowDMG * 10).ToString());
+            if (health <= 0)
+            {
+                destruct();
+            }
+            else
+            {
+                canDestroy = false;
+                timer = GracePeriod;
+            }
+        }
     }
 
     void displayDamage(string damage)
@@ -240,5 +290,10 @@ public class Destructable : MonoBehaviour
         disp.GetComponent<movingEnviroment>().Goal = disp.transform.up * 100;
         disp.GetComponent<TextMeshPro>().text = damage;
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().addPoints(int.Parse(damage));
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        
     }
 }
