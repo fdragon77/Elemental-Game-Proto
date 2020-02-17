@@ -298,7 +298,7 @@ public class Destructable : MonoBehaviour
         {
             Throwing = false;
         }
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Touching = false;
         }
