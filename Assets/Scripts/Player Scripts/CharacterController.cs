@@ -18,7 +18,7 @@ public class CharacterController : MonoBehaviour
     bool dash = false;
     GameController GAME;
     float dash_stick_sens = 0.3f;
-    public float rotateSpeed = 0.01f;
+    public float rotateSpeed = 0.5f;
 
     public int health = 100;
     //public Text healthText;
@@ -214,7 +214,7 @@ public class CharacterController : MonoBehaviour
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal"))), 0.1f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal"))), rotateSpeed);
         //transform.rotation = Quaternion.LookRotation((Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical")) + (Camera.main.transform.right * Input.GetAxis("Horizontal")));
         //transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, ground.normal).normalized * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         transform.position += transform.forward * moveSpeed * Time.deltaTime;

@@ -12,7 +12,9 @@ public class Flamethrower : MonoBehaviour
     [SerializeField] float cooldown;
     [SerializeField] float animationLenth = 1;
     [SerializeField] float slowSpeed = 10;
-    private float spd = 0;
+    [SerializeField] float rotateSpeed = 0.1f;
+    private float spd;
+    private float rotspd;
     private CharacterController CC;
 
     public RawImage FlamethrowerCooldown;
@@ -30,6 +32,7 @@ public class Flamethrower : MonoBehaviour
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
         CC = gameObject.GetComponent<CharacterController>();
         spd = CC.regSpeed;
+        rotspd = CC.rotateSpeed;
     }
     public void Fire()
     {
@@ -68,11 +71,13 @@ public class Flamethrower : MonoBehaviour
         if(t2 > 0)
         {
             CC.moveSpeed = slowSpeed;
+            CC.rotateSpeed = rotateSpeed;
             CC.dashLock = true;
         }
         else
         {
             CC.moveSpeed = spd;
+            CC.rotateSpeed = rotspd;
             CC.dashLock = false;
         }
     }
