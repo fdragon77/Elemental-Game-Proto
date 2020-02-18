@@ -166,6 +166,26 @@ public class Destructable : MonoBehaviour
                 timer = GracePeriod;
             }
         }
+        else if (collision.gameObject.tag == "burnTile")
+        {
+            Touching = true;
+            TouchTimer = Time.time;
+            if (CreateHeal)
+            {
+                Instantiate(HealFlame, transform.position, transform.rotation);
+            }
+            health -= 1;
+            displayDamage("5");
+            if (health <= 0)
+            {
+                destruct();
+            }
+            else
+            {
+                canDestroy = false;
+                timer = GracePeriod;
+            }
+        }
     }
 
     /// <summary>
