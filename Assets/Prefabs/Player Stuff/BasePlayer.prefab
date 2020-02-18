@@ -338,8 +338,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6633728, y: 3.080204, z: 2.6927695}
-  m_Center: {x: 0.013991505, y: 1.4935755, z: 0.27904853}
+  m_Size: {x: 3.6633728, y: 8.42306, z: 2.6927695}
+  m_Center: {x: 0.013991505, y: 4.1650043, z: 0.27904853}
 --- !u!114 &6985969154474090705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,13 +623,14 @@ MonoBehaviour:
   HighCam: {fileID: 0}
   highHealth: 75
   LowHealth: 25
-  firebreath: {fileID: 0}
+  firebreath: {fileID: 6985969153286353204}
   FTlowy: 1.71
   FTmidy: 4.21
   FThighy: 5.33
   FBlow: 4
   FBmid: 6
   FBhigh: 6
+  LastCheckpoint: {fileID: 0}
 --- !u!82 &1413453585
 AudioSource:
   m_ObjectHideFlags: 0

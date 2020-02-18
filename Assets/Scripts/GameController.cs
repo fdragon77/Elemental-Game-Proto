@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     UnityAction nullAction;
 
     private int points = 0;
-    [SerializeField] TextMeshProUGUI PointsDisplay;
+    [SerializeField] public TextMeshProUGUI PointsDisplay;
     [SerializeField] public GameObject DamageCounter;
     [SerializeField] public GameObject HealFlame;
     public Vector3 LastCheckpoint;
