@@ -645,7 +645,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -741,7 +741,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -58917,18 +58917,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2704852619042690031}
     m_Modifications:
-    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
-      propertyPath: m_Name
-      value: vfx_MagicAbility_Impact_Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4017071966757802, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -58984,6 +58972,18 @@ PrefabInstance:
     - target: {fileID: 4017071966757802, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0176027
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
+      propertyPath: m_Name
+      value: vfx_MagicAbility_Impact_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4135448939324264, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
       propertyPath: m_LocalScale.x
@@ -59107,16 +59107,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2704852619042690031}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
-        type: 3}
-      propertyPath: m_Name
-      value: high_test 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4ccad3fe6dcf6de48831df281f90efb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59186,6 +59176,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
+        type: 3}
+      propertyPath: m_Name
+      value: high_test 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ccad3fe6dcf6de48831df281f90efb1, type: 3}

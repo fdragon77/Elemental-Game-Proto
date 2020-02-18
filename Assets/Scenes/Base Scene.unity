@@ -47436,6 +47436,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 272504425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1651090364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5411100757055697643, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1216177770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1651090365
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651090364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7321516171901871987, guid: 6f02b90a490c8d9429a98e5033e9bb3d, type: 3}
 --- !u!4 &1653216066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5545926354816813103, guid: 8017eed36771dc243a92aaab96e18265,
@@ -54205,11 +54225,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasePlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 6985969153443781241, guid: 8279a2792e2d5c4459ae497df9f3dae3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2704852619042690031, guid: 8279a2792e2d5c4459ae497df9f3dae3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54331,6 +54346,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 452936820604872047, guid: 8279a2792e2d5c4459ae497df9f3dae3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985969153443781241, guid: 8279a2792e2d5c4459ae497df9f3dae3,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -56502,7 +56522,7 @@ BoxCollider:
   m_GameObject: {fileID: 1964385086}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 63.21734, y: 62.28048, z: 43.473675}
   m_Center: {x: -304.63574, y: 32.333416, z: 129.83208}
