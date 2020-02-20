@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
         //Set delegates for set actions. 
         quitAction += quitGame;
         nullAction += DoNothing;
+        Screen.SetResolution(1024, 768, true);
     }
     // Update is called once per frame
     void Update()
