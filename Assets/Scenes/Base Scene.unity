@@ -24876,7 +24876,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873876820}
-  m_LocalRotation: {x: -0.2369492, y: -0.23959626, z: 0.06042346, w: -0.9395732}
+  m_LocalRotation: {x: -0.23694919, y: -0.23959625, z: 0.060423452, w: -0.9395732}
   m_LocalPosition: {x: 258.05768, y: 46.22358, z: 435.65622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -34485,17 +34485,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -438.5
+      value: -144
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 478.5
+      value: 787
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
         type: 3}
@@ -34536,6 +34536,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4093
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4093
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4093
       objectReference: {fileID: 0}
     - target: {fileID: -4496999068719626180, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
         type: 3}
@@ -38574,7 +38589,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314683032}
-  m_LocalRotation: {x: -0.2369492, y: -0.23959626, z: 0.06042346, w: -0.9395732}
+  m_LocalRotation: {x: -0.23694919, y: -0.23959625, z: 0.060423452, w: -0.9395732}
   m_LocalPosition: {x: 258.05768, y: 46.22358, z: 435.65622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -57263,6 +57278,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 63.21734, y: 62.28048, z: 43.473675}
   m_Center: {x: -304.63574, y: 32.333416, z: 129.83208}
+--- !u!114 &1964385088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964385086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef39a93784e64d4ca5b8e111ccb5ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toLoad: the fractured land
 --- !u!1001 &1965395673
 PrefabInstance:
   m_ObjectHideFlags: 0

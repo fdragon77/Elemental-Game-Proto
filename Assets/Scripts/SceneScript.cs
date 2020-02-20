@@ -17,12 +17,14 @@ public class SceneScript : MonoBehaviour
         
         if ((collision.gameObject.tag == "Player"))
         {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().LastCheckpoint = new Vector3(0, 0, 0);
             SceneManager.LoadScene(toLoad);
         }
     }
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.U))
         {
             SceneManager.LoadScene("MainMenu");
@@ -43,6 +45,7 @@ public class SceneScript : MonoBehaviour
         {
             SceneManager.LoadScene("backupmine");
         }
+        */
 
     }
 }
