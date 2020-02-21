@@ -540,6 +540,7 @@ MonoBehaviour:
   cooldown: 2.5
   animationLenth: 1
   slowSpeed: 10
+  rotateSpeed: 0.1
   FlamethrowerCooldown: {fileID: 0}
 --- !u!114 &6985969154474090719
 MonoBehaviour:
@@ -610,7 +611,7 @@ MonoBehaviour:
   boost: 75
   timer: 1
   dashTimer: 0.2
-  rotateSpeed: 0.01
+  rotateSpeed: 0.3
   health: 100
   armor1: {fileID: 0}
   dashLock: 0
@@ -58917,18 +58918,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2704852619042690031}
     m_Modifications:
-    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
-      propertyPath: m_Name
-      value: vfx_MagicAbility_Impact_Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4017071966757802, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -58984,6 +58973,18 @@ PrefabInstance:
     - target: {fileID: 4017071966757802, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0176027
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
+      propertyPath: m_Name
+      value: vfx_MagicAbility_Impact_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007489450165806, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4135448939324264, guid: 6e1e59f2c5ce521499157f9b16215908, type: 3}
       propertyPath: m_LocalScale.x
@@ -59107,16 +59108,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2704852619042690031}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
-        type: 3}
-      propertyPath: m_Name
-      value: high_test 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4ccad3fe6dcf6de48831df281f90efb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59187,6 +59178,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
+        type: 3}
+      propertyPath: m_Name
+      value: high_test 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4ccad3fe6dcf6de48831df281f90efb1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ccad3fe6dcf6de48831df281f90efb1, type: 3}
 --- !u!4 &359517780280005450 stripped
@@ -59216,7 +59217,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0d25bfa808b80b74182d91f3578f4176,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0d25bfa808b80b74182d91f3578f4176,
         type: 3}

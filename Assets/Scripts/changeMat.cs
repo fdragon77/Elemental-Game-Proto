@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class changeMat : MonoBehaviour
 {
+    public int health;
+    private float Touchtimer;
     float timer = 5;
     int interval = 0;
 
@@ -12,6 +14,7 @@ public class changeMat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Touchtimer = Time.time;
         rend = GetComponent<Renderer>();
         rend.sharedMaterial = material[0];
     }
@@ -24,8 +27,19 @@ public class changeMat : MonoBehaviour
         if (col.gameObject.tag == "Player")
             
         {
-            interval += 1;
-            rend.sharedMaterial = material[interval];
+            Touchtimer = Time.time;
+            health -= 1;
+            if (health <= 10)
+            {
+                interval += 1;
+                rend.sharedMaterial = material[interval]; 
+            }
+            else if (health<= 0)
+            {
+                interval += 1;
+                rend.sharedMaterial = material[interval];
+            }
+          
             if (interval > 1)
             {
                 Destroy(gameObject);

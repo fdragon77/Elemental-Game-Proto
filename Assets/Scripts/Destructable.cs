@@ -171,7 +171,7 @@ public class Destructable : MonoBehaviour
             Touching = true;
             TouchTimer = Time.time;
             if (CreateHeal)
-            {
+           {
                 Instantiate(HealFlame, transform.position, transform.rotation);
             }
             health -= 1;
