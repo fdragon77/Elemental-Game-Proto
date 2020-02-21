@@ -27,6 +27,7 @@ public class Conversable : MonoBehaviour
             pop.Data.SetLabelsTexts(Speakers[i], Lines[i]);
             UIPopupManager.AddToQueue(pop);
         }
+        gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -41,5 +42,13 @@ public class Conversable : MonoBehaviour
             Converse();
         }
         */
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Converse();
+        }
     }
 }
