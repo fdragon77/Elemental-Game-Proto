@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 //This whole thing exists to make up mean up.
 
@@ -256,9 +257,11 @@ public class CharacterController : MonoBehaviour
 
     void displayDamage(string damage)
     {
+        GAME.addPoints(int.Parse(damage) * -1);
         GameObject disp = Instantiate(DamageDisplay, transform.position + new Vector3(0, 5, 0), transform.rotation);
         disp.GetComponent<movingEnviroment>().Goal = disp.transform.up * 100;
-        //disp.GetComponent<TextMesh>().text = damage;
+        disp.GetComponent<TextMeshPro>().text = "-" + damage;
+        disp.GetComponent<TextMeshPro>().color = Color.red;
     }
 
     public bool playerMoving()
@@ -282,6 +285,7 @@ public class CharacterController : MonoBehaviour
 
     public void death()
     {
+        GAME.addPoints(-100);
         LastCheckpoint.ResetScene();
     }
 }
