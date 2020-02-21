@@ -120,6 +120,9 @@ public class CharacterController : MonoBehaviour
         //dash with the rjoystick
         if (Input.GetAxis("Dash") > 0 && !dash && !dashLock)
         {
+            timer = 0;
+            dashTimer = 0;
+            dash = true;
             moveSpeed = boost;
 
             /*
