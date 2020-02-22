@@ -8,6 +8,9 @@ using TMPro;
 
 public class CharacterController : MonoBehaviour
 {
+
+   
+
     [SerializeField] public float moveSpeed;
     public float regSpeed;
     [SerializeField] float boost = 40f;
@@ -68,6 +71,8 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+
         GAME = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         if(GAME.LastCheckpoint != new Vector3())
         {
