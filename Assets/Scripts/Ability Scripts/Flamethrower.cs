@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class Flamethrower : MonoBehaviour
 {
+
+    // wills attempt to initiate animations 
+    public Animator anim;
+
     public GameObject flamethrower;
     float timer = 0;
     float t2 = 0;
@@ -27,6 +31,8 @@ public class Flamethrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         FlamethrowerCooldown = GameObject.Find("FlamethrowerFill").GetComponent<RawImage>();
         color = FlamethrowerCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
@@ -39,6 +45,7 @@ public class Flamethrower : MonoBehaviour
         //Debug.Log("flamethrower");
         if (!active)
         {
+            anim.Play("Firebreath",-1,0f);
             timer = cooldown;
             t2 = animationLenth;
             flamethrower.SetActive(true);

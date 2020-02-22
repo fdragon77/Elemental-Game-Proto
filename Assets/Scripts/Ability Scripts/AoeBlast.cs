@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class AoeBlast : MonoBehaviour
 {
+    public Animator anim;
+
     public GameObject aoeRing;
     [SerializeField] GameObject AoeObject;
     float timer = 0;
@@ -24,6 +27,9 @@ public class AoeBlast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+       
+        anim = GetComponent<Animator>();
         AoeCooldown = GameObject.Find("AoeFill").GetComponent<RawImage>();
         color = AoeCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
@@ -33,6 +39,8 @@ public class AoeBlast : MonoBehaviour
     {
         if (!active)
         {
+            anim.Play("AOE", -1, 0f);
+           
             Debug.Log("AoeBlast");
             timer = 0;
             Blast = Instantiate(AoeObject, transform.position, AoeObject.transform.rotation) as GameObject;
@@ -49,14 +57,14 @@ public class AoeBlast : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        
+
         if (timer >= cooldown && active)
         {
             //aoeRing.SetActive(false);
             active = false;
             //AoeCooldown.rectTransform.localScale = Full;
         }
-        ratio= timer / cooldown;
+        ratio = timer / cooldown;
         AoeCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
         if (theManager.currentMana < theManager.AoeMana)
         {

@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 
 public class firewall : MonoBehaviour
 {
+    public Animator anim;
+
     //sound
     public AudioClip firewallsnd;
     public AudioSource Playersnd;
@@ -25,6 +27,8 @@ public class firewall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         timer = cooldown;
         // get audio source
         if (firewallsnd != null)
@@ -42,6 +46,7 @@ public class firewall : MonoBehaviour
     {
         if (!active)
         {
+            anim.Play("Firewall", -1, 0f);
             Debug.Log("Firewall");
 
             // play sound for firewall
