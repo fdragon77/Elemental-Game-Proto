@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5926109, g: 0, b: 1, a: 0.3372549}
+      maxColor: {r: 0.5803922, g: 0, b: 0.8396226, a: 0.2784314}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5736,20 +5736,20 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 1
-          inSlope: -0.55718
-          outSlope: -0.55718
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.15517241
+          outWeight: 0
         - serializedVersion: 3
-          time: 0.9862487
-          value: 0.35770744
-          inSlope: -0.057316523
-          outSlope: -0.057316523
+          time: 1
+          value: 0.5953064
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.18466435
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -9516,7 +9516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6176289652169136223}
   m_Layer: 0
-  m_Name: PurpleOrb
+  m_Name: CorruptionOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15276,21 +15276,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.49346924
-          inSlope: 0.50653076
-          outSlope: 0.50653076
-          tangentMode: 34
+          value: 1
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.33333334
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 0.50653076
-          outSlope: 0.50653076
-          tangentMode: 34
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
