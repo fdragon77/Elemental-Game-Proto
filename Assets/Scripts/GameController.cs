@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     [SerializeField] public GameObject DamageCounter;
     [SerializeField] public GameObject HealFlame;
     public Vector3 LastCheckpoint;
+    public int playerHealth = 0;
     // Start is called before the first frame update
     void Awake()
     {

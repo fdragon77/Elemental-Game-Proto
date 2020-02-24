@@ -18,6 +18,7 @@ public class SceneScript : MonoBehaviour
         if ((collision.gameObject.tag == "Player"))
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().LastCheckpoint = new Vector3(0, 0, 0);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().playerHealth = collision.gameObject.GetComponent<CharacterController>().health;
             SceneManager.LoadScene(toLoad);
         }
     }

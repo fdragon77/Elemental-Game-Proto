@@ -18,6 +18,14 @@ public class Checkpoint : MonoBehaviour
 
     public void ResetScene()
     {
+        if (UseLastHealth)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().playerHealth = resetHealth;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().playerHealth = 0;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameObject[] playersgwa = GameObject.FindGameObjectsWithTag("Player");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -36,7 +44,6 @@ public class Checkpoint : MonoBehaviour
             if (UseLastHealth)
             {
                 resetHealth = other.gameObject.GetComponent<CharacterController>().health;
-                
             }
         }
     }

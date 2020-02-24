@@ -78,6 +78,10 @@ public class CharacterController : MonoBehaviour
         {
             transform.position = GAME.LastCheckpoint;
         }
+        if(GAME.playerHealth != 0)
+        {
+            health = GAME.playerHealth;
+        }
         DashCooldown = GameObject.Find("DashFill").GetComponent<RawImage>();
         //LoadAllSprites();
         holdtimer = timer;
