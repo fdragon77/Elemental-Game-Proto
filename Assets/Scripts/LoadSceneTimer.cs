@@ -23,13 +23,13 @@ public class LoadSceneTimer : MonoBehaviour
             SceneManager.LoadScene(scene);
         }
 
-        if (Input.anyKey)
+        if (Input.anyKeyDown)
         {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-            {
-                SceneManager.LoadScene(scene);
-            }
             skip = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0) && skip)
+        {
+            SceneManager.LoadScene(scene);
         }
     }
 }
