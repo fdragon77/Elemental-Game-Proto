@@ -20,9 +20,12 @@ public class FireWallEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time - starttime >= activateTime)
+        if (GameController.gamespeed > 0)
         {
-            Box.enabled = true;
+            if (Time.time - starttime >= activateTime)
+            {
+                Box.enabled = true;
+            }
         }
     }
 }

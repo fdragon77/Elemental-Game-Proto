@@ -58,34 +58,37 @@ public class Flamethrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        t2 -= Time.deltaTime;
-        if (timer <= 0 && active)
+        if (GameController.gamespeed > 0)
         {
-            flamethrower.SetActive(false);
-            active = false;
-            FlamethrowerCooldown.rectTransform.localScale = Full;
-        }
-        if (theManager.currentMana < theManager.FlamethrowMana)
-        {
-            FlamethrowerCooldown.color = fadeColor;
-        }
-        else
-        {
-            FlamethrowerCooldown.color = color;
-        }
+            timer -= Time.deltaTime;
+            t2 -= Time.deltaTime;
+            if (timer <= 0 && active)
+            {
+                flamethrower.SetActive(false);
+                active = false;
+                FlamethrowerCooldown.rectTransform.localScale = Full;
+            }
+            if (theManager.currentMana < theManager.FlamethrowMana)
+            {
+                FlamethrowerCooldown.color = fadeColor;
+            }
+            else
+            {
+                FlamethrowerCooldown.color = color;
+            }
 
-        if(t2 > 0)
-        {
-            CC.moveSpeed = slowSpeed;
-            CC.rotateSpeed = rotateSpeed;
-            CC.dashLock = true;
-        }
-        else
-        {
-            CC.moveSpeed = spd;
-            CC.rotateSpeed = rotspd;
-            CC.dashLock = false;
+            if (t2 > 0)
+            {
+                CC.moveSpeed = slowSpeed;
+                CC.rotateSpeed = rotateSpeed;
+                CC.dashLock = true;
+            }
+            else
+            {
+                CC.moveSpeed = spd;
+                CC.rotateSpeed = rotspd;
+                CC.dashLock = false;
+            }
         }
     }
     

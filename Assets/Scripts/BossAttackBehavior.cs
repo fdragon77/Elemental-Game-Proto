@@ -21,16 +21,19 @@ public class BossAttackBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        GameObject visualHandler;
-        Vector3 startPos = transform.position;
-        visualHandler = Instantiate(theVisual, startPos, theVisual.transform.rotation) as GameObject;
-
-        theAttacks.Add(visualHandler);
-        lifetime -= Time.deltaTime;
-        if (lifetime <= 0)
+        if (GameController.gamespeed > 0)
         {
-            Boom();
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            GameObject visualHandler;
+            Vector3 startPos = transform.position;
+            visualHandler = Instantiate(theVisual, startPos, theVisual.transform.rotation) as GameObject;
+
+            theAttacks.Add(visualHandler);
+            lifetime -= Time.deltaTime;
+            if (lifetime <= 0)
+            {
+                Boom();
+            }
         }
 
     }

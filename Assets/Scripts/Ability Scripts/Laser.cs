@@ -27,11 +27,14 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0 && active)
+        if (GameController.gamespeed > 0)
         {
-            laser.SetActive(false);
-            active = false;
+            timer -= Time.deltaTime;
+            if (timer <= 0 && active)
+            {
+                laser.SetActive(false);
+                active = false;
+            }
         }
     }
 }

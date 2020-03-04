@@ -92,20 +92,26 @@ public class Explosion : MonoBehaviour
     }
     void Update()
     {
-        if (hasCollided)
+        if (GameController.gamespeed > 0)
         {
-            timer-= Time.deltaTime;
-            if (timer <=1)
+            if (GameController.gamespeed > 0)
             {
-                trigger.enabled = false;
-                rigid.enabled = false;
+                if (hasCollided)
+                {
+                    timer -= Time.deltaTime;
+                    if (timer <= 1)
+                    {
+                        trigger.enabled = false;
+                        rigid.enabled = false;
+                    }
+                    //Debug.Log("tick");
+                }
+                if (timer <= 0)
+                {
+                    //Debug.Log("Destroy");
+                    Destroy(gameObject);
+                }
             }
-            //Debug.Log("tick");
-        }
-        if (timer <=0)
-        {
-            //Debug.Log("Destroy");
-            Destroy(gameObject);
         }
     }
 }

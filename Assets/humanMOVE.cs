@@ -13,17 +13,20 @@ public class humanMOVE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = dirTarget.position - transform.position ;
-        Quaternion rotation = Quaternion.LookRotation(direction );
-        transform.rotation = rotation;
-        if (transform.position != target[current])
+        if (GameController.gamespeed > 0)
         {
-            Vector3 pos = Vector3.MoveTowards(transform.position, target[current], speed * Time.deltaTime);
-            GetComponent<Rigidbody>().MovePosition(pos);
-        }
-        else current = (current + 1) % target.Length;
+            Vector3 direction = dirTarget.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            transform.rotation = rotation;
+            if (transform.position != target[current])
+            {
+                Vector3 pos = Vector3.MoveTowards(transform.position, target[current], speed * Time.deltaTime);
+                GetComponent<Rigidbody>().MovePosition(pos);
+            }
+            else current = (current + 1) % target.Length;
 
         }
+    }
     
 
 }

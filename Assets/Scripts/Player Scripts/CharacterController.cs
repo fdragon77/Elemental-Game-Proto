@@ -104,125 +104,127 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health > 100)
+        if (GameController.gamespeed > 0)
         {
-            health = 100;
-        }
-        else if(health <= 0)
-        {
-            death();
-        }
-        if(timer <= holdtimer)
-            timer += Time.deltaTime;
-        if(dashTimer<=dashtimerhold)
-            dashTimer += Time.deltaTime;
-        if (dashTimer >=dashtimerhold && dash)
-        {
-            moveSpeed = regSpeed;
+            if (health > 100)
+            {
+                health = 100;
+            }
+            else if (health <= 0)
+            {
+                death();
+            }
+            if (timer <= holdtimer)
+                timer += Time.deltaTime;
+            if (dashTimer <= dashtimerhold)
+                dashTimer += Time.deltaTime;
+            if (dashTimer >= dashtimerhold && dash)
+            {
+                moveSpeed = regSpeed;
 
-        }
-        if (timer >= holdtimer)
-        {
-            dash = false;
-        }
-        
-        //dash with the rjoystick
-        if (Input.GetAxis("Dash") > 0 && !dash && !dashLock)
-        {
-            timer = 0;
-            dashTimer = 0;
-            dash = true;
-            moveSpeed = boost;
+            }
+            if (timer >= holdtimer)
+            {
+                dash = false;
+            }
 
-            /*
-            timer = 0;
-            dashTimer = 0;
-            dash = true;
-            moveSpeed = boost;
-
-            //Just took all the code from Move() here, pretty jank
-            Vector3 rightMovement = transform.right * moveSpeed * Time.deltaTime * Input.GetAxis("Dash_H") * GameController.gamespeed * rotateSpeed;
-            Vector3 upMovement = transform.forward * moveSpeed * Time.deltaTime * -Input.GetAxis("Dash_V") * GameController.gamespeed;
-
-            Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-
-            transform.forward = heading;
-            transform.position += rightMovement;
-            transform.position += upMovement;
-
-            return;
-            */
-            Move();
-        }
-        //if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
-        //move with ljoystick or arrows
-        if (Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0)
-        {
-            if (Input.GetButtonDown("Dash") && !dash && !dashLock)
+            //dash with the rjoystick
+            if (Input.GetAxis("Dash") > 0 && !dash && !dashLock)
             {
                 timer = 0;
                 dashTimer = 0;
                 dash = true;
                 moveSpeed = boost;
+
+                /*
+                timer = 0;
+                dashTimer = 0;
+                dash = true;
+                moveSpeed = boost;
+
+                //Just took all the code from Move() here, pretty jank
+                Vector3 rightMovement = transform.right * moveSpeed * Time.deltaTime * Input.GetAxis("Dash_H") * GameController.gamespeed * rotateSpeed;
+                Vector3 upMovement = transform.forward * moveSpeed * Time.deltaTime * -Input.GetAxis("Dash_V") * GameController.gamespeed;
+
+                Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+
+                transform.forward = heading;
+                transform.position += rightMovement;
+                transform.position += upMovement;
+
+                return;
+                */
+                Move();
             }
-            Move();
+            //if (Input.GetKey("w")|| Input.GetKey("a")|| Input.GetKey("s")|| Input.GetKey("d"))
+            //move with ljoystick or arrows
+            if (Input.GetButtonDown("Vertical") || Input.GetAxis("Vertical") != 0)
+            {
+                if (Input.GetButtonDown("Dash") && !dash && !dashLock)
+                {
+                    timer = 0;
+                    dashTimer = 0;
+                    dash = true;
+                    moveSpeed = boost;
+                }
+                Move();
+            }
+            if (Input.GetButtonDown("Horizontal") || (Input.GetAxis("Horizontal") != 0))
+            {
+                transform.position += Camera.main.transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+                //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
+            }
+
+            ratio = timer / holdtimer;
+            DashCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+
+            //Health/form change stuff.
+            if (health >= highHealth)
+            {
+                //form change stuff.
+                HighBlaze.SetActive(true);
+                MidBlaze.SetActive(false);
+                LowBlaze.SetActive(false);
+                Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
+                targeter.camera2 = HighCam;
+
+                //flamethrower height:
+                firebreath.transform.localPosition = new Vector3(0, FThighy, 1.33f);
+
+                //fireball adjustment
+                fireballcontroller.YOffset = FBhigh;
+            }
+            else if (health >= LowHealth)
+            {
+                //form change stuff.
+                HighBlaze.SetActive(false);
+                MidBlaze.SetActive(true);
+                LowBlaze.SetActive(false);
+                Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
+                targeter.camera2 = MidCam;
+
+                //flamethrower height:
+                firebreath.transform.localPosition = new Vector3(0, FTmidy, 1.33f);
+
+                //fireball adjustment
+                fireballcontroller.YOffset = FBmid;
+            }
+            else
+            {
+                //form change stuff.
+                HighBlaze.SetActive(false);
+                MidBlaze.SetActive(false);
+                LowBlaze.SetActive(true);
+                Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
+                targeter.camera2 = LowCam;
+
+                //flamethrower height:
+                firebreath.transform.localPosition = new Vector3(0, FTlowy, 1.33f);
+
+                //fireball adjustment
+                fireballcontroller.YOffset = FBlow;
+            }
         }
-        if (Input.GetButtonDown("Horizontal") || (Input.GetAxis("Horizontal") != 0))
-        {
-            transform.position += Camera.main.transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-            //transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime);
-        }
-
-        ratio = timer / holdtimer;
-        DashCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
-
-        //Health/form change stuff.
-        if(health >= highHealth)
-        {
-            //form change stuff.
-            HighBlaze.SetActive(true);
-            MidBlaze.SetActive(false);
-            LowBlaze.SetActive(false);
-            Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
-            targeter.camera2 = HighCam;
-
-            //flamethrower height:
-            firebreath.transform.localPosition = new Vector3(0, FThighy, 1.33f);
-
-            //fireball adjustment
-            fireballcontroller.YOffset = FBhigh;
-        }
-        else if(health >= LowHealth)
-        {
-            //form change stuff.
-            HighBlaze.SetActive(false);
-            MidBlaze.SetActive(true);
-            LowBlaze.SetActive(false);
-            Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
-            targeter.camera2 = MidCam;
-
-            //flamethrower height:
-            firebreath.transform.localPosition = new Vector3(0, FTmidy, 1.33f);
-
-            //fireball adjustment
-            fireballcontroller.YOffset = FBmid;
-        }
-        else
-        {
-            //form change stuff.
-            HighBlaze.SetActive(false);
-            MidBlaze.SetActive(false);
-            LowBlaze.SetActive(true);
-            Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
-            targeter.camera2 = LowCam;
-
-            //flamethrower height:
-            firebreath.transform.localPosition = new Vector3(0, FTlowy, 1.33f);
-
-            //fireball adjustment
-            fireballcontroller.YOffset = FBlow;
-        }
-
     }
     //Correct for isometric camera movements being diagonal; ie: makes up move you up
     void Move()

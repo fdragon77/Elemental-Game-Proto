@@ -36,11 +36,13 @@ public class Heal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Time.time >= lastTrigger + waitTime)
+        if (GameController.gamespeed > 0)
         {
-            //HealCooldown.rectTransform.localScale = Full;
-            healing = false;
+            if (Time.time >= lastTrigger + waitTime)
+            {
+                //HealCooldown.rectTransform.localScale = Full;
+                healing = false;
+            }
         }
     }
 }

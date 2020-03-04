@@ -13,17 +13,20 @@ public class movingEnviroment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, Goal, speed * Time.deltaTime);
+        if (GameController.gamespeed > 0)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, Goal, speed * Time.deltaTime);
 
-        if(Vector3.Distance(transform.position, Goal) <= tollerance && wrap)
-        {
-            transform.position = ResetZone;
-        }
-        else if (Vector3.Distance(transform.position, Goal) <= tollerance && !wrap)
-        {
-            Vector3 temp = ResetZone;
-            ResetZone = Goal;
-            Goal = temp;
+            if (Vector3.Distance(transform.position, Goal) <= tollerance && wrap)
+            {
+                transform.position = ResetZone;
+            }
+            else if (Vector3.Distance(transform.position, Goal) <= tollerance && !wrap)
+            {
+                Vector3 temp = ResetZone;
+                ResetZone = Goal;
+                Goal = temp;
+            }
         }
     }
 }

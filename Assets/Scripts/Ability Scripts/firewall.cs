@@ -78,25 +78,28 @@ public class firewall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= cooldown)
+        if (GameController.gamespeed > 0)
         {
-            timer += Time.deltaTime;
-        }
-        if (timer >= cooldown && active)
-        {
+            if (timer <= cooldown)
+            {
+                timer += Time.deltaTime;
+            }
+            if (timer >= cooldown && active)
+            {
 
-            //fireballCooldown.rectTransform.localScale = Full;
-            active = false;
-        }
-        float ratio = timer / cooldown;
-        firewallCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
-        if (theManager.currentMana < theManager.FirewallMana)
-        {
-            firewallCooldown.color = fadeColor;
-        }
-        else
-        {
-            firewallCooldown.color = color;
+                //fireballCooldown.rectTransform.localScale = Full;
+                active = false;
+            }
+            float ratio = timer / cooldown;
+            firewallCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+            if (theManager.currentMana < theManager.FirewallMana)
+            {
+                firewallCooldown.color = fadeColor;
+            }
+            else
+            {
+                firewallCooldown.color = color;
+            }
         }
     }
 

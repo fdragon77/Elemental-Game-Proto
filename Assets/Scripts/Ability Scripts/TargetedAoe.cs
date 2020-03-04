@@ -24,10 +24,13 @@ public class TargetedAoe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0 && active)
+        if (GameController.gamespeed > 0)
         {
-            active = false;
+            timer -= Time.deltaTime;
+            if (timer <= 0 && active)
+            {
+                active = false;
+            }
         }
     }
 }

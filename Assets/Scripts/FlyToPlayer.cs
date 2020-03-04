@@ -19,15 +19,18 @@ public class FlyToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (active)
+        if (GameController.gamespeed > 0)
         {
-            //Move towards the player at given speed. 
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed*Time.deltaTime);
-        }
-        if(Vector3.Distance(player.transform.position, transform.position) <= max_distance)
-        {
-            //Activate once player is within range. Do not deactivate. 
-            active = player.GetComponent<Heal>().healing || active;
+            if (active)
+            {
+                //Move towards the player at given speed. 
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            }
+            if (Vector3.Distance(player.transform.position, transform.position) <= max_distance)
+            {
+                //Activate once player is within range. Do not deactivate. 
+                active = player.GetComponent<Heal>().healing || active;
+            }
         }
     }
 

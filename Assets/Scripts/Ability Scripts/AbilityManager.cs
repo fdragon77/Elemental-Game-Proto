@@ -80,96 +80,95 @@ public class AbilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameController.gamespeed > 0)
+        {
+            updateManabar();
 
-      
+            timer -= Time.deltaTime;
+            if (currentMana < mana)
+            {
+                currentMana += manaRegenMod * Time.deltaTime;
+                //Debug.Log(currentMana);
+            }
+            else if (currentMana > mana)
+            {
+                currentMana = mana;
+            }
+            //Debug.Log(timer);
+            if (timer <= 0 && !fire)
+            {
+                fire = true;
+            }
+            //Debug.Log("Update");
+            if (Input.GetButtonDown("Fire1"))
+            {
+                //fire = false;
 
+                //Debug.Log("Melee");
+                //melee goes here
+            }
+            if (Input.GetButtonDown("1") && fire && currentMana >= FireballMana)
+            {
 
-        updateManabar();
+                //currentMana -= FireballMana;
+                fire = false;
 
-        timer -= Time.deltaTime;
-        if(currentMana < mana)
-        {
-            currentMana += manaRegenMod*Time.deltaTime;
-            //Debug.Log(currentMana);
-        }
-        else if(currentMana > mana)
-        {
-            currentMana = mana;
-        }
-        //Debug.Log(timer);
-        if(timer <=0 && !fire)
-        {
-            fire = true;
-        }
-        //Debug.Log("Update");
-        if (Input.GetButtonDown("Fire1"))
-        {
-            //fire = false;
-            
-            //Debug.Log("Melee");
-            //melee goes here
-        }
-        if (Input.GetButtonDown("1") && fire && currentMana >= FireballMana)
-        {
-            
-            //currentMana -= FireballMana;
-            fire = false;
-            
-            // test code for cool down take out later 
-            //fireballCooldown.rectTransform.localScale = new Vector3(0, 1, 1);
+                // test code for cool down take out later 
+                //fireballCooldown.rectTransform.localScale = new Vector3(0, 1, 1);
 
-            timer = allcool;
-            //Debug.Log("1");
-            abil1Trigger.Invoke();
-            //to be bound
-        }
-        if (Input.GetButtonDown("2") && fire && currentMana >= AoeMana)
-        {
-            //currentMana -= AoeMana;
-            fire = false;
-            // test code for cool down take out later 
-            //AOECooldown.rectTransform.localScale = new Vector3(0, 1, 1);
+                timer = allcool;
+                //Debug.Log("1");
+                abil1Trigger.Invoke();
+                //to be bound
+            }
+            if (Input.GetButtonDown("2") && fire && currentMana >= AoeMana)
+            {
+                //currentMana -= AoeMana;
+                fire = false;
+                // test code for cool down take out later 
+                //AOECooldown.rectTransform.localScale = new Vector3(0, 1, 1);
 
-            timer = allcool;
-            //Debug.Log("2");
-            abil2Trigger.Invoke();
-            //to be bound
-        }
-        if (Input.GetButtonDown("3") && fire && currentMana >= FlamethrowMana)
-        {
-            //currentMana -= FlamethrowMana;
-            fire = false;
-            timer = allcool;
-            //Debug.Log("3");
-            abil3Trigger.Invoke();
-            //to be bound
-        }
-        if (Input.GetButtonDown("4") && fire && currentMana >= FirewallMana)
-        {
-            //currentMana -= FirewallMana;
-            fire = false;
-            timer = allcool;
-            //Debug.Log("4");
-            abil4Trigger.Invoke();
-            //to be bound
-        }
-        if (Input.GetButtonDown("5") && fire && currentMana >= HealMana)
-        {
-            //currentMana -= HealMana;
-            fire = false;
-            timer = allcool;
-            //Debug.Log("5");
-            abil5Trigger.Invoke();
-            //to be bound
-        }
-        if (Input.GetButtonDown("6") && fire && currentMana >= abil6mana)
-        {
-            //currentMana -= abil6mana;
-            fire = false;
-            timer = allcool;
-            //Debug.Log("6");
-            abil6Trigger.Invoke();
-            //to be bound
+                timer = allcool;
+                //Debug.Log("2");
+                abil2Trigger.Invoke();
+                //to be bound
+            }
+            if (Input.GetButtonDown("3") && fire && currentMana >= FlamethrowMana)
+            {
+                //currentMana -= FlamethrowMana;
+                fire = false;
+                timer = allcool;
+                //Debug.Log("3");
+                abil3Trigger.Invoke();
+                //to be bound
+            }
+            if (Input.GetButtonDown("4") && fire && currentMana >= FirewallMana)
+            {
+                //currentMana -= FirewallMana;
+                fire = false;
+                timer = allcool;
+                //Debug.Log("4");
+                abil4Trigger.Invoke();
+                //to be bound
+            }
+            if (Input.GetButtonDown("5") && fire && currentMana >= HealMana)
+            {
+                //currentMana -= HealMana;
+                fire = false;
+                timer = allcool;
+                //Debug.Log("5");
+                abil5Trigger.Invoke();
+                //to be bound
+            }
+            if (Input.GetButtonDown("6") && fire && currentMana >= abil6mana)
+            {
+                //currentMana -= abil6mana;
+                fire = false;
+                timer = allcool;
+                //Debug.Log("6");
+                abil6Trigger.Invoke();
+                //to be bound
+            }
         }
     }
 }

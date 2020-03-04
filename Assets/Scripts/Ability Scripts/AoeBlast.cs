@@ -53,26 +53,29 @@ public class AoeBlast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= cooldown)
+        if (GameController.gamespeed > 0)
         {
-            timer += Time.deltaTime;
-        }
+            if (timer <= cooldown)
+            {
+                timer += Time.deltaTime;
+            }
 
-        if (timer >= cooldown && active)
-        {
-            //aoeRing.SetActive(false);
-            active = false;
-            //AoeCooldown.rectTransform.localScale = Full;
-        }
-        ratio = timer / cooldown;
-        AoeCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
-        if (theManager.currentMana < theManager.AoeMana)
-        {
-            AoeCooldown.color = fadeColor;
-        }
-        else
-        {
-            AoeCooldown.color = color;
+            if (timer >= cooldown && active)
+            {
+                //aoeRing.SetActive(false);
+                active = false;
+                //AoeCooldown.rectTransform.localScale = Full;
+            }
+            ratio = timer / cooldown;
+            AoeCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+            if (theManager.currentMana < theManager.AoeMana)
+            {
+                AoeCooldown.color = fadeColor;
+            }
+            else
+            {
+                AoeCooldown.color = color;
+            }
         }
     }
 }

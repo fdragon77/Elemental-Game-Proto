@@ -258,48 +258,51 @@ public class Destructable : MonoBehaviour
     
     void Update()
     {
-        if (timer > 0 && !canDestroy)
+        if (GameController.gamespeed > 0)
         {
-            timer-= Time.deltaTime;
-            //Debug.Log("Tick");
-        }
-        else if(timer <= 0 && !canDestroy)
-        {
-            canDestroy = true;
-        }
+            if (timer > 0 && !canDestroy)
+            {
+                timer -= Time.deltaTime;
+                //Debug.Log("Tick");
+            }
+            else if (timer <= 0 && !canDestroy)
+            {
+                canDestroy = true;
+            }
 
-        if (Touching && TouchTimer + TouchTime <= Time.time)
-        {
-            TouchTimer = Time.time;
-            if (CreateHeal)
+            if (Touching && TouchTimer + TouchTime <= Time.time)
             {
-                Instantiate(HealFlame, transform.position, transform.rotation);
+                TouchTimer = Time.time;
+                if (CreateHeal)
+                {
+                    Instantiate(HealFlame, transform.position, transform.rotation);
+                }
+                health -= 1;
+                displayDamage("5");
+                if (health <= 0)
+                {
+                    destruct();
+                }
+                else
+                {
+                    canDestroy = false;
+                    timer = GracePeriod;
+                }
             }
-            health -= 1;
-            displayDamage("5");
-            if (health <= 0)
+            if (Throwing && ThrowTimer + ThrowerTime <= Time.time)
             {
-                destruct();
-            }
-            else
-            {
-                canDestroy = false;
-                timer = GracePeriod;
-            }
-        }
-        if (Throwing && ThrowTimer + ThrowerTime <= Time.time)
-        {
-            ThrowTimer = Time.time;
-            health -= AM.FlamethrowDMG;
-            displayDamage((AM.FlamethrowDMG * 10).ToString());
-            if (health <= 0)
-            {
-                destruct();
-            }
-            else
-            {
-                canDestroy = false;
-                timer = GracePeriod;
+                ThrowTimer = Time.time;
+                health -= AM.FlamethrowDMG;
+                displayDamage((AM.FlamethrowDMG * 10).ToString());
+                if (health <= 0)
+                {
+                    destruct();
+                }
+                else
+                {
+                    canDestroy = false;
+                    timer = GracePeriod;
+                }
             }
         }
     }

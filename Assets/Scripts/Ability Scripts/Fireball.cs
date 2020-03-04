@@ -129,25 +129,28 @@ public class Fireball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer <= cooldown)
+        if (GameController.gamespeed > 0)
         {
-            timer += Time.deltaTime;
-        }
-        if (timer >= cooldown && active)
-        {
-            
-            //fireballCooldown.rectTransform.localScale = Full;
-            active = false;
-        }
-        float ratio = timer/cooldown;
-        fireballCooldown.rectTransform.localScale= new Vector3(ratio, 1, 1);
-        if (theManager.currentMana < theManager.FireballMana)
-        {
-            fireballCooldown.color = fadeColor;
-        }
-        else
-        {
-            fireballCooldown.color = color;
+            if (timer <= cooldown)
+            {
+                timer += Time.deltaTime;
+            }
+            if (timer >= cooldown && active)
+            {
+
+                //fireballCooldown.rectTransform.localScale = Full;
+                active = false;
+            }
+            float ratio = timer / cooldown;
+            fireballCooldown.rectTransform.localScale = new Vector3(ratio, 1, 1);
+            if (theManager.currentMana < theManager.FireballMana)
+            {
+                fireballCooldown.color = fadeColor;
+            }
+            else
+            {
+                fireballCooldown.color = color;
+            }
         }
     }
 

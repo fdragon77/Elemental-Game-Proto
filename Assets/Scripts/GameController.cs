@@ -48,7 +48,20 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            
+            if (gamespeed > 0)
+            {
+                gamespeed = 0;
+                Debug.Log("SPEED: " + gamespeed.ToString());
+            }
+            else
+            {
+                gamespeed = 1;
+                Debug.Log("SPEED: " + gamespeed.ToString());
+            }
+        }
     }
     /// <summary>
     /// Loads given scene by string.

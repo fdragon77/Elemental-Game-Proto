@@ -29,24 +29,26 @@ public class armor : MonoBehaviour
     void Update()
     {
         //healthText.text = "Health : " + health;
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (GameController.gamespeed > 0)
         {
-            health--;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                health--;
 
-            //Debug.Log(watchHealth.health);
+                //Debug.Log(watchHealth.health);
 
+            }
+            if (watchHealth.health > 0)
+            {
+                armor1 = armorSprites[100 - watchHealth.health];
+            }
+            else
+            {
+                armor1 = armorSprites[99];
+            }
+
+            this.gameObject.GetComponent<Image>().sprite = (armor1);
         }
-        if (watchHealth.health >0)
-        {
-            armor1 = armorSprites[100 - watchHealth.health];
-        }
-        else
-        {
-            armor1 = armorSprites[99];
-        }
-        
-        this.gameObject.GetComponent<Image>().sprite = (armor1);
        
     }
 

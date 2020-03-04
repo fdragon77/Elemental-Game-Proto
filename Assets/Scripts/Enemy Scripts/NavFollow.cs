@@ -26,11 +26,14 @@ public class NavFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Vector3.Distance(transform.position, thePlayer.transform.position) <= MaxDist) && (Vector3.Distance(transform.position, thePlayer.transform.position) >= MinDist))
+        if (GameController.gamespeed > 0)
         {
-            Navigator.SetDestination(thePlayer.position);
-            //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-            //transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            if ((Vector3.Distance(transform.position, thePlayer.transform.position) <= MaxDist) && (Vector3.Distance(transform.position, thePlayer.transform.position) >= MinDist))
+            {
+                Navigator.SetDestination(thePlayer.position);
+                //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+                //transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            }
         }
         
     }

@@ -45,18 +45,21 @@ public class EnemyInSight : MonoBehaviour
         else
             visible = false;
             */
-        distance = thePlayer.transform.position - gameObject.transform.position;
-        Debug.Log(gameObject.GetComponentInChildren<Renderer>().isVisible);
-        if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded && distance.x < range && distance.z < range)
+        if (GameController.gamespeed > 0)
         {
-            beenAdded = true;
-            Debug.Log("I am " + gameObject);
-            TargetLock.targetableEnemies.Add(gameObject);
-        }
-        else if ((!gameObject.GetComponentInChildren<Renderer>().isVisible || distance.x > range || distance.z > range) && beenAdded)
-        {
-            
-            RemoveThyself();
+            distance = thePlayer.transform.position - gameObject.transform.position;
+            Debug.Log(gameObject.GetComponentInChildren<Renderer>().isVisible);
+            if (gameObject.GetComponentInChildren<Renderer>().isVisible && !beenAdded && distance.x < range && distance.z < range)
+            {
+                beenAdded = true;
+                Debug.Log("I am " + gameObject);
+                TargetLock.targetableEnemies.Add(gameObject);
+            }
+            else if ((!gameObject.GetComponentInChildren<Renderer>().isVisible || distance.x > range || distance.z > range) && beenAdded)
+            {
+
+                RemoveThyself();
+            }
         }
     }
 }

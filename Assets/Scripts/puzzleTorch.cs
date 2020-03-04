@@ -20,10 +20,13 @@ public class puzzleTorch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        burnEffect.SetActive(burning);
-        if(Time.time >= StartBurningTime + burnTime)
+        if (GameController.gamespeed > 0)
         {
-            burning = false;
+            burnEffect.SetActive(burning);
+            if (Time.time >= StartBurningTime + burnTime)
+            {
+                burning = false;
+            }
         }
     }
 

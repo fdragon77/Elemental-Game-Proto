@@ -49,21 +49,23 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform.position);
-        timer -= Time.deltaTime;
-        if ((Vector3.Distance(transform.position, player.transform.position) <= MaxDist) && (Vector3.Distance(transform.position, player.transform.position) >= MinDist))
+        if (GameController.gamespeed > 0)
         {
+            transform.LookAt(player.transform.position);
+            timer -= Time.deltaTime;
+            if ((Vector3.Distance(transform.position, player.transform.position) <= MaxDist) && (Vector3.Distance(transform.position, player.transform.position) >= MinDist))
+            {
 
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-            //transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        }
+                transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+                //transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            }
 
-        if (timer <= 0 && (Vector3.Distance(transform.position, player.transform.position) <= attackRange))
-        {
+            if (timer <= 0 && (Vector3.Distance(transform.position, player.transform.position) <= attackRange))
+            {
 
-            Fire();
-            timer = 4.0f;
-        }
-        
+                Fire();
+                timer = 4.0f;
+            }
+        } 
     }
 }
