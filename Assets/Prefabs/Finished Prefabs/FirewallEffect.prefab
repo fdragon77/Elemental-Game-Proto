@@ -33480,6 +33480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3405264428087834223}
+  - component: {fileID: 5085105515053693515}
   m_Layer: 0
   m_Name: FirewallEffect
   m_TagString: Untagged
@@ -33503,6 +33504,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5085105515053693515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3407578377609922113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dedddb5c4c672468af364e6ee2753c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
+  theObject: {fileID: 3407578377609922113}
 --- !u!1 &3407673353728834393
 GameObject:
   m_ObjectHideFlags: 0
