@@ -43,6 +43,8 @@ public class Destructable : MonoBehaviour
     private float TouchTimer;
     private float ThrowTimer;
 
+    private GameObject ThrowerCheck;
+
     private void Start()
     {
         AM = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<AbilityManager>();
@@ -54,6 +56,8 @@ public class Destructable : MonoBehaviour
         //timers for extended damage.
         TouchTimer = Time.time;
         ThrowTimer = Time.time;
+
+        ThrowerCheck = null;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -94,6 +98,7 @@ public class Destructable : MonoBehaviour
                 case "fireCone":
                     if (FirebreathsDestroy)
                     {
+                        ThrowerCheck = collision.gameObject;
                         Throwing = true;
                         ThrowTimer = Time.time;
                         health -= AM.FlamethrowDMG;
@@ -303,6 +308,10 @@ public class Destructable : MonoBehaviour
                     canDestroy = false;
                     timer = GracePeriod;
                 }
+            }
+            if(ThrowerCheck != null && Throwing && !ThrowerCheck.gameObject.activeInHierarchy)
+            {
+                Throwing = false;
             }
         }
     }
