@@ -6,7 +6,9 @@ using UnityEngine.Audio;
 
 public class Fireball : MonoBehaviour
 {
-    public Animator anim;
+    [SerializeField] Animator animS;
+    [SerializeField] Animator animM;
+    [SerializeField] Animator animL;
 
     //sound
     //public AudioClip fireballsnd;
@@ -34,7 +36,7 @@ public class Fireball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        animS = GetComponent<Animator>();
 
         timer = cooldown;
         // get audio source
@@ -52,8 +54,10 @@ public class Fireball : MonoBehaviour
     {
         if(!active)
         {
-            anim.Play("Fireball", -1, 0f);
-            if(Multishot)
+            animS.Play("Fireball", -1, 0f);
+            animM.Play("Fireball");
+            animL.Play("Fireball");
+            if (Multishot)
             {
                 StartCoroutine(Repeat());
             }

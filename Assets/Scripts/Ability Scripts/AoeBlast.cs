@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class AoeBlast : MonoBehaviour
 {
-    public Animator anim;
+    [SerializeField] Animator animS;
+    [SerializeField] Animator animM;
+    [SerializeField] Animator animL;
 
     public GameObject aoeRing;
     [SerializeField] GameObject AoeObject;
@@ -27,9 +29,8 @@ public class AoeBlast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-       
-        anim = GetComponent<Animator>();
+        animS = GetComponent<Animator>();
+
         AoeCooldown = GameObject.Find("AoeFill").GetComponent<RawImage>();
         color = AoeCooldown.color;
         theManager = GameObject.FindGameObjectWithTag("Player").GetComponent<AbilityManager>();
@@ -39,8 +40,10 @@ public class AoeBlast : MonoBehaviour
     {
         if (!active)
         {
-            anim.Play("AOE", -1, 0f);
-           
+            animS.Play("AOE", -1, 0f);
+            animM.Play("AOE");
+            animL.Play("AOE");
+
             Debug.Log("AoeBlast");
             timer = 0;
             Blast = Instantiate(AoeObject, transform.position, AoeObject.transform.rotation) as GameObject;

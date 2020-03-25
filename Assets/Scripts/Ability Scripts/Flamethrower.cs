@@ -7,7 +7,9 @@ public class Flamethrower : MonoBehaviour
 {
 
     // wills attempt to initiate animations 
-    public Animator anim;
+    [SerializeField] Animator animS;
+    [SerializeField] Animator animM;
+    [SerializeField] Animator animL;
 
     public GameObject flamethrower;
     float timer = 0;
@@ -31,7 +33,7 @@ public class Flamethrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        animS = GetComponent<Animator>();
 
         FlamethrowerCooldown = GameObject.Find("FlamethrowerFill").GetComponent<RawImage>();
         color = FlamethrowerCooldown.color;
@@ -45,7 +47,10 @@ public class Flamethrower : MonoBehaviour
         //Debug.Log("flamethrower");
         if (!active)
         {
-            anim.Play("Firebreath",-1,0f);
+            animS.Play("Firebreath",-1,0f);
+            animM.Play("Breath");
+            animL.Play("Fire Breath");
+
             timer = cooldown;
             t2 = animationLenth;
             flamethrower.SetActive(true);
