@@ -6366,6 +6366,7 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -7546,6 +7547,7 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
     Value: 0.000003415095
+    m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
@@ -12249,13 +12251,17 @@ MonoBehaviour:
   HealDestroy: 0
   AOEDestroy: 0
   TargetedAOEDestroy: 0
+  Touch: 0
   explosiveForce: 0
   GracePeriod: 0
   DestructionType: 0
   burnmat: {fileID: 0}
   explodeObj: {fileID: 0}
+  CreateHeal: 1
   HealFlame: {fileID: 6147101787596755686, guid: 6e7ced66554f6b0459433b230fee5528,
     type: 3}
+  TouchTime: 5
+  ThrowerTime: 0.1
 --- !u!65 &1060781026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18153,11 +18159,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7162633372862728562, guid: 31fd71a300675e94d9209888d8ab53d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5362163313586573460, guid: 31fd71a300675e94d9209888d8ab53d3,
         type: 3}
       propertyPath: DestructionType
@@ -18169,6 +18170,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3742462651009319042, guid: 6983cf30bc5b8ae458f6b19c72b9e8b7,
         type: 3}
+    - target: {fileID: 7162633372862728562, guid: 31fd71a300675e94d9209888d8ab53d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fd71a300675e94d9209888d8ab53d3, type: 3}
 --- !u!1001 &1494379015
@@ -19829,11 +19835,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7162633372862728562, guid: 31fd71a300675e94d9209888d8ab53d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5362163313586573460, guid: 31fd71a300675e94d9209888d8ab53d3,
         type: 3}
       propertyPath: explodeObj
@@ -19844,6 +19845,11 @@ PrefabInstance:
         type: 3}
       propertyPath: DestructionType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162633372862728562, guid: 31fd71a300675e94d9209888d8ab53d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fd71a300675e94d9209888d8ab53d3, type: 3}
