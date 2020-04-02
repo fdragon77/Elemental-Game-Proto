@@ -157,6 +157,7 @@ MonoBehaviour:
   Follow: {fileID: 1033205408}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &2609977
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2609975}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -320,6 +321,7 @@ MonoBehaviour:
   Follow: {fileID: 2609975}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &211370523
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -401,7 +403,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211370521}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -572,6 +574,7 @@ MonoBehaviour:
   Follow: {fileID: 890435094}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &218982336
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -653,7 +656,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218982334}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -698,6 +701,7 @@ MonoBehaviour:
   Follow: {fileID: 2991584457570143778}
   updatetime: 0.1
   socialDistance: 40
+  isFirstBody: 0
 --- !u!135 &235388906
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -779,7 +783,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235388904}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -893,6 +897,7 @@ MonoBehaviour:
   Follow: {fileID: 2014394016}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &288204857
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -974,7 +979,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288204855}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1591,6 +1596,7 @@ MonoBehaviour:
   Follow: {fileID: 1638616263}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &615970829
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1658,7 +1664,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615970826}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1945,6 +1951,7 @@ MonoBehaviour:
   Follow: {fileID: 235388904}
   updatetime: 0.1
   socialDistance: 40
+  isFirstBody: 0
 --- !u!135 &727327254
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2026,7 +2033,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727327252}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2193,6 +2200,7 @@ MonoBehaviour:
   Follow: {fileID: 218982334}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &857446048
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2274,7 +2282,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857446046}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2445,6 +2453,7 @@ MonoBehaviour:
   Follow: {fileID: 288204855}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &890435096
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2526,7 +2535,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890435094}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2766,6 +2775,7 @@ MonoBehaviour:
   Follow: {fileID: 857446046}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &1033205410
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2847,7 +2857,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033205408}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -3681,6 +3691,7 @@ MonoBehaviour:
   Follow: {fileID: 211370521}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 0
 --- !u!135 &1638616265
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3762,7 +3773,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638616263}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -4321,6 +4332,7 @@ MonoBehaviour:
   Follow: {fileID: 727327252}
   updatetime: 0.1
   socialDistance: 40
+  isFirstBody: 0
 --- !u!135 &2014394018
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4402,7 +4414,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014394016}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -5035,6 +5047,7 @@ MonoBehaviour:
   Follow: {fileID: 7215710886796704647}
   updatetime: 0.1
   socialDistance: 30
+  isFirstBody: 1
 --- !u!54 &2991584457570143781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5043,7 +5056,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2991584457570143778}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -5301,8 +5314,9 @@ GameObject:
   - component: {fileID: 4074990733974192306}
   - component: {fileID: 4440880494323478254}
   - component: {fileID: 8923368822812990081}
-  - component: {fileID: 8923368822812990082}
   - component: {fileID: 8923368822812990083}
+  - component: {fileID: 8923368822812990084}
+  - component: {fileID: 8923368822812990082}
   m_Layer: 14
   m_Name: Head
   m_TagString: Enemy
@@ -5322,10 +5336,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdccf1b453665aa4cbf2acdc4bffbebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
-  rotateSpeed: 0.4
---- !u!65 &8923368822812990082
-BoxCollider:
+  speed: 50
+  rotateSpeed: 0.6
+  isActivated: 0
+  ActivateDistance: 100
+--- !u!136 &8923368822812990082
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5334,9 +5350,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.7665644, y: 3.0729287, z: 4.898102}
-  m_Center: {x: -0.044857502, y: 0.2573162, z: 2.8897493}
+  m_Radius: 1.8149973
+  m_Height: 5.758649
+  m_Direction: 2
+  m_Center: {x: -0.00069561007, y: 0.03921623, z: 2.812558}
 --- !u!54 &8923368822812990083
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5345,14 +5362,43 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8923368822812990080}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8923368822812990084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923368822812990080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4ccb4141cc7b34294743941131597f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  FireballsDestroy: 0
+  FirebreathsDestroy: 0
+  WallDestroy: 0
+  HealDestroy: 0
+  AOEDestroy: 0
+  TargetedAOEDestroy: 0
+  Touch: 0
+  explosiveForce: 0
+  GracePeriod: 0
+  DestructionType: 0
+  burnmat: {fileID: 0}
+  explodeObj: {fileID: 0}
+  CreateHeal: 1
+  HealFlame: {fileID: 0}
+  TouchTime: 5
+  ThrowerTime: 0.1
 --- !u!4 &8989335756676863915
 Transform:
   m_ObjectHideFlags: 0
@@ -5361,8 +5407,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5376120269962732984}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.9, y: 21.3, z: 446.8}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -75, y: 21.3, z: 357}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 2801675135662750910}
   - {fileID: 2102605680338631800}
