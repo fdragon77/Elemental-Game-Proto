@@ -13,6 +13,7 @@ public class SnakeBody : MonoBehaviour
     [SerializeField] private float updatetime = .1f;
     private float startTime;
     [SerializeField] private float socialDistance = 0.5f;
+    [SerializeField] private bool isFirstBody = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,9 @@ public class SnakeBody : MonoBehaviour
             if (Follow == null)
             {
                 Destroy(gameObject);
+                return;
             }
-            if (Vector3.Distance(transform.position, Follow.transform.position) >= socialDistance)
+            if (Vector3.Distance(transform.position, Follow.transform.position) >= socialDistance && Head.isActivated)
             {
                 transform.position = Vector3.MoveTowards(transform.position, go, speed * Time.deltaTime);
             }
@@ -51,6 +53,10 @@ public class SnakeBody : MonoBehaviour
     {
         if (other.gameObject.name == "Head")
         {
+            if (isFirstBody)
+            {
+                Head.ItsJustTheHeadNow();
+            }
             Destroy(gameObject);
         }
     }
