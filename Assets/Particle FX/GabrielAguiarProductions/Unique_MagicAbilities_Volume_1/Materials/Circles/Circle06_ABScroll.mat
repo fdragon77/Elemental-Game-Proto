@@ -1,18 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8070445136395062750
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Circle06_ABScroll
-  m_Shader: {fileID: 4800000, guid: c183104a0d06f5c4780d2ec95079ab3f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0850b508c5c025442a9d0a4cfe05c747, type: 3}
   m_ShaderKeywords: _DISTORTMAINTEXTURE_ON _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -54,6 +68,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 58e3a0bde9baa69438ff362ec85c73b5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTexMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTexutre:
         m_Texture: {fileID: 2800000, guid: 58e3a0bde9baa69438ff362ec85c73b5, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -76,7 +94,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _ColorMultiplier: 2
+    - _ColorMultiplier: 44.1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DistortMainTexture: 1
@@ -94,6 +112,8 @@ Material:
     - _GradientVSpeed: 0.2
     - _GradientVSpeed_copy: 0.1
     - _InvFade: 2.71
+    - _MainTextUSpeed: 0
+    - _MainTextVSpeed: 0
     - _MainTextureUSpeed: 0
     - _MainTextureVSpeed: 0
     - _Metallic: 0
