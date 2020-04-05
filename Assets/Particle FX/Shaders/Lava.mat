@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6672764279024784578
+--- !u!114 &-2361737190016036927
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve 1
-  m_Shader: {fileID: -6465566751694194690, guid: 3a1e19f76e5a7404d95cd6b09ab559e6,
+  m_Name: Lava
+  m_Shader: {fileID: -6465566751694194690, guid: 69fcd78b72faf1545a6e45beea7fc318,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -62,8 +62,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_5DED58A3: 0.01
-    - Vector1_5F293E0F: 30
+    - Vector1_30992225: 5
+    - Vector1_92CA9A71: 5.35
+    - Vector1_BC8EF596: 0.75
+    - Vector1_E3B4F1A6: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -86,7 +88,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_A8D2BC9D: {r: 16, g: 0.1882353, b: 0, a: 1}
+    - Color_55D63FB5: {r: 0.3584906, g: 0, b: 0, a: 0}
+    - Color_97A7F626: {r: 11.39267, g: 1.340314, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
