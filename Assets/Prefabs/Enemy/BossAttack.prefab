@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 272129965957265849}
   - component: {fileID: 8308225875126259645}
   - component: {fileID: 1478702054857305092}
+  - component: {fileID: 8342457755995874307}
   m_Layer: 15
   m_Name: BossAttack
   m_TagString: EnemyAttack
@@ -236,3 +237,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8212036, y: 2.076686, z: 2.2067544}
   m_Center: {x: 0.030634062, y: -0.1047779, z: 0.003612488}
+--- !u!114 &8342457755995874307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357107000235186375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e011362c566dad5428189200fbf11abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

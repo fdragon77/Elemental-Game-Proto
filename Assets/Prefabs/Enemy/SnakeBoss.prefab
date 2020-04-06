@@ -295,9 +295,10 @@ GameObject:
   - component: {fileID: 5194805526472014160}
   - component: {fileID: 5194805526472014167}
   - component: {fileID: 5194805526472014166}
+  - component: {fileID: 6670340455448967893}
   m_Layer: 14
   m_Name: body (1)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 410052960051678452}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 1
 --- !u!54 &5194805526472014166
@@ -408,6 +409,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &6670340455448967893
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194805526472014161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0, y: -0.20039451, z: -0.88314676}
 --- !u!1 &7031128561206416743
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,9 +436,10 @@ GameObject:
   - component: {fileID: 7031128561206416741}
   - component: {fileID: 7031128561206416742}
   - component: {fileID: 7031128561206416745}
+  - component: {fileID: 528322957379865987}
   m_Layer: 14
   m_Name: body (3)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561688922267}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 40
   isFirstBody: 0
 --- !u!54 &7031128561206416745
@@ -535,6 +550,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &528322957379865987
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561206416743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0, y: -0.20039451, z: -0.88314295}
 --- !u!1 &7031128561312534393
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,9 +577,10 @@ GameObject:
   - component: {fileID: 7031128561312534398}
   - component: {fileID: 7031128561312534399}
   - component: {fileID: 7031128561312534371}
+  - component: {fileID: 3322406238050103736}
   m_Layer: 14
   m_Name: body (13)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,7 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128562438421428}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128561312534371
@@ -662,6 +691,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &3322406238050103736
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561312534393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0, y: -0.20039451, z: -0.88314295}
 --- !u!1 &7031128561427710419
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,9 +718,10 @@ GameObject:
   - component: {fileID: 7031128561427710417}
   - component: {fileID: 7031128561427710418}
   - component: {fileID: 7031128561427710421}
+  - component: {fileID: 1808324907271035469}
   m_Layer: 14
   m_Name: body (9)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -770,7 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561604780525}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128561427710421
@@ -789,6 +832,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &1808324907271035469
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561427710419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: -0.0000011920929, y: -0.20039451, z: -0.88314295}
 --- !u!1 &7031128561570742629
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,9 +859,10 @@ GameObject:
   - component: {fileID: 7031128561570742635}
   - component: {fileID: 7031128561570742628}
   - component: {fileID: 7031128561570742639}
+  - component: {fileID: 1077138907177708513}
   m_Layer: 14
   m_Name: body (6)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -897,7 +954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128562177957700}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128561570742639
@@ -916,6 +973,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &1077138907177708513
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561570742629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0, y: -0.20039451, z: -0.88314295}
 --- !u!1 &7031128561604780525
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,9 +1000,10 @@ GameObject:
   - component: {fileID: 7031128561604780499}
   - component: {fileID: 7031128561604780524}
   - component: {fileID: 7031128561604780503}
+  - component: {fileID: 8653428503559999712}
   m_Layer: 14
   m_Name: body (8)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1024,7 +1095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561706111181}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128561604780503
@@ -1043,6 +1114,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &8653428503559999712
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561604780525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5127149
+  m_Center: {x: 0, y: -0.20039402, z: -0.8831429}
 --- !u!1 &7031128561688922267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,9 +1141,10 @@ GameObject:
   - component: {fileID: 7031128561688922265}
   - component: {fileID: 7031128561688922266}
   - component: {fileID: 7031128561688922269}
+  - component: {fileID: 493483308436274361}
   m_Layer: 14
   m_Name: body (2)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,7 +1236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 5194805526472014161}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 40
   isFirstBody: 0
 --- !u!54 &7031128561688922269
@@ -1170,6 +1255,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &493483308436274361
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561688922267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0, y: -0.20039451, z: -0.88314676}
 --- !u!1 &7031128561706111181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,9 +1282,10 @@ GameObject:
   - component: {fileID: 7031128561706111155}
   - component: {fileID: 7031128561706111180}
   - component: {fileID: 7031128561706111159}
+  - component: {fileID: 3921660250760688774}
   m_Layer: 14
   m_Name: body (7)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1278,7 +1377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561570742629}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128561706111159
@@ -1297,6 +1396,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &3921660250760688774
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561706111181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5127149
+  m_Center: {x: 0, y: -0.20039402, z: -0.88313526}
 --- !u!1 &7031128561713722730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,9 +1423,10 @@ GameObject:
   - component: {fileID: 7031128561713722728}
   - component: {fileID: 7031128561713722729}
   - component: {fileID: 7031128561713722732}
+  - component: {fileID: 3511205051498301900}
   m_Layer: 14
   m_Name: body (11)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1405,7 +1518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561925891140}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128561713722732
@@ -1424,6 +1537,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &3511205051498301900
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561713722730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5127149
+  m_Center: {x: 0, y: -0.20039354, z: -0.8831429}
 --- !u!1 &7031128561925891140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,9 +1564,10 @@ GameObject:
   - component: {fileID: 7031128561925891146}
   - component: {fileID: 7031128561925891147}
   - component: {fileID: 7031128561925891150}
+  - component: {fileID: 6416664125347717591}
   m_Layer: 14
   m_Name: body (10)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1532,7 +1659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561427710419}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128561925891150
@@ -1551,6 +1678,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &6416664125347717591
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128561925891140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0, y: -0.20039451, z: -0.88314295}
 --- !u!1 &7031128562177957700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,9 +1705,10 @@ GameObject:
   - component: {fileID: 7031128562177957706}
   - component: {fileID: 7031128562177957707}
   - component: {fileID: 7031128562177957710}
+  - component: {fileID: 7955915392399949118}
   m_Layer: 14
   m_Name: body (5)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1659,7 +1800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128562594005459}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128562177957710
@@ -1678,6 +1819,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &7955915392399949118
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128562177957700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5127152
+  m_Center: {x: 0, y: -0.20039406, z: -0.88313925}
 --- !u!1 &7031128562438421428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,9 +1846,10 @@ GameObject:
   - component: {fileID: 7031128562438421434}
   - component: {fileID: 7031128562438421435}
   - component: {fileID: 7031128562438421438}
+  - component: {fileID: 1854414234405843026}
   m_Layer: 14
   m_Name: body (12)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1786,7 +1941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561713722730}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 30
   isFirstBody: 0
 --- !u!54 &7031128562438421438
@@ -1805,6 +1960,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &1854414234405843026
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128562438421428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0, y: -0.20039451, z: -0.88314295}
 --- !u!1 &7031128562594005459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,9 +1987,10 @@ GameObject:
   - component: {fileID: 7031128562594005457}
   - component: {fileID: 7031128562594005458}
   - component: {fileID: 7031128562594005461}
+  - component: {fileID: 8537246313938032200}
   m_Layer: 14
   m_Name: body (4)
-  m_TagString: Enemy
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1913,7 +2082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 1893124304074550770}
   Follow: {fileID: 7031128561206416743}
-  updatetime: 0.1
+  updateTime: 0.1
   socialDistance: 40
   isFirstBody: 0
 --- !u!54 &7031128562594005461
@@ -1932,6 +2101,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!135 &8537246313938032200
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031128562594005459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.512715
+  m_Center: {x: 0.00000011920929, y: -0.20039451, z: -0.88314676}
 --- !u!1 &9042921446071417640
 GameObject:
   m_ObjectHideFlags: 0

@@ -261,9 +261,20 @@ public class CharacterController : MonoBehaviour
     {
         if(collision.gameObject.tag == "EnemyAttack")
         {
-            health -= 5;
-            displayDamage("5");
-            Debug.Log("Ouch");
+            attackdmg dmg = collision.gameObject.GetComponent<attackdmg>();
+            int d;
+            if (dmg == null)
+            {
+                d = 5;
+            }
+            else
+            {
+                d = dmg.damage;
+            }
+
+            health -= d;
+            displayDamage(d.ToString());
+            //Debug.Log("Ouch");
             //armor1 = armorSprites[100 - health];
             //this.gameObject.GetComponent<Image>().sprite = (armor1);
         }
