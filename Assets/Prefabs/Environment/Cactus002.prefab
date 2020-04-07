@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 264536f1857bd7b41a8f43536954b5f2, type: 2}
+  - {fileID: 2100000, guid: ba7f2ac147c0d61488c2d06379051277, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,10 @@ MonoBehaviour:
   burnmat: {fileID: 2100000, guid: e0af8c35d67f6fc40b434982d1cb24a8, type: 2}
   explodeObj: {fileID: 1865295414965800690, guid: ef9249f073cdf4644b723726fdf76119,
     type: 3}
+  CreateHeal: 1
   HealFlame: {fileID: 2845824157495635507}
+  TouchTime: 5
+  ThrowerTime: 0.1
 --- !u!208 &9017932439823827000
 NavMeshObstacle:
   m_ObjectHideFlags: 0
