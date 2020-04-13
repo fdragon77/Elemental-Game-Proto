@@ -12,6 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e03cca2dde6954da0a411c80be011c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6031821871502232996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681587960603214849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b068809aea02a14bb1c104093c337c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 642775180373225733}
+        m_MethodName: Hide
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &680910272134351989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,6 +50,96 @@ PrefabInstance:
     - target: {fileID: 1804210476386420, guid: d401ff5d3cb36c7478804b9f6400fb2a, type: 3}
       propertyPath: m_Name
       value: Dialogue Popup Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: Overlay.StartAlpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideOnBackButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3584434043365527468}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3584434043365527468}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: play
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: HideOnAnyButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: AutoSelectButtonAfterShow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: AutoHideAfterShow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+        type: 3}
+      propertyPath: AutoHideAfterShowDelay
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224438690315014364, guid: d401ff5d3cb36c7478804b9f6400fb2a,
         type: 3}
@@ -128,95 +246,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+    - target: {fileID: 225358424908297222, guid: d401ff5d3cb36c7478804b9f6400fb2a,
         type: 3}
-      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: Overlay.StartAlpha
+      propertyPath: m_Alpha
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideOnBackButton
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3584434043365527468}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: ShowBehavior.OnStart.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3584434043365527468}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: play
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideBehavior.OnFinished.Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: HideOnAnyButton
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: AutoSelectButtonAfterShow
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: AutoHideAfterShow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: AutoHideAfterShowDelay
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224562080713641074, guid: d401ff5d3cb36c7478804b9f6400fb2a,
         type: 3}
@@ -228,15 +261,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 1024
       objectReference: {fileID: 0}
-    - target: {fileID: 225358424908297222, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+    - target: {fileID: 114774587154237820, guid: d401ff5d3cb36c7478804b9f6400fb2a,
         type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224313627310269024, guid: d401ff5d3cb36c7478804b9f6400fb2a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -31
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224795347637574908, guid: d401ff5d3cb36c7478804b9f6400fb2a,
         type: 3}
@@ -248,10 +276,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -79.3
       objectReference: {fileID: 0}
-    - target: {fileID: 114774587154237820, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+    - target: {fileID: 224313627310269024, guid: d401ff5d3cb36c7478804b9f6400fb2a,
         type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
+      propertyPath: m_AnchoredPosition.y
+      value: -31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d401ff5d3cb36c7478804b9f6400fb2a, type: 3}
@@ -261,3 +289,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 680910272134351989}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &642775180373225733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114996641633598832, guid: d401ff5d3cb36c7478804b9f6400fb2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 680910272134351989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681587960603214849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d434a5ea618166e46a16791046345ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
