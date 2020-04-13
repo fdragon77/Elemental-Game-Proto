@@ -51,4 +51,17 @@ public class SnakeHead : MonoBehaviour
     {
         CantTouchThis.enabled = true;
     }
+
+    public void NewTarget(GameObject t)
+    {
+        Target = t;
+    }
+
+    public void TargetPlayer(GameObject t)
+    {
+        if (Target == t)
+        {
+            Target = Player;
+        }
+    }
 }
