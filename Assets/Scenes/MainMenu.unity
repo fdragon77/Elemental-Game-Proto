@@ -13430,6 +13430,7 @@ GameObject:
   - component: {fileID: 2025236043}
   - component: {fileID: 2025236042}
   - component: {fileID: 2025236041}
+  - component: {fileID: 2025236046}
   m_Layer: 0
   m_Name: Button - Play
   m_TagString: Untagged
@@ -14379,7 +14380,18 @@ MonoBehaviour:
         CustomSortingLayer: Default
       Event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 2025236046}
+            m_MethodName: loadScene
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       GameEvents: []
@@ -15920,6 +15932,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025236039}
   m_CullTransparentMesh: 0
+--- !u!114 &2025236046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025236039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef39a93784e64d4ca5b8e111ccb5ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toLoad: Intro
 --- !u!1 &2026219842
 GameObject:
   m_ObjectHideFlags: 0
