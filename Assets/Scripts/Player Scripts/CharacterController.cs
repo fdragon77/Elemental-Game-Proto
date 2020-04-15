@@ -67,6 +67,9 @@ public class CharacterController : MonoBehaviour
 
     //Checkpoints.
     public Checkpoint LastCheckpoint;
+    
+    //Healthbar
+    [SerializeField] private RawImage HealthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -114,6 +117,9 @@ public class CharacterController : MonoBehaviour
             {
                 death();
             }
+            
+            HealthBar.rectTransform.localScale = new Vector3(health / 100.0f, 1, 1);
+            
             if (timer <= holdtimer)
                 timer += Time.deltaTime;
             if (dashTimer <= dashtimerhold)
