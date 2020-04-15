@@ -21,10 +21,10 @@ public class SceneScript : MonoBehaviour
 
     public void loadScene()
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().LastCheckpoint = new Vector3(0, 0, 0);
         if (!(SceneManager.GetSceneAt(0) == SceneManager.GetActiveScene()))
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().LastCheckpoint =
-                new Vector3(0, 0, 0);
+            
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().playerHealth =
                 GameObject.FindWithTag("Player").GetComponent<CharacterController>().health;
         }
