@@ -13,40 +13,23 @@ public class SceneScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-
-        
         if ((collision.gameObject.tag == "Player"))
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().LastCheckpoint = new Vector3(0, 0, 0);
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().playerHealth = collision.gameObject.GetComponent<CharacterController>().health;
-            SceneManager.LoadScene(toLoad);
+            loadScene();
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        /*
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-        else if (Input.GetKeyDown(KeyCode.I))
-        {
-            SceneManager.LoadScene("Andrew_Fire_fx");
-        }
-        else if (Input.GetKeyDown(KeyCode.O))
-        {
-            SceneManager.LoadScene("Filip's Messing Around Scene");
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            SceneManager.LoadScene("StartLevel");
-        }
-        else if (Input.GetKeyDown(KeyCode.J))
-        {
-            SceneManager.LoadScene("backupmine");
-        }
-        */
 
+    public void loadScene()
+    {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().LastCheckpoint = new Vector3(0, 0, 0);
+        if (!(SceneManager.GetSceneAt(0) == SceneManager.GetActiveScene()))
+        {
+            
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().playerHealth =
+                GameObject.FindWithTag("Player").GetComponent<CharacterController>().health;
+        }
+
+        SceneManager.LoadScene(toLoad);
+        Time.timeScale = 1;
     }
 }
