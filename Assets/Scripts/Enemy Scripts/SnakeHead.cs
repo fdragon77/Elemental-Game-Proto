@@ -38,29 +38,18 @@ public class SnakeHead : MonoBehaviour
         }
 
         HealthBar.rectTransform.localScale = new Vector3(health / 14f, 1, 1);
-        
-        if (health > 1)
+
+        if (!isActivated)
         {
-            if (!isActivated)
+            if (Vector3.Distance(transform.position, Player.transform.position) <= ActivateDistance)
             {
-                if (Vector3.Distance(transform.position, Player.transform.position) <= ActivateDistance)
-                {
-                    isActivated = true;
-                }
-            }
-            else
-            {
-                transform.position += transform.forward * (speed * Time.deltaTime);
-                Quaternion TargetQ = Quaternion.LookRotation(Target.transform.position - transform.position);
-                TargetQ.z = transform.rotation.z;
-                transform.localRotation = Quaternion.Lerp(transform.rotation, TargetQ, rotateSpeed * Time.deltaTime);
+                isActivated = true;
             }
         }
-        //No more protection.
         else
         {
             transform.position += transform.forward * (speed * Time.deltaTime);
-            Quaternion TargetQ = Quaternion.LookRotation(transform.position - Target.transform.position);
+            Quaternion TargetQ = Quaternion.LookRotation(Target.transform.position - transform.position);
             TargetQ.z = transform.rotation.z;
             transform.localRotation = Quaternion.Lerp(transform.rotation, TargetQ, rotateSpeed * Time.deltaTime);
         }
