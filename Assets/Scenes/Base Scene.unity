@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 3876d0e183013044aab5adba683217d7, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4037d7925552acd469e87b94b7dfbe81, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -24151,7 +24151,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873876820}
-  m_LocalRotation: {x: -0.23715547, y: -0.2389009, z: 0.06029197, w: -0.9397067}
+  m_LocalRotation: {x: -0.23715548, y: -0.23890093, z: 0.06029198, w: -0.9397067}
   m_LocalPosition: {x: 260.22507, y: 46.22358, z: 434.15622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -33468,12 +33468,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mine001
       objectReference: {fileID: 0}
-    - target: {fileID: -4496999068719626180, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 5561349426305759274, guid: a65071f64ecab17409eaa0179716dced,
-        type: 3}
     - target: {fileID: -4216859302048453862, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33544,6 +33538,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.4093
       objectReference: {fileID: 0}
+    - target: {fileID: -4496999068719626180, guid: 6f02b90a490c8d9429a98e5033e9bb3d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5561349426305759274, guid: a65071f64ecab17409eaa0179716dced,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f02b90a490c8d9429a98e5033e9bb3d, type: 3}
 --- !u!1001 &1216574527
@@ -37389,7 +37389,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314683032}
-  m_LocalRotation: {x: -0.23715547, y: -0.2389009, z: 0.06029197, w: -0.9397067}
+  m_LocalRotation: {x: -0.23715548, y: -0.23890093, z: 0.06029198, w: -0.9397067}
   m_LocalPosition: {x: 260.22507, y: 46.22358, z: 434.15622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -37913,6 +37913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 3002255105893342285, guid: 0e82fe43b1f343542a76f02074c922b3,
+        type: 3}
+      propertyPath: PointsDisplay
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3002255105893342286, guid: 0e82fe43b1f343542a76f02074c922b3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37967,11 +37972,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3002255105893342285, guid: 0e82fe43b1f343542a76f02074c922b3,
-        type: 3}
-      propertyPath: PointsDisplay
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e82fe43b1f343542a76f02074c922b3, type: 3}
