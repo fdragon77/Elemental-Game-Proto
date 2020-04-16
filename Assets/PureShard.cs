@@ -14,6 +14,7 @@ public class PureShard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        theManager = GameObject.FindGameObjectWithTag("EarthBoss").GetComponent<EarthBossManager>();
         CurrentCrystal = theManager.ActiveCrystal();
         
     }
@@ -33,8 +34,10 @@ public class PureShard : MonoBehaviour
     /// Destroy the object once it collides with the crystal to be destroyed. 
     /// </summary>
     /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
+        Debug.Log(CurrentCrystal);
+        Debug.Log(collision.gameObject);
         if (collision.gameObject == CurrentCrystal)
         {
             theManager.BreakCrystal();
