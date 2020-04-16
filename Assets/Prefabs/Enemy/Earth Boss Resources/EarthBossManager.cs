@@ -7,22 +7,40 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] GameObject CrystalMid;
     [SerializeField] GameObject CrystalRight;
     [SerializeField] GameObject CrystalLeft;
+
+    [SerializeField] Destructable CrystalMidD;
+    [SerializeField] Destructable CrystalRightD;
+    [SerializeField] Destructable CrystalLeftD;
     [SerializeField] int explosiveForce;
     [SerializeField] GameObject BrokenCrystal;
+    [SerializeField] GameObject BindingArray;
 
+    private Destructable[] bindings;
+    Destructable CurrentBreakD;
     GameObject CurrentBreak;
     int nextBreak = 0;
+
     List<GameObject> theCrystals = new List<GameObject>();
+    List<Destructable> theCrystalsD = new List<Destructable>();
     // Start is called before the first frame update
     void Start()
     {
+        
+        theCrystalsD.Add(CrystalLeftD);
+        theCrystalsD.Add(CrystalRightD);
+        theCrystalsD.Add(CrystalMidD);
+
         theCrystals.Add(CrystalLeft);
         theCrystals.Add(CrystalRight);
         theCrystals.Add(CrystalMid);
 
+        CurrentBreakD = theCrystalsD[nextBreak];
         CurrentBreak = theCrystals[nextBreak];
 
-    }
+
+        bindings = BindingArray.GetComponentsInChildren<Destructable>();    
+
+}
 
     // Update is called once per frame
     void Update()
@@ -35,22 +53,31 @@ public class EarthBossManager : MonoBehaviour
 
     void CrystalBreak()
     {
-        CurrentBreak.SetActive(false);
-        Vector3 pos = CurrentBreak.transform.position;
-        GameObject Fragments = Instantiate(BrokenCrystal, pos, CurrentBreak.transform.rotation) as GameObject;
-        Rigidbody[] theBodies = Fragments.GetComponentsInChildren<Rigidbody>();
-        if (theBodies.Length > 0)
-        {
-            foreach (Rigidbody body in theBodies)
-            {
-                body.AddExplosionForce(explosiveForce, transform.position, 1);
-            }
-        }
+        CurrentBreakD.CallDestruct();  
+        
+        
         nextBreak++;
-        if(nextBreak < theCrystals.Count)
+        if(nextBreak < theCrystalsD.Count)
         {
+            CurrentBreakD = theCrystalsD[nextBreak];
             CurrentBreak = theCrystals[nextBreak];
         }
+        else
+        {
+            foreach (Destructable binding in bindings)
+            {
+                binding.CallDestruct();
+            }
+        }
        
+    }
+
+    public GameObject ActiveCrystal()
+    {
+        return CurrentBreak;
+    }
+    public void BreakCrystal()
+    {
+        CrystalBreak();
     }
 }

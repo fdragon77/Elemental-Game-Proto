@@ -21,7 +21,8 @@ public class Destructable : MonoBehaviour
     [SerializeField] float GracePeriod;
     bool canDestroy = true;
     float timer = 0;
-    GameObject Tourge;
+
+    GameObject Tourge;//because explosions
     [Header("How Does this become destroyed?")]
     [SerializeField] destroyType DestructionType = destroyType.normal;
 
@@ -334,5 +335,13 @@ public class Destructable : MonoBehaviour
         {
             Touching = false;
         }
+    }
+
+    /// <summary>
+    /// call the destruction separate from attacks to allow other scripts to trigger it
+    /// </summary>
+    public void CallDestruct()
+    {
+        destruct();
     }
 }

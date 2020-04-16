@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6174548102174664871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -378.9, y: 2.7962399, z: 260.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 145877257750344039}
@@ -122,8 +122,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 206.97021, y: 1031.2977, z: 229.02832}
-  m_Center: {x: 11.474609, y: 509.0166, z: 8.9782715}
+  m_Size: {x: 329.1282, y: 1031.2977, z: 311.8423}
+  m_Center: {x: 2.7490616, y: 509.0166, z: 19.874895}
 --- !u!114 &6915768429310030773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,13 +144,13 @@ MonoBehaviour:
   AOEDestroy: 0
   TargetedAOEDestroy: 0
   Touch: 0
-  explosiveForce: 0
+  explosiveForce: 25
   GracePeriod: 0
   DestructionType: 1
   burnmat: {fileID: 0}
   explodeObj: {fileID: 6126327062782542646, guid: 7d0c16516faeaf34aaa08073d0e8212b,
     type: 3}
-  CreateHeal: 1
+  CreateHeal: 0
   HealFlame: {fileID: 0}
   TouchTime: 5
   ThrowerTime: 0.1
