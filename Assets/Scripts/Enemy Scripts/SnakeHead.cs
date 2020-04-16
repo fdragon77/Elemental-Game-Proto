@@ -1,5 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Destructable))]
 [SuppressMessage("ReSharper", "Unity.InefficientPropertyAccess")]
@@ -12,6 +14,9 @@ public class SnakeHead : MonoBehaviour
     [SerializeField] public float rotateSpeed;
     [SerializeField] public bool isActivated;
     [SerializeField] private float ActivateDistance = 100;
+    [HideInInspector] public int health = 1;
+    [SerializeField] public Image HealthBar;
+    [SerializeField] private GameObject remove;
 
     private Destructable CantTouchThis;
  
@@ -31,17 +36,31 @@ public class SnakeHead : MonoBehaviour
         {
             return;
         }
-        if (!isActivated)
+
+        HealthBar.rectTransform.localScale = new Vector3(health / 14f, 1, 1);
+        
+        if (health > 1)
         {
-            if (Vector3.Distance(transform.position, Player.transform.position) <= ActivateDistance)
+            if (!isActivated)
             {
-                isActivated = true;
+                if (Vector3.Distance(transform.position, Player.transform.position) <= ActivateDistance)
+                {
+                    isActivated = true;
+                }
+            }
+            else
+            {
+                transform.position += transform.forward * (speed * Time.deltaTime);
+                Quaternion TargetQ = Quaternion.LookRotation(Target.transform.position - transform.position);
+                TargetQ.z = transform.rotation.z;
+                transform.localRotation = Quaternion.Lerp(transform.rotation, TargetQ, rotateSpeed * Time.deltaTime);
             }
         }
+        //No more protection.
         else
         {
             transform.position += transform.forward * (speed * Time.deltaTime);
-            Quaternion TargetQ = Quaternion.LookRotation(Target.transform.position - transform.position);
+            Quaternion TargetQ = Quaternion.LookRotation(transform.position - Target.transform.position);
             TargetQ.z = transform.rotation.z;
             transform.localRotation = Quaternion.Lerp(transform.rotation, TargetQ, rotateSpeed * Time.deltaTime);
         }
@@ -50,6 +69,8 @@ public class SnakeHead : MonoBehaviour
     public void ItsJustTheHeadNow()
     {
         CantTouchThis.enabled = true;
+        speed *= 2;
+        rotateSpeed = 0.9f;
     }
 
     public void NewTarget(GameObject t)
@@ -63,5 +84,10 @@ public class SnakeHead : MonoBehaviour
         {
             Target = Player;
         }
+    }
+
+    public void OnDestroy()
+    {
+        remove.SetActive(false);
     }
 }

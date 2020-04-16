@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 public class SnakeBody : MonoBehaviour
@@ -20,6 +21,7 @@ public class SnakeBody : MonoBehaviour
         //rotateSpeed = 1;
         startTime = Time.time;
         go = Follow.transform.position;
+        Head.health += 1;
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class SnakeBody : MonoBehaviour
 
         if (!Follow.activeSelf)
         {
+            Head.health -= 1;
             gameObject.SetActive(false);
             return;
         }
@@ -59,7 +62,9 @@ public class SnakeBody : MonoBehaviour
             {
                 Head.ItsJustTheHeadNow();
             }
+            Head.health -= 1;
             gameObject.SetActive(false);
         }
     }
+
 }
