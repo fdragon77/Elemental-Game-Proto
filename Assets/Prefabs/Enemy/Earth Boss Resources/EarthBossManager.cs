@@ -20,6 +20,10 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] GameObject BrokenCrystal;
     [SerializeField] GameObject BindingArray;
 
+    [SerializeField] GameObject ModelControl;
+
+
+
     [Header("Boss Attack Objects")]
     [SerializeField] GameObject PrisonObject;
     [SerializeField] GameObject CorruptSpike;
@@ -30,7 +34,7 @@ public class EarthBossManager : MonoBehaviour
     Destructable CurrentBreakD;
     GameObject CurrentBreak;
     int nextBreak = 0;
-
+    float timer = 0;
     List<GameObject> theCrystals = new List<GameObject>();
     List<Destructable> theCrystalsD = new List<Destructable>();
     // Start is called before the first frame update
@@ -52,19 +56,38 @@ public class EarthBossManager : MonoBehaviour
         CurrentBreak = theCrystals[nextBreak];
 
 
-        bindings = BindingArray.GetComponentsInChildren<Destructable>();    
+        bindings = BindingArray.GetComponentsInChildren<Destructable>();
+    }
 
-}
+    private void Imprison()
+    {
+        Debug.Log("PrisonForm");
+        GameObject prisonHandler;
+        Vector3 startPos = player.transform.position;
+        
+        prisonHandler = Instantiate(PrisonObject, startPos, PrisonObject.transform.rotation) as GameObject;
+
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space") && nextBreak <=2)
+        if (GameController.gamespeed > 0)
         {
-            CrystalBreak();
+            ModelControl.transform.LookAt(player.transform.position);
+            //timer -= Time.deltaTime;
+        }
+            if (Input.GetKeyDown("space"))
+        {
+            //CrystalBreak();
+            Imprison();
         }
     }
 
+    /// <summary>
+    /// This controls the destruction of the crystals that are corrupting the elemental
+    /// </summary>
     void CrystalBreak()
     {
         CurrentBreakD.CallDestruct();  
@@ -85,13 +108,29 @@ public class EarthBossManager : MonoBehaviour
         }
        
     }
-
+    /// <summary>
+    /// allows for the targeting script on the shard to access which crystal it needs to target
+    /// </summary>
+    /// <returns></returns>
     public GameObject ActiveCrystal()
     {
         return CurrentBreak;
     }
+
+    /// <summary>
+    /// allows the shard to break the crystal 
+    /// </summary>
     public void BreakCrystal()
     {
         CrystalBreak();
+    }
+    /// <summary>
+    /// makes sure the boss can reacquire the player if necessary
+    /// </summary>
+    public void TargetAcquire()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Target Acquired");
+        Debug.Log(player);
     }
 }

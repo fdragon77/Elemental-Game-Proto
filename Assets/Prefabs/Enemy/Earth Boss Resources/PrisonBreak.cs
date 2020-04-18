@@ -52,7 +52,11 @@ public class PrisonBreak : MonoBehaviour
         {
             foreach (Destructable toBreak in thePillars)
             {
-                toBreak.CallDestruct();
+                if(toBreak != null)
+                {
+                    toBreak.CallDestruct();
+                }
+                
             }
         }
     }
