@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EarthBossManager : MonoBehaviour
 {
+
+    GameObject player;
+    Transform playerLoc;
+
+    [Header("Boss Pieces")]
     [SerializeField] GameObject CrystalMid;
     [SerializeField] GameObject CrystalRight;
     [SerializeField] GameObject CrystalLeft;
@@ -15,6 +20,12 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] GameObject BrokenCrystal;
     [SerializeField] GameObject BindingArray;
 
+    [Header("Boss Attack Objects")]
+    [SerializeField] GameObject PrisonObject;
+    [SerializeField] GameObject CorruptSpike;
+    [SerializeField] GameObject BossDamagingSpike;
+
+
     private Destructable[] bindings;
     Destructable CurrentBreakD;
     GameObject CurrentBreak;
@@ -25,7 +36,10 @@ public class EarthBossManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         
+
+
         theCrystalsD.Add(CrystalLeftD);
         theCrystalsD.Add(CrystalRightD);
         theCrystalsD.Add(CrystalMidD);

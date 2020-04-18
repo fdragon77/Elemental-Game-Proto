@@ -11,7 +11,7 @@ public class BasicEnemy : MonoBehaviour
     [SerializeField] float MinDist;
     [SerializeField] float attackRange;
     [SerializeField] float projAdj;
-    float yLoc;
+    
 
     public GameObject projectile;
     float timer = 0;
@@ -21,7 +21,7 @@ public class BasicEnemy : MonoBehaviour
     {
         //playerLoc = player.position;
         player = GameObject.FindGameObjectWithTag("Player");
-        yLoc = transform.position.y;
+       
     }
 
     public void Fire()
