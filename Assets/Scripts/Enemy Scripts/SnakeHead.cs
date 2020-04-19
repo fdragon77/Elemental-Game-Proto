@@ -17,6 +17,7 @@ public class SnakeHead : MonoBehaviour
     [HideInInspector] public int health = 1;
     [SerializeField] public Image HealthBar;
     [SerializeField] private GameObject remove;
+    [SerializeField] private GameObject ActivateOnDestroy;
 
     private Destructable CantTouchThis;
  
@@ -78,5 +79,6 @@ public class SnakeHead : MonoBehaviour
     public void OnDestroy()
     {
         remove.SetActive(false);
+        ActivateOnDestroy.SetActive(true);
     }
 }
