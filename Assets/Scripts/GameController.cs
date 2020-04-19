@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Doozy.Engine.UI;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -46,20 +47,19 @@ public class GameController : MonoBehaviour
         Screen.SetResolution(1920, 1080, true);
     }
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            
             if (gamespeed > 0)
             {
                 gamespeed = 0;
-                Debug.Log("SPEED: " + gamespeed.ToString());
+                //Debug.Log("SPEED: " + gamespeed.ToString());
             }
             else
             {
                 gamespeed = 1;
-                Debug.Log("SPEED: " + gamespeed.ToString());
+                //Debug.Log("SPEED: " + gamespeed.ToString());
             }
         }
     }
