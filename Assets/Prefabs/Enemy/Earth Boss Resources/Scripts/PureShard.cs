@@ -26,7 +26,8 @@ public class PureShard : MonoBehaviour
         {
             //Move towards the crystal at given speed. 
             transform.position = Vector3.MoveTowards(transform.position, CurrentCrystal.transform.position, speed * Time.deltaTime);
-            
+            Quaternion TargetQ = Quaternion.LookRotation(CurrentCrystal.transform.position - transform.position);
+            transform.rotation = TargetQ;
         }
     }
 
