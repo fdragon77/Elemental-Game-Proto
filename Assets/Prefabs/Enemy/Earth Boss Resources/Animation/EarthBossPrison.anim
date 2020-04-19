@@ -62,7 +62,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.25
-        value: {x: 127.78, y: -40.793, z: -59.575012}
+        value: {x: 111.7, y: 24.6, z: -60}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -130,7 +130,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.25
-        value: {x: -124.725, y: 66.898994, z: -70.67999}
+        value: {x: -124.725, y: 122.84, z: -50.9}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -305,7 +305,21 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
+      path: 3289740277
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
       path: 3271205377
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1213036074
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -338,20 +352,6 @@ AnimationClip:
       script: {fileID: 0}
       typeID: 4
       customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 3289740277
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1213036074
-      attribute: 4
-      script: {fileID: 0}
-      typeID: 4
-      customType: 4
       isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
@@ -722,7 +722,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: 127.78
+        value: 111.7
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -759,7 +759,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: -40.793
+        value: 24.6
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -796,7 +796,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: -59.575012
+        value: -60
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1203,7 +1203,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: 66.898994
+        value: 122.84
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1240,7 +1240,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: -70.67999
+        value: -50.9
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1271,7 +1271,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: EarthElementalContainer/Body Control/Right Shoulder Control/Right Arm Control
+    path: EarthElementalContainer/Body Control/Left Shoulder Control/Left Arm Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1281,7 +1281,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: EarthElementalContainer/Body Control/Right Shoulder Control/Right Arm Control
+    path: EarthElementalContainer/Body Control/Left Shoulder Control/Left Arm Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1291,7 +1291,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: EarthElementalContainer/Body Control/Right Shoulder Control/Right Arm Control
+    path: EarthElementalContainer/Body Control/Left Shoulder Control/Left Arm Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1301,7 +1301,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: EarthElementalContainer/Body Control/Left Shoulder Control/Left Arm Control
+    path: EarthElementalContainer/Body Control/Right Shoulder Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1311,7 +1311,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: EarthElementalContainer/Body Control/Left Shoulder Control/Left Arm Control
+    path: EarthElementalContainer/Body Control/Right Shoulder Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1321,7 +1321,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: EarthElementalContainer/Body Control/Left Shoulder Control/Left Arm Control
+    path: EarthElementalContainer/Body Control/Right Shoulder Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1361,7 +1361,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: EarthElementalContainer/Body Control/Right Shoulder Control
+    path: EarthElementalContainer/Body Control/Right Shoulder Control/Right Arm Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1371,7 +1371,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: EarthElementalContainer/Body Control/Right Shoulder Control
+    path: EarthElementalContainer/Body Control/Right Shoulder Control/Right Arm Control
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1381,7 +1381,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: EarthElementalContainer/Body Control/Right Shoulder Control
+    path: EarthElementalContainer/Body Control/Right Shoulder Control/Right Arm Control
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
