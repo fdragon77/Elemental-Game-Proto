@@ -9,7 +9,7 @@ public class FlyToPlayer_Enemy : MonoBehaviour
     [SerializeField] float speed = 1;
     [HideInInspector] GameObject player;
     [SerializeField] bool active = true;
-    [SerializeField] int damageAmount = 5;
+    //[SerializeField] int damageAmount = 5;
     [SerializeField] float timer = 5;
     [SerializeField] Rigidbody myBody;
     bool gravityOn = false;
@@ -56,7 +56,7 @@ public class FlyToPlayer_Enemy : MonoBehaviour
         if(collision.gameObject.tag == player.gameObject.tag)
         {
             Destroy(gameObject);
-            player.GetComponent<CharacterController>().health -= damageAmount;
+            //player.GetComponent<CharacterController>().health -= damageAmount;
         }
     }
 }

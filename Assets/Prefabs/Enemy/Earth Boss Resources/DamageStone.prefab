@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3940517839848686397}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 7199917767388568244}
   m_RootOrder: 0
@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 5156619796734118667}
   - component: {fileID: 2776549113599706197}
   - component: {fileID: -2135802934359537424}
+  - component: {fileID: -6897402839032971096}
   m_Layer: 15
   m_Name: DamageStone
   m_TagString: EnemyAttack
@@ -126,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 329.1282, y: 1031.2977, z: 311.8423}
-  m_Center: {x: 2.7490616, y: 509.0166, z: 19.874895}
+  m_Size: {x: 329.1282, y: 289.05273, z: 1540.3055}
+  m_Center: {x: 2.7490616, y: -3.1195521, z: 749.6581}
 --- !u!114 &6915768429310030773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,9 +230,22 @@ MonoBehaviour:
   GracePeriod: 0
   DestructionType: 1
   burnmat: {fileID: 0}
-  explodeObj: {fileID: 6126327062782542646, guid: 7d0c16516faeaf34aaa08073d0e8212b,
+  explodeObj: {fileID: 6126327062782542646, guid: 758d0e523cea322418251bb01517688a,
     type: 3}
   CreateHeal: 0
   HealFlame: {fileID: 0}
   TouchTime: 5
   ThrowerTime: 0.1
+--- !u!114 &-6897402839032971096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174548102174664871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e011362c566dad5428189200fbf11abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
