@@ -17,7 +17,10 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] Destructable CrystalMidD;
     [SerializeField] Destructable CrystalRightD;
     [SerializeField] Destructable CrystalLeftD;
+
     [SerializeField] int explosiveForce;
+    [SerializeField] int crystalHealth = 3;
+    int crystalHealthReset;
     [SerializeField] GameObject BrokenCrystal;
     [SerializeField] GameObject BindingArray;
 
@@ -32,6 +35,8 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] GameObject BossDamagingSpike;
     [SerializeField] GameObject PlayerDamagingSpike;
 
+
+    
     int determinePure = 3;
     int theSpike = 1;
     bool hostile = true;
@@ -53,7 +58,7 @@ public class EarthBossManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         attackDelayReset = attackDelay;
         breakDelayReset = breakDelay;
-
+        crystalHealthReset = crystalHealth;
         theCrystalsD.Add(CrystalLeftD);
         theCrystalsD.Add(CrystalRightD);
         theCrystalsD.Add(CrystalMidD);
@@ -157,23 +162,32 @@ public class EarthBossManager : MonoBehaviour
         if (!hasBrokenRecently)
         {
             hasBrokenRecently = true;
-            CurrentBreakD.CallDestruct();
-
-
-            nextBreak++;
-            if (nextBreak < theCrystalsD.Count)
+            if(crystalHealth <= 0)
             {
-                CurrentBreakD = theCrystalsD[nextBreak];
-                CurrentBreak = theCrystals[nextBreak];
+                CurrentBreakD.CallDestruct();
+
+
+                nextBreak++;
+                if (nextBreak < theCrystalsD.Count)
+                {
+                    CurrentBreakD = theCrystalsD[nextBreak];
+                    CurrentBreak = theCrystals[nextBreak];
+                    crystalHealth = crystalHealthReset;
+                }
+                else
+                {
+                    hostile = false;
+                    foreach (Destructable binding in bindings)
+                    {
+                        binding.CallDestruct();
+                    }
+                }
             }
             else
             {
-                hostile = false;
-                foreach (Destructable binding in bindings)
-                {
-                    binding.CallDestruct();
-                }
+                crystalHealth--;
             }
+            
         }
         
        
