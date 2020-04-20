@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &681555899515830690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3299210234349250895}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3786955, y: 4.4904118, z: 3.2294965}
+  m_Center: {x: -0.23492855, y: 2.196937, z: 0.33365864}
+--- !u!208 &5690243119785880424
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3299210234349250895}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.6890001, y: 2.2450001, z: 1.6890001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.23500001, y: 2.197, z: 0.33400002}
+  m_TimeToStationary: 0.5
 --- !u!114 &7373322050614735775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,6 +69,21 @@ PrefabInstance:
     - target: {fileID: 1498478766008014, guid: 2e3a851fb51f05946afa4156d0078cae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Cactus_15 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 64257947033026162, guid: 2e3a851fb51f05946afa4156d0078cae,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64555320487939438, guid: 2e3a851fb51f05946afa4156d0078cae,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64604257640886520, guid: 2e3a851fb51f05946afa4156d0078cae,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4906149303299186, guid: 2e3a851fb51f05946afa4156d0078cae, type: 3}
       propertyPath: m_LocalPosition.x
