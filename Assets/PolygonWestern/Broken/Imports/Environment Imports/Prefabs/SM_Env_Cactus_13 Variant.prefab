@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!208 &-5203063412467470093
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803776049497321923}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.34500003, y: 0.395, z: 0.34500003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.067, y: 0.395, z: -0.018000001}
+  m_TimeToStationary: 0.5
 --- !u!114 &-7120388815184979052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,8 +35,8 @@ MonoBehaviour:
   HealDestroy: 0
   AOEDestroy: 1
   TargetedAOEDestroy: 0
-  Touch: 0
-  explosiveForce: 500
+  Touch: 1
+  explosiveForce: 10
   GracePeriod: 0
   DestructionType: 1
   burnmat: {fileID: 0}
@@ -96,6 +112,11 @@ PrefabInstance:
     - target: {fileID: 4657201411312216, guid: d0875601fc479f34e81d2c44a5d3ed2b, type: 3}
       propertyPath: m_LocalScale.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 64109068881961710, guid: d0875601fc479f34e81d2c44a5d3ed2b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0875601fc479f34e81d2c44a5d3ed2b, type: 3}

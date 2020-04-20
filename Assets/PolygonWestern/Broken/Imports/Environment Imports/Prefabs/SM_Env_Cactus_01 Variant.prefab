@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!208 &257984672395720688
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454564575683504474}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.63100004, y: 1.2980001, z: 0.63100004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.026, y: 1.2980001, z: -0.036000002}
+  m_TimeToStationary: 0.5
 --- !u!114 &4987360301912968845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,15 +35,15 @@ MonoBehaviour:
   HealDestroy: 0
   AOEDestroy: 1
   TargetedAOEDestroy: 0
-  Touch: 0
-  explosiveForce: 500
+  Touch: 1
+  explosiveForce: 10
   GracePeriod: 0
   DestructionType: 1
   burnmat: {fileID: 0}
   explodeObj: {fileID: 1114495943257539351, guid: 88a61d71cd932b44cbbb88673b38bb5e,
     type: 3}
   CreateHeal: 1
-  HealFlame: {fileID: 1114495943257539351, guid: 88a61d71cd932b44cbbb88673b38bb5e,
+  HealFlame: {fileID: 6147101787596755686, guid: 6e7ced66554f6b0459433b230fee5528,
     type: 3}
   TouchTime: 5
   ThrowerTime: 0.1

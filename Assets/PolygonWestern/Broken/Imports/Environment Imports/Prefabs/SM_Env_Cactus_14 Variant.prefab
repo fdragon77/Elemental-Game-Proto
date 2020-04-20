@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!208 &-4143573180643075136
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559479600127054433}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.19500001, y: 1.3010001, z: 0.19500001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.058000002, y: 1.3010001, z: -0.017}
+  m_TimeToStationary: 0.5
 --- !u!114 &-9121968485256503124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,8 +35,8 @@ MonoBehaviour:
   HealDestroy: 0
   AOEDestroy: 1
   TargetedAOEDestroy: 0
-  Touch: 0
-  explosiveForce: 500
+  Touch: 1
+  explosiveForce: 10
   GracePeriod: 0
   DestructionType: 1
   burnmat: {fileID: 0}

@@ -48,15 +48,16 @@ MonoBehaviour:
   HealDestroy: 0
   AOEDestroy: 1
   TargetedAOEDestroy: 0
-  Touch: 0
-  explosiveForce: 10000
+  Touch: 1
+  explosiveForce: 10
   GracePeriod: 0
   DestructionType: 1
   burnmat: {fileID: 0}
   explodeObj: {fileID: 1340140452060503263, guid: c0b3eac46c53e674d88c5b806fc528da,
     type: 3}
   CreateHeal: 1
-  HealFlame: {fileID: 0}
+  HealFlame: {fileID: 6147101787596755686, guid: 6e7ced66554f6b0459433b230fee5528,
+    type: 3}
   TouchTime: 5
   ThrowerTime: 0.1
 --- !u!1001 &3300141139611701121
@@ -69,21 +70,6 @@ PrefabInstance:
     - target: {fileID: 1498478766008014, guid: 2e3a851fb51f05946afa4156d0078cae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Cactus_15 Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 64257947033026162, guid: 2e3a851fb51f05946afa4156d0078cae,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64555320487939438, guid: 2e3a851fb51f05946afa4156d0078cae,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64604257640886520, guid: 2e3a851fb51f05946afa4156d0078cae,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4906149303299186, guid: 2e3a851fb51f05946afa4156d0078cae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -140,6 +126,21 @@ PrefabInstance:
     - target: {fileID: 4906149303299186, guid: 2e3a851fb51f05946afa4156d0078cae, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 64257947033026162, guid: 2e3a851fb51f05946afa4156d0078cae,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64555320487939438, guid: 2e3a851fb51f05946afa4156d0078cae,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64604257640886520, guid: 2e3a851fb51f05946afa4156d0078cae,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3a851fb51f05946afa4156d0078cae, type: 3}
