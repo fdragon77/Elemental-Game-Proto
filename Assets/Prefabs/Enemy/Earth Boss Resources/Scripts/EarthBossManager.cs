@@ -24,28 +24,35 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] GameObject ModelControl;
     [SerializeField] Animator EarthBossAnim;
 
+    [SerializeField] GameObject CorruptOrb;
+
 
    [Header("Boss Attack Objects")]
     [SerializeField] GameObject PrisonObject;
-    [SerializeField] GameObject CorruptSpike;
     [SerializeField] GameObject BossDamagingSpike;
+    [SerializeField] GameObject PlayerDamagingSpike;
 
-
+    int determinePure = 3;
+    int theSpike = 1;
     bool hostile = true;
     int nextAttack = 1;
     private Destructable[] bindings;
     Destructable CurrentBreakD;
     GameObject CurrentBreak;
     int nextBreak = 0;
-    float timer = 5;
+    [SerializeField] float attackDelay = 5;
+    float attackDelayReset;
+    [SerializeField] float breakDelay = 5;
+    float breakDelayReset;
+    bool hasBrokenRecently = false;
     List<GameObject> theCrystals = new List<GameObject>();
     List<Destructable> theCrystalsD = new List<Destructable>();
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        
-
+        attackDelayReset = attackDelay;
+        breakDelayReset = breakDelay;
 
         theCrystalsD.Add(CrystalLeftD);
         theCrystalsD.Add(CrystalRightD);
@@ -66,7 +73,16 @@ public class EarthBossManager : MonoBehaviour
     {
         Imprison();
     }
+    public void CallSpikeLaunch()
+    {
+        SpikeLaunch();
+    }
 
+    public void PureRoll()
+    {
+        determinePure = Random.Range(1, 6);
+
+    }
     private void Imprison()
     {
         Debug.Log("PrisonForm");
@@ -78,15 +94,39 @@ public class EarthBossManager : MonoBehaviour
         
     }
 
+    private void SpikeLaunch()
+    {
+        Debug.Log("SpikeForm");
+        GameObject DamageSpikeHandler;
+        Vector3 startPos = CorruptOrb.transform.position;
+        if(theSpike != determinePure)
+        {
+            DamageSpikeHandler = Instantiate(PlayerDamagingSpike, startPos, PlayerDamagingSpike.transform.rotation) as GameObject;
+            theSpike++;
+        }
+        else
+        {
+            DamageSpikeHandler = Instantiate(BossDamagingSpike, startPos, BossDamagingSpike.transform.rotation) as GameObject;
+            theSpike++;
+        }
+        if (theSpike >= 6)
+        {
+            theSpike = 1;
+        }
+        
+
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (GameController.gamespeed > 0)
         {
             ModelControl.transform.LookAt(player.transform.position);
-
-            if(timer <= 0 && hostile)
+            
+            if(attackDelay <= 0 && hostile)
             {
+                nextAttack = Random.Range(1, 3);
                 switch (nextAttack)
                 {
                     case 1:
@@ -97,15 +137,15 @@ public class EarthBossManager : MonoBehaviour
                         EarthBossAnim.Play("PiercingCrystal");
                         break;
                 }
-                timer = 5; 
+                attackDelay = breakDelayReset; 
             }
-
-            timer -= Time.deltaTime;
-        }
-            if (Input.GetKeyDown("space"))
-        {
-            //CrystalBreak();
-            Imprison();
+            if(breakDelay <= 0)
+            {
+                hasBrokenRecently = false;
+                breakDelay = breakDelayReset;
+            }
+            attackDelay -= Time.deltaTime;
+            breakDelay -= Time.deltaTime;
         }
     }
 
@@ -114,23 +154,28 @@ public class EarthBossManager : MonoBehaviour
     /// </summary>
     void CrystalBreak()
     {
-        CurrentBreakD.CallDestruct();  
-        
-        
-        nextBreak++;
-        if(nextBreak < theCrystalsD.Count)
+        if (!hasBrokenRecently)
         {
-            CurrentBreakD = theCrystalsD[nextBreak];
-            CurrentBreak = theCrystals[nextBreak];
-        }
-        else
-        {
-            hostile = false;
-            foreach (Destructable binding in bindings)
+            hasBrokenRecently = true;
+            CurrentBreakD.CallDestruct();
+
+
+            nextBreak++;
+            if (nextBreak < theCrystalsD.Count)
             {
-                binding.CallDestruct();
+                CurrentBreakD = theCrystalsD[nextBreak];
+                CurrentBreak = theCrystals[nextBreak];
+            }
+            else
+            {
+                hostile = false;
+                foreach (Destructable binding in bindings)
+                {
+                    binding.CallDestruct();
+                }
             }
         }
+        
        
     }
     /// <summary>

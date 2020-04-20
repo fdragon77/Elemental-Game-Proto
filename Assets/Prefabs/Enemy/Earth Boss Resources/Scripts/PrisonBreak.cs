@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PrisonBreak : MonoBehaviour
 {
+    [SerializeField] GameObject me;
     [SerializeField] Destructable myDestroy;
     [SerializeField] Destructable PrisonPillar;
     [SerializeField] Destructable PrisonPillar1;
@@ -59,5 +60,6 @@ public class PrisonBreak : MonoBehaviour
                 
             }
         }
+        Destroy(me);
     }
 }

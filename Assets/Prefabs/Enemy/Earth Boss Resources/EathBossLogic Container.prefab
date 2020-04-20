@@ -165,12 +165,15 @@ MonoBehaviour:
     type: 3}
   BindingArray: {fileID: 12548815459762583}
   ModelControl: {fileID: 9120489380888307157}
-  EarthBossAnim: {fileID: 0}
+  EarthBossAnim: {fileID: 8478225217000641761}
+  CorruptOrb: {fileID: 8931208219879091948}
   PrisonObject: {fileID: 529881350127857470, guid: ccff01819ecd67442b2aa5a7f4a81b0e,
     type: 3}
   CorruptSpike: {fileID: 6174548102174664871, guid: 35f88ed767d270f4e8b6e642df5ab0b2,
     type: 3}
   BossDamagingSpike: {fileID: 6126327062782542646, guid: d7752589b5198544091c9d0c57defdad,
+    type: 3}
+  PlayerDamagingSpike: {fileID: 6174548102174664871, guid: 35f88ed767d270f4e8b6e642df5ab0b2,
     type: 3}
 --- !u!95 &8478225217000641761
 Animator:
@@ -1400,9 +1403,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5cfcd4d99df434bb362423bfbd5e6e, type: 3}
---- !u!1 &1510342251665233998 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1701531147598758420, guid: 8c5cfcd4d99df434bb362423bfbd5e6e,
+--- !u!4 &2499086156953807453 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2433725319630680071, guid: 8c5cfcd4d99df434bb362423bfbd5e6e,
     type: 3}
   m_PrefabInstance: {fileID: 245690094594693722}
   m_PrefabAsset: {fileID: 0}
@@ -1418,9 +1421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4ccb4141cc7b34294743941131597f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2499086156953807453 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2433725319630680071, guid: 8c5cfcd4d99df434bb362423bfbd5e6e,
+--- !u!1 &1510342251665233998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1701531147598758420, guid: 8c5cfcd4d99df434bb362423bfbd5e6e,
     type: 3}
   m_PrefabInstance: {fileID: 245690094594693722}
   m_PrefabAsset: {fileID: 0}
@@ -3346,6 +3349,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae657713025d23d419aac72a0ed9d585, type: 3}
+--- !u!1 &8931208219879091948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3412159894910043780, guid: ae657713025d23d419aac72a0ed9d585,
+    type: 3}
+  m_PrefabInstance: {fileID: 6100244265965955176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1173720083477202062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4963406475455442150, guid: ae657713025d23d419aac72a0ed9d585,
