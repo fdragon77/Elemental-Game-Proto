@@ -67,6 +67,8 @@ public class FlyToPlayer_Enemy : MonoBehaviour
         }
         if (collision.gameObject.tag == "Terrain")
         {
+            Debug.Log(gameObject);
+            
             GameObject groundSpawnHandler;
             Vector3 startPos = gameObject.transform.position;
 

@@ -290,9 +290,9 @@ GameObject:
   - component: {fileID: 7160248253887476005}
   - component: {fileID: 232937975849908423}
   - component: {fileID: 4009277323987210992}
-  - component: {fileID: 3801074023284837688}
   - component: {fileID: 618048614000146300}
   - component: {fileID: 105540866983524821}
+  - component: {fileID: 3801074023284837688}
   - component: {fileID: 2329954296739778768}
   m_Layer: 16
   m_Name: KeyStone
@@ -366,19 +366,6 @@ MonoBehaviour:
     type: 3}
   TouchTime: 5
   ThrowerTime: 0.1
---- !u!65 &3801074023284837688
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6126327062782542646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 97.97959, y: 101.76473, z: 520.7394}
-  m_Center: {x: -4.284664, y: 40.673473, z: -254.1159}
 --- !u!114 &618048614000146300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +401,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2329954296739778768
+--- !u!65 &3801074023284837688
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -425,8 +412,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 97.97959, y: 101.76473, z: 520.7394}
+  m_Center: {x: -4.284664, y: 40.673473, z: -254.1159}
+--- !u!65 &2329954296739778768
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126327062782542646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 106.845894, y: 100.01833, z: 525.0754}
+  m_Center: {x: -6.175689, y: 41.551807, z: -254.51875}
 --- !u!1 &6450064036817408864
 GameObject:
   m_ObjectHideFlags: 0

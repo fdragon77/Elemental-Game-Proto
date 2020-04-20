@@ -347,7 +347,6 @@ GameObject:
   - component: {fileID: 232937975849908423}
   - component: {fileID: 4009277323987210992}
   - component: {fileID: 3801074023284837688}
-  - component: {fileID: 618048614000146300}
   - component: {fileID: 105540866983524821}
   m_Layer: 16
   m_Name: KeyStone Ground
@@ -429,23 +428,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 97.97959, y: 519.5129, z: 112.875786}
   m_Center: {x: -4.284664, y: 254.70494, z: 6.6071754}
---- !u!114 &618048614000146300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6126327062782542646}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19053bdbd22a959429eae74791a94a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  active: 1
-  timer: 10
-  myBody: {fileID: 105540866983524821}
-  groundSpawn: {fileID: 0}
 --- !u!54 &105540866983524821
 Rigidbody:
   m_ObjectHideFlags: 0
