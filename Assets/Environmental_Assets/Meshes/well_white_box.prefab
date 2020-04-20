@@ -2416,16 +2416,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4ccb4141cc7b34294743941131597f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
   FireballsDestroy: 1
   FirebreathsDestroy: 1
-  BeamDestroy: 0
+  WallDestroy: 0
   HealDestroy: 0
   AOEDestroy: 0
   TargetedAOEDestroy: 0
+  Touch: 0
+  explosiveForce: 0
+  GracePeriod: 0
   DestructionType: 2
   burnmat: {fileID: 2100000, guid: e0af8c35d67f6fc40b434982d1cb24a8, type: 2}
   explodeObj: {fileID: 0}
+  CreateHeal: 1
   HealFlame: {fileID: 7162633372862728562}
+  TouchTime: 5
+  ThrowerTime: 0.1
 --- !u!65 &6540972976117809395
 BoxCollider:
   m_ObjectHideFlags: 0
