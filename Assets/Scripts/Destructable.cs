@@ -82,8 +82,8 @@ public class Destructable : MonoBehaviour
                         
                         health -= AM.FireballDMG;
                         displayDamage((AM.FireballDMG * 10).ToString());
-                        Debug.Log("Damage" + AM.FireballDMG.ToString());
-                        Debug.Log(health);
+                        //Debug.Log("Damage" + AM.FireballDMG.ToString());
+                        //Debug.Log(health);
                         if (health <= 0)
                         {
                             destruct();
@@ -91,7 +91,7 @@ public class Destructable : MonoBehaviour
                         else
                         {
                             canDestroy = false;
-                            Debug.Log("GraceBall");
+                            //Debug.Log("GraceBall");
                             timer = GracePeriod;
                         }
                     }

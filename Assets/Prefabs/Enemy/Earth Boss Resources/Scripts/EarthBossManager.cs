@@ -8,6 +8,7 @@ public class EarthBossManager : MonoBehaviour
     GameObject player;
     Transform playerLoc;
 
+
     [Header("Boss Pieces")]
     [SerializeField] GameObject CrystalMid;
     [SerializeField] GameObject CrystalRight;
@@ -21,20 +22,22 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] GameObject BindingArray;
 
     [SerializeField] GameObject ModelControl;
+    [SerializeField] Animator EarthBossAnim;
 
 
-
-    [Header("Boss Attack Objects")]
+   [Header("Boss Attack Objects")]
     [SerializeField] GameObject PrisonObject;
     [SerializeField] GameObject CorruptSpike;
     [SerializeField] GameObject BossDamagingSpike;
 
 
+    bool hostile = true;
+    int nextAttack = 1;
     private Destructable[] bindings;
     Destructable CurrentBreakD;
     GameObject CurrentBreak;
     int nextBreak = 0;
-    float timer = 0;
+    float timer = 5;
     List<GameObject> theCrystals = new List<GameObject>();
     List<Destructable> theCrystalsD = new List<Destructable>();
     // Start is called before the first frame update
@@ -59,6 +62,11 @@ public class EarthBossManager : MonoBehaviour
         bindings = BindingArray.GetComponentsInChildren<Destructable>();
     }
 
+    public void CallImprison()
+    {
+        Imprison();
+    }
+
     private void Imprison()
     {
         Debug.Log("PrisonForm");
@@ -76,7 +84,23 @@ public class EarthBossManager : MonoBehaviour
         if (GameController.gamespeed > 0)
         {
             ModelControl.transform.LookAt(player.transform.position);
-            //timer -= Time.deltaTime;
+
+            if(timer <= 0 && hostile)
+            {
+                switch (nextAttack)
+                {
+                    case 1:
+                        EarthBossAnim.Play("PrisonAttack");
+                        //play animation
+                        break;
+                    case 2:
+                        EarthBossAnim.Play("PiercingCrystal");
+                        break;
+                }
+                timer = 5; 
+            }
+
+            timer -= Time.deltaTime;
         }
             if (Input.GetKeyDown("space"))
         {
@@ -101,6 +125,7 @@ public class EarthBossManager : MonoBehaviour
         }
         else
         {
+            hostile = false;
             foreach (Destructable binding in bindings)
             {
                 binding.CallDestruct();

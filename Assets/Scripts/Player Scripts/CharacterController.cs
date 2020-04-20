@@ -191,7 +191,7 @@ public class CharacterController : MonoBehaviour
                 HighBlaze.SetActive(true);
                 MidBlaze.SetActive(false);
                 LowBlaze.SetActive(false);
-                Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
+                //Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
                 targeter.camera2 = HighCam;
 
                 //flamethrower height:
@@ -206,7 +206,7 @@ public class CharacterController : MonoBehaviour
                 HighBlaze.SetActive(false);
                 MidBlaze.SetActive(true);
                 LowBlaze.SetActive(false);
-                Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
+                //Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
                 targeter.camera2 = MidCam;
 
                 //flamethrower height:
@@ -221,7 +221,7 @@ public class CharacterController : MonoBehaviour
                 HighBlaze.SetActive(false);
                 MidBlaze.SetActive(false);
                 LowBlaze.SetActive(true);
-                Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
+                //Debug.Log("Camera2 is null?: " + (targeter.camera2 == null).ToString());
                 targeter.camera2 = LowCam;
 
                 //flamethrower height:
@@ -260,7 +260,7 @@ public class CharacterController : MonoBehaviour
         armor1 = armorSprites[100 - health];
         foreach (Sprite s in armorSprites)
         {
-            Debug.Log(s.name);
+            //Debug.Log(s.name);
         }
     }
     private void OnTriggerEnter(Collider collision)

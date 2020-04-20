@@ -118,7 +118,7 @@ public class Fireball : MonoBehaviour
         {
             playermovement += CC.moveDirection();
         }
-        Debug.Log("Fireball velocity: " + (playermovement).ToString());
+        //Debug.Log("Fireball velocity: " + (playermovement).ToString());
         //fireballHandler.GetComponent<Rigidbody>().velocity = projectile.transform.TransformDirection(fireDirection.x * fireballSpeed, fireDirection.y * fireballHeight, fireDirection.z * fireballSpeed) + playermovement;
         if (reticleRef.IsLocked())
         {

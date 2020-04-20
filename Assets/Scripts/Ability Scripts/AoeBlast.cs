@@ -44,7 +44,7 @@ public class AoeBlast : MonoBehaviour
             animM.Play("AOE");
             animL.Play("AOE");
 
-            Debug.Log("AoeBlast");
+            //Debug.Log("AoeBlast");
             timer = 0;
             Blast = Instantiate(AoeObject, transform.position, AoeObject.transform.rotation) as GameObject;
             //aoeRing.SetActive(true);
