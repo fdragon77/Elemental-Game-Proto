@@ -12,6 +12,7 @@ public class FlyToPlayer_Enemy : MonoBehaviour
     //[SerializeField] int damageAmount = 5;
     [SerializeField] float timer = 5;
     [SerializeField] Rigidbody myBody;
+    [SerializeField] GameObject groundSpawn;
     bool gravityOn = false;
     Vector3 targetVector = new Vector3();
     // Start is called before the first frame update
@@ -57,6 +58,14 @@ public class FlyToPlayer_Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             //player.GetComponent<CharacterController>().health -= damageAmount;
+        }
+        else if (collision.gameObject.tag == "Terrain")
+        {
+            GameObject groundSpawnHandler;
+            Vector3 startPos = gameObject.transform.position;
+
+            groundSpawnHandler = Instantiate(groundSpawn, startPos, groundSpawn.transform.rotation) as GameObject;
+            Destroy(gameObject);
         }
     }
 }
