@@ -175,7 +175,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6174548102174664871}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 329.1282, y: 1571.0682, z: 402.61945}
@@ -227,6 +227,7 @@ MonoBehaviour:
   timer: 10
   myBody: {fileID: 5156619796734118667}
   groundSpawn: {fileID: 0}
+  damageAmount: 5
 --- !u!54 &5156619796734118667
 Rigidbody:
   m_ObjectHideFlags: 0

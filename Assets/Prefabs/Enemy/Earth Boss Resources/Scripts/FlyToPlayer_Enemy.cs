@@ -15,10 +15,13 @@ public class FlyToPlayer_Enemy : MonoBehaviour
     [SerializeField] GameObject groundSpawn;
     bool gravityOn = false;
     Vector3 targetVector = new Vector3();
+
+    [SerializeField] int damageAmount =5;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log(player);
     }
 
     // Update is called once per frame
@@ -54,12 +57,15 @@ public class FlyToPlayer_Enemy : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == player.gameObject.tag)
+        Debug.Log(collision);
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == player.gameObject.tag)
         {
+            
             Destroy(gameObject);
             //player.GetComponent<CharacterController>().health -= damageAmount;
         }
-        else if (collision.gameObject.tag == "Terrain")
+        if (collision.gameObject.tag == "Terrain")
         {
             GameObject groundSpawnHandler;
             Vector3 startPos = gameObject.transform.position;

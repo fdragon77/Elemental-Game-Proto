@@ -265,6 +265,7 @@ public class CharacterController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
+        Debug.Log(collision);
         if(collision.gameObject.tag == "EnemyAttack")
         {
             attackdmg dmg = collision.gameObject.GetComponent<attackdmg>();
@@ -280,7 +281,7 @@ public class CharacterController : MonoBehaviour
 
             health -= d;
             displayDamage(d.ToString());
-            //Debug.Log("Ouch");
+            Debug.Log("Ouch");
             //armor1 = armorSprites[100 - health];
             //this.gameObject.GetComponent<Image>().sprite = (armor1);
         }
