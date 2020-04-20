@@ -53,7 +53,7 @@ public class firewall : MonoBehaviour
             animM.Play("Firewall");
             animL.Play("Fire Wall");
 
-            Debug.Log("Firewall");
+            //Debug.Log("Firewall");
 
             // play sound for firewall
             if (firewallsnd != null && Playersnd != null)
@@ -63,7 +63,7 @@ public class firewall : MonoBehaviour
             }
 
             //fireballCooldown.rectTransform.localScale = Empty;
-            Debug.Log("Blah");
+            //Debug.Log("Blah");
             GameObject firewallHandler;
             Vector3 fireDirection;
 

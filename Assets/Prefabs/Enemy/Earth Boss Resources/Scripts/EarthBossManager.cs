@@ -85,7 +85,7 @@ public class EarthBossManager : MonoBehaviour
     }
     private void Imprison()
     {
-        Debug.Log("PrisonForm");
+        //Debug.Log("PrisonForm");
         GameObject prisonHandler;
         Vector3 startPos = player.transform.position;
         
@@ -96,7 +96,7 @@ public class EarthBossManager : MonoBehaviour
 
     private void SpikeLaunch()
     {
-        Debug.Log("SpikeForm");
+        //Debug.Log("SpikeForm");
         GameObject DamageSpikeHandler;
         Vector3 startPos = CorruptOrb.transform.position;
         if(theSpike != determinePure)
@@ -200,7 +200,7 @@ public class EarthBossManager : MonoBehaviour
     public void TargetAcquire()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log("Target Acquired");
-        Debug.Log(player);
+        //Debug.Log("Target Acquired");
+        //Debug.Log(player);
     }
 }
