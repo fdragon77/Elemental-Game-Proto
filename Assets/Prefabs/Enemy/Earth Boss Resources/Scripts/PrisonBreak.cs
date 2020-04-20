@@ -20,6 +20,10 @@ public class PrisonBreak : MonoBehaviour
     [SerializeField] Destructable PrisonPillar11;
     [SerializeField] Destructable PrisonPillar12;
 
+    [SerializeField] float PrisonHealth = 1f;
+
+    private AbilityManager AM;
+
     List<Destructable> thePillars = new List<Destructable>();
     // Start is called before the first frame update
     void Start()
@@ -38,7 +42,7 @@ public class PrisonBreak : MonoBehaviour
         thePillars.Add(PrisonPillar10);
         thePillars.Add(PrisonPillar11);
         thePillars.Add(PrisonPillar12);
-        
+        AM = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<AbilityManager>();
 
     }
 
@@ -49,6 +53,38 @@ public class PrisonBreak : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
+        switch (collision.gameObject.name)
+        {
+            case "Fireball(Clone)":
+            case "Fireball Variant(Clone)":
+                PrisonHealth -= AM.FireballDMG;
+                break;
+            case "fireCone":
+                PrisonHealth -= AM.FlamethrowDMG;
+                break;
+            case "fire wall(Clone)":
+                PrisonHealth -= AM.FirewallDMG;  
+                break;
+            case "AoeDam":
+            case "AoeKnock":
+                PrisonHealth -= AM.AoeDMG;                  
+                break;
+
+                //FIXME Fill in with prefabs as we work on it.
+        }
+        if (PrisonHealth <= 0)
+        {
+            foreach (Destructable toBreak in thePillars)
+            {
+                if (toBreak != null)
+                {
+                    toBreak.CallDestruct();
+                }
+
+            }
+            Destroy(me);
+        }
+        /*
         if (collision.gameObject.tag == "Attack")
         {
             foreach (Destructable toBreak in thePillars)
@@ -59,7 +95,7 @@ public class PrisonBreak : MonoBehaviour
                 }
                 
             }
-        }
-        Destroy(me);
+        }*/
+       
     }
 }
