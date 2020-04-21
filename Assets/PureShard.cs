@@ -24,9 +24,14 @@ public class PureShard : MonoBehaviour
     {
         if (GameController.gamespeed > 0)
         {
+            if(CurrentCrystal != null)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, CurrentCrystal.transform.position, speed * Time.deltaTime);
+                Quaternion TargetQ = Quaternion.LookRotation(CurrentCrystal.transform.position - transform.position);
+                transform.rotation = TargetQ;
+            }
             //Move towards the crystal at given speed. 
-            transform.position = Vector3.MoveTowards(transform.position, CurrentCrystal.transform.position, speed * Time.deltaTime);
-            
+           
         }
     }
 

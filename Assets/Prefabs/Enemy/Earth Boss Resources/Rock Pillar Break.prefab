@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 5400636662874994303}
   - component: {fileID: 935627821137955357}
   - component: {fileID: 5560189198526367377}
+  - component: {fileID: -6198885518186644029}
   m_Layer: 16
   m_Name: Rock Pillar Break
   m_TagString: Untagged
@@ -838,3 +839,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6198885518186644029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982908529053238380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dedddb5c4c672468af364e6ee2753c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 10
+  theObject: {fileID: 8982908529053238380}
