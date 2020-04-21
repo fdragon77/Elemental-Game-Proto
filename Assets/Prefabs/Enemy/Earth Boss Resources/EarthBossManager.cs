@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EarthBossManager : MonoBehaviour
 {
@@ -35,6 +37,10 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] GameObject BossDamagingSpike;
     [SerializeField] GameObject PlayerDamagingSpike;
     [SerializeField] GameObject SpikeWave;
+
+    [SerializeField] public GameObject GateWay;
+    private bool isActive = false;
+    [SerializeField] private float activeDist = 200f;
 
 
     int determinePure = 3;
@@ -139,33 +145,43 @@ public class EarthBossManager : MonoBehaviour
     {
         if (GameController.gamespeed > 0)
         {
-            ModelControl.transform.LookAt(player.transform.position);
-            
-            if(attackDelay <= 0 && hostile)
+            if (isActive)
             {
-                nextAttack = Random.Range(1, 4);
-                switch (nextAttack)
+                ModelControl.transform.LookAt(player.transform.position);
+
+                if (attackDelay <= 0 && hostile)
                 {
-                    case 1:
-                        EarthBossAnim.Play("PrisonAttack");
-                        //play animation
-                        break;
-                    case 2:
-                        EarthBossAnim.Play("PiercingCrystal");
-                        break;
-                    case 3:
-                        EarthBossAnim.Play("WaveSmash");
-                        break;
+                    nextAttack = Random.Range(1, 4);
+                    switch (nextAttack)
+                    {
+                        case 1:
+                            EarthBossAnim.Play("PrisonAttack");
+                            //play animation
+                            break;
+                        case 2:
+                            EarthBossAnim.Play("PiercingCrystal");
+                            break;
+                        case 3:
+                            EarthBossAnim.Play("WaveSmash");
+                            break;
+                    }
+
+                    attackDelay = breakDelayReset;
                 }
-                attackDelay = breakDelayReset; 
+
+                if (breakDelay <= 0)
+                {
+                    hasBrokenRecently = false;
+                    breakDelay = breakDelayReset;
+                }
+
+                attackDelay -= Time.deltaTime;
+                breakDelay -= Time.deltaTime;
             }
-            if(breakDelay <= 0)
+            else if (Vector3.Distance(player.transform.position, transform.position) <= activeDist)
             {
-                hasBrokenRecently = false;
-                breakDelay = breakDelayReset;
+                isActive = true;
             }
-            attackDelay -= Time.deltaTime;
-            breakDelay -= Time.deltaTime;
         }
     }
 
@@ -196,6 +212,7 @@ public class EarthBossManager : MonoBehaviour
                     {
                         binding.CallDestruct();
                     }
+                    Destroy(gameObject);
                 }
             }
             else
@@ -231,5 +248,10 @@ public class EarthBossManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //Debug.Log("Target Acquired");
         //Debug.Log(player);
+    }
+
+    public void OnDestroy()
+    {
+        GateWay.SetActive(true);
     }
 }
