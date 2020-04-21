@@ -139,7 +139,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7199917767388568244}
   - component: {fileID: 8011479622683312361}
-  - component: {fileID: 6915768429310030773}
   - component: {fileID: 5156619796734118667}
   - component: {fileID: 2776549113599706197}
   - component: {fileID: -2135802934359537424}
@@ -179,36 +178,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 329.1282, y: 1571.0682, z: 402.61945}
   m_Center: {x: 2.7490616, y: 776.48413, z: 0.4499197}
---- !u!114 &6915768429310030773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6174548102174664871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4ccb4141cc7b34294743941131597f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  FireballsDestroy: 0
-  FirebreathsDestroy: 0
-  WallDestroy: 0
-  HealDestroy: 0
-  AOEDestroy: 0
-  TargetedAOEDestroy: 0
-  Touch: 0
-  explosiveForce: 25
-  GracePeriod: 0
-  DestructionType: 1
-  burnmat: {fileID: 0}
-  explodeObj: {fileID: 6126327062782542646, guid: 7d0c16516faeaf34aaa08073d0e8212b,
-    type: 3}
-  CreateHeal: 0
-  HealFlame: {fileID: 0}
-  TouchTime: 5
-  ThrowerTime: 0.1
 --- !u!54 &5156619796734118667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -256,7 +225,7 @@ MonoBehaviour:
   FirebreathsDestroy: 1
   WallDestroy: 1
   HealDestroy: 0
-  AOEDestroy: 0
+  AOEDestroy: 1
   TargetedAOEDestroy: 0
   Touch: 0
   explosiveForce: 0

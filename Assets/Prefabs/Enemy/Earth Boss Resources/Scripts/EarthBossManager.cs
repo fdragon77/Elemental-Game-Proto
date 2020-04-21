@@ -28,15 +28,15 @@ public class EarthBossManager : MonoBehaviour
     [SerializeField] Animator EarthBossAnim;
 
     [SerializeField] GameObject CorruptOrb;
-
+    [SerializeField] GameObject WaveSpawner;
 
    [Header("Boss Attack Objects")]
     [SerializeField] GameObject PrisonObject;
     [SerializeField] GameObject BossDamagingSpike;
     [SerializeField] GameObject PlayerDamagingSpike;
+    [SerializeField] GameObject SpikeWave;
 
 
-    
     int determinePure = 3;
     int theSpike = 1;
     bool hostile = true;
@@ -82,6 +82,10 @@ public class EarthBossManager : MonoBehaviour
     {
         SpikeLaunch();
     }
+    public void CallWave()
+    {
+        Wave();
+    }
 
     public void PureRoll()
     {
@@ -121,6 +125,14 @@ public class EarthBossManager : MonoBehaviour
         
 
     }
+    private void Wave()
+    {
+        GameObject WaveHandler;
+        Vector3 startPos = WaveSpawner.transform.position;
+
+        WaveHandler = Instantiate(SpikeWave, startPos, WaveSpawner.transform.rotation) as GameObject;
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -131,7 +143,7 @@ public class EarthBossManager : MonoBehaviour
             
             if(attackDelay <= 0 && hostile)
             {
-                nextAttack = Random.Range(1, 3);
+                nextAttack = Random.Range(1, 4);
                 switch (nextAttack)
                 {
                     case 1:
@@ -140,6 +152,9 @@ public class EarthBossManager : MonoBehaviour
                         break;
                     case 2:
                         EarthBossAnim.Play("PiercingCrystal");
+                        break;
+                    case 3:
+                        EarthBossAnim.Play("WaveSmash");
                         break;
                 }
                 attackDelay = breakDelayReset; 
